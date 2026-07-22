@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  
+  --color-gold-50: #fefcf3;
+  --color-gold-100: #fdf6df;
+  --color-gold-200: #fbe6be;
+  --color-gold-300: #f7ce90;
+  --color-gold-400: #f1b15e;
+  --color-gold-500: #e5933a;
+  --color-gold-600: #c9a227; /* Luxury Gold Primary */
+  --color-gold-700: #a77c1d;
+  --color-gold-800: #855d17;
+  --color-gold-900: #684714;
+  --color-gold-950: #3c2409;
+  
+  --color-luxury-black: #0a0a0a;
+  --color-luxury-charcoal: #151515;
+  --color-luxury-grey: #121212;
+  --color-luxury-gold: #c9a227;
+  
+  --animate-gold-glow: gold-glow 4s ease-in-out infinite;
+}
+
+@keyframes gold-glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(201, 162, 39, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(201, 162, 39, 0.5), 0 0 5px rgba(201, 162, 39, 0.3);
+  }
+}
+
+/* Base style resets */
+html {
+  scroll-behavior: smooth;
+  background-color: #050505;
+  color: #e5e5e5;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a227;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a77c1d;
+}
+
+.gold-gradient-bg {
+  background: radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.08) 0%, rgba(5, 5, 5, 0) 70%);
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to right, #c9a227, #3a2e0a) 1;
+}
+
+.gold-glow-hover {
+  transition: all 0.5s ease-in-out;
+}
+.gold-glow-hover:hover {
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.3);
+  border-color: #c9a227;
+}
+
+/* Custom glassmorphism classes */
+/* Custom glassmorphism classes styled for white theme */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 162, 39, 0.2);
+}
+
+.glass-panel-heavy {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 162, 39, 0.3);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #C9A227 0%, #8E6D15 100%);
+}
+
+.serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+@keyframes border-spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.animate-border-spin {
+  animation: border-spin 4s linear infinite;
+}
+
