@@ -8,7 +8,6 @@ import {
   ScrollText,
   BadgeCheck,
   Receipt,
-  ShieldCheck,
   AlertTriangle,
   ExternalLink,
   Phone,
@@ -30,8 +29,7 @@ const RECORD_ICONS: Record<string, typeof Building2> = {
   Building2,
   ScrollText,
   BadgeCheck,
-  Receipt,
-  ShieldCheck
+  Receipt
 };
 
 export default function CredentialsPage() {

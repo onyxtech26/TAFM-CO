@@ -29,6 +29,10 @@ import ContactPage from './pages/ContactPage';
 import ThankYouPage from './pages/ThankYouPage';
 import LegalPage from './pages/LegalPage';
 import NotFoundPage from './pages/NotFoundPage';
+import OurLegalServicesPage from './pages/OurLegalServicesPage';
+import LegalProcessPage from './pages/LegalProcessPage';
+import WhyChooseUsPage from './pages/WhyChooseUsPage';
+import OurClientsPage from './pages/OurClientsPage';
 
 /**
  * The splash screen only plays when the visitor lands on the home page.
@@ -138,14 +142,18 @@ function FirmApp() {
                   <Route path="/terms" element={<LegalPage slug="terms" />} />
                   <Route path="/cookies" element={<LegalPage slug="cookies" />} />
 
-                  {/* Redirects from the previous site structure */}
-                  <Route path="/services" element={<Navigate to="/practice-areas" replace />} />
+                  {/* Dedicated Pages from firm profile */}
+                  <Route path="/services" element={<OurLegalServicesPage />} />
+                  <Route path="/process" element={<LegalProcessPage />} />
+                  <Route path="/why-us" element={<WhyChooseUsPage />} />
+                  <Route path="/clients" element={<OurClientsPage />} />
+                  <Route path="/our-clients" element={<OurClientsPage />} />
+
+                  {/* Redirects from previous site structure */}
                   <Route
                     path="/services/:slug"
                     element={<Navigate to="/practice-areas" replace />}
                   />
-                  <Route path="/why-us" element={<Navigate to="/about" replace />} />
-                  <Route path="/process" element={<Navigate to="/client-guide" replace />} />
                   <Route path="/experience" element={<Navigate to="/our-lawyer" replace />} />
                   <Route path="/ms" element={<Navigate to="/" replace />} />
                   <Route path="/notis-privasi" element={<Navigate to="/privacy" replace />} />

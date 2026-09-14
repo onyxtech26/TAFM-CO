@@ -38,6 +38,31 @@ export const PAGE_META: Record<string, PageMeta> = {
     description:
       "Malaysian Bar registration, 2026 Practising Certificate and insurance details, with steps to verify our firm."
   },
+  "/services": {
+    title: "Our Legal Services | Amin Firdaus Mashudi & Co.",
+    description:
+      "Comprehensive legal assistance across 10 core practice disciplines including conveyancing, probate, litigation, land disputes, and commercial law."
+  },
+  "/process": {
+    title: "Our Legal Process | Amin Firdaus Mashudi & Co.",
+    description:
+      "Our 8-step legal framework ensuring systematic case management, clear strategy, and structured completion."
+  },
+  "/why-us": {
+    title: "Why Choose Us | Amin Firdaus Mashudi & Co.",
+    description:
+      "Discover the 6 core pillars and professional values that define our practice in Johor and Pahang."
+  },
+  "/clients": {
+    title: "Our Clients | Amin Firdaus Mashudi & Co.",
+    description:
+      "Serving individuals, families, property owners, businesses, investors, and corporate organisations across Malaysia."
+  },
+  "/our-clients": {
+    title: "Our Clients | Amin Firdaus Mashudi & Co.",
+    description:
+      "Serving individuals, families, property owners, businesses, investors, and corporate organisations across Malaysia."
+  },
   "/practice-areas": {
     title: "Practice Areas | Amin Firdaus Mashudi & Co.",
     description:

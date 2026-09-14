@@ -9,7 +9,7 @@ import PageHero from '../components/PageHero';
 import SectionHeading from '../components/SectionHeading';
 import CTABand from '../components/CTABand';
 import LawyerPortrait from '../components/LawyerPortrait';
-import { PRINCIPAL_LAWYER, LAWYER_QUICK_FACTS } from '../data/firm';
+import { PRINCIPAL_LAWYER, LAWYER_QUICK_FACTS, LEADERSHIP_TEAM } from '../data/firm';
 
 export default function OurLawyerPage() {
   return (
@@ -192,21 +192,72 @@ export default function OurLawyerPage() {
         </div>
       </section>
 
-      {/* Team note (6.5) */}
-      <section className="bg-slate-200/30 backdrop-blur-2xl py-16 border-b border-[#CBD5E1]/60">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* 2. Operations Manager & Management Lead */}
+      <section className="bg-slate-200/30 backdrop-blur-2xl py-20 sm:py-24 border-b border-[#CBD5E1]/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Our Team"
-            title="A Growing Practice"
-            subtitle="The firm is currently led by its sole proprietor. As lawyers and staff join, their profiles will be published here."
+            eyebrow="Key Personnel"
+            title="Firm Operations &"
+            italicAccent="Management Lead"
+            subtitle="Professional management ensuring efficient case progression, systematic administration, and exceptional client coordination."
           />
-          <Link
-            to="/careers"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2410C] hover:text-[#EA580C] transition-colors"
-          >
-            <span>See current opportunities</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {LEADERSHIP_TEAM.filter((m) => m.id !== 'founder-principal').map((member) => (
+              <div key={member.id} className="card-luxury p-7 sm:p-8 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="text-[11px] font-mono text-[#C2410C] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30">
+                      {member.badge}
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif text-2xl font-bold text-[#0F172A] mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-xs uppercase tracking-wider text-[#EA580C] font-semibold mb-4">
+                    {member.role}
+                  </p>
+
+                  <p className="text-sm text-[#475569] leading-relaxed font-light mb-6">
+                    {member.description}
+                  </p>
+
+                  {member.responsibilities && (
+                    <div className="pt-4 border-t border-[#CBD5E1]/70">
+                      <span className="text-xs uppercase tracking-wider text-[#0F172A] font-semibold block mb-3">
+                        Key Responsibilities:
+                      </span>
+                      <ul className="space-y-2">
+                        {member.responsibilities.map((resp) => (
+                          <li key={resp} className="flex items-start gap-2 text-xs text-[#475569]">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] shrink-0 mt-1.5" />
+                            <span>{resp}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {member.note && (
+                    <p className="mt-4 text-xs italic text-[#64748B] border-l-2 border-amber-500/40 pl-3">
+                      {member.note}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              to="/careers"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2410C] hover:text-[#EA580C] transition-colors"
+            >
+              <span>Explore career opportunities with our chambers</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 

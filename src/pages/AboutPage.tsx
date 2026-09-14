@@ -41,11 +41,11 @@ export default function AboutPage() {
         eyebrow="About Us"
         title="About Amin Firdaus"
         italicAccent="Mashudi & Co."
-        intro="A Malaysian law firm registered with the Malaysian Bar, serving individuals, families and businesses from offices in Skudai and Johor Bahru, Johor, and in Kuantan, Pahang."
+        intro="A Malaysian law firm registered with the Malaysian Bar, serving individuals, families, businesses, property owners, investors and corporate clients across Peninsular Malaysia."
         breadcrumbs={[{ label: 'About the Firm' }]}
       />
 
-      {/* 5.1 Introduction & 5.2 Why the firm was founded */}
+      {/* 5.1 Introduction & Official Firm Background */}
       <section className="bg-transparent pt-10 pb-20 sm:pt-12 sm:pb-28 border-b border-[#CBD5E1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -56,34 +56,34 @@ export default function AboutPage() {
               </div>
 
               <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] leading-tight">
-                A registered Malaysian law firm{' '}
-                <span className="italic font-normal gold-text-gradient">
-                  in Johor and Pahang
-                </span>
+                About the Firm
               </h2>
 
               <div className="space-y-4 text-base text-[#475569] leading-relaxed font-light">
                 <p>
-                  Amin Firdaus Mashudi &amp; Co. is a Malaysian law firm registered with the Malaysian
-                  Bar under Section 85(1) of the Legal Profession Act 1976 (Registration No.{' '}
-                  {FIRM_DETAILS.registrationNumber}). The firm was founded in 2026 by Muhammad Amin
-                  Firdaus bin Mashudi, Advocate &amp; Solicitor of the High Court in Malaya, and
-                  operates as a sole proprietorship.
+                  Amin Firdaus Mashudi &amp; Co. is a Malaysian law firm providing legal representation, advisory services and comprehensive legal solutions to individuals, families, businesses, property owners, investors and corporate clients.
                 </p>
                 <p>
-                  From our headquarters (HQ) in Skudai and our offices in Johor Bahru and Kuantan, we advise
-                  and act for individuals, families, small and medium-sized businesses, and property
-                  owners across Johor, Pahang and the rest of Peninsular Malaysia.
+                  Established in 2021 and subsequently incorporated in 2025, the firm has developed a multidisciplinary approach to legal practice, combining legal knowledge, practical case management and strategic client support.
+                </p>
+                <p>
+                  Our practice covers a range of legal matters, with particular emphasis on property and conveyancing, estate administration, litigation, corporate and commercial matters, legal documentation and advisory services.
+                </p>
+                <p className="text-sm text-[#0F172A] bg-white/70 backdrop-blur-md p-4 rounded-xl border border-[#CBD5E1] shadow-sm">
+                  The firm is registered with the <strong className="font-semibold">Malaysian Bar Council</strong> under Registration No.{' '}
+                  <span className="font-mono text-[#C2410C] font-semibold">{FIRM_DETAILS.registrationNumber}</span>. The Malaysian Bar maintains an official directory through which lawyers and law firms can be searched and verified.
                 </p>
               </div>
 
-              <div className="pt-4">
-                <h3 className="font-serif text-xl font-bold text-[#0F172A] mb-3">
-                  Why the firm was founded
-                </h3>
-                <p className="text-base text-[#475569] leading-relaxed font-light">
-                  {FIRM_DETAILS.foundingStory}
-                </p>
+              <div className="pt-2">
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-50/80 via-white/90 to-amber-50/40 border border-amber-500/30 shadow-sm">
+                  <span className="text-xs uppercase tracking-[0.2em] text-[#C2410C] font-semibold block mb-2">
+                    Our Objective
+                  </span>
+                  <p className="font-serif text-lg sm:text-xl text-[#0F172A] leading-relaxed italic">
+                    &ldquo;{FIRM_DETAILS.objective}&rdquo;
+                  </p>
+                </div>
               </div>
             </div>
 

@@ -80,15 +80,26 @@ export const FIRM_DETAILS = {
   areasServed: ["Johor", "Pahang", "Peninsular Malaysia"],
 
   description:
-    "Amin Firdaus Mashudi & Co. is a Malaysian law firm registered with the Malaysian Bar (Registration No. 000020009279). Founded in 2026 by Advocate & Solicitor Muhammad Amin Firdaus bin Mashudi, the firm advises and represents individuals, families and businesses in property transactions, court disputes, criminal matters, family and estate matters, and business affairs, from offices in Johor and Pahang.",
+    "Amin Firdaus Mashudi & Co. is a Malaysian law firm providing legal representation, advisory services and comprehensive legal solutions to individuals, families, businesses, property owners, investors and corporate clients.",
 
   heroSubheadline:
     "Messrs. Amin Firdaus Mashudi & Co. advises and represents clients in property transactions, court disputes, criminal matters, family and estate matters, and business affairs, from offices in Johor and Pahang.",
 
   vision:
-    "To be a trusted and accessible law firm for the communities we serve in Johor and Pahang.",
+    "To be a distinguished and progressive Malaysian law firm recognised for legal excellence, uncompromising integrity, and unwavering dedication to safeguarding our clients' legal and commercial interests across Peninsular Malaysia.",
   mission:
-    "To provide legal services that are clear, careful and responsive, delivered with integrity and respect for every client.",
+    "To deliver precise, commercially sound legal solutions and robust representation through structured case management, clear communication, and an agile, client-focused multidisciplinary approach.",
+
+  objective:
+    "To provide clear legal advice, structured processes and effective representation while protecting our clients' legal and commercial interests.",
+
+  aboutOfficial: [
+    "Amin Firdaus Mashudi & Co. is a Malaysian law firm providing legal representation, advisory services and comprehensive legal solutions to individuals, families, businesses, property owners, investors and corporate clients.",
+    "Established in 2021 and subsequently incorporated in 2025, the firm has developed a multidisciplinary approach to legal practice, combining legal knowledge, practical case management and strategic client support.",
+    "Our practice covers a range of legal matters, with particular emphasis on property and conveyancing, estate administration, litigation, corporate and commercial matters, legal documentation and advisory services.",
+    "The firm is registered with the Malaysian Bar Council under Registration No. 000020009279.",
+    "Our objective is simple: To provide clear legal advice, structured processes and effective representation while protecting our clients' legal and commercial interests."
+  ],
 
   foundingStory:
     "The firm was established with a simple aim: to make proper legal help easier to reach and easier to understand. Many people put off seeing a lawyer because they are unsure what it will cost, worried they will not understand the advice, or do not know where to begin. We set out to remove those barriers by explaining matters clearly, being upfront about fees, and staying in contact throughout each matter.",
@@ -404,23 +415,6 @@ export interface CredentialRecord {
 
 export const CREDENTIAL_RECORDS: CredentialRecord[] = [
   {
-    id: "firm-registration",
-    title: "Law firm registration",
-    icon: "Building2",
-    rows: [
-      { label: "Firm name", value: "Amin Firdaus Mashudi & Co." },
-      { label: "Certificate", value: "Certificate of Registration of Law Firm" },
-      { label: "Issued under", value: "Section 85(1) of the Legal Profession Act 1976" },
-      { label: "Issued by", value: "Malaysian Bar (Badan Peguam Malaysia)" },
-      { label: "Registration Number", value: "000020009279" },
-      { label: "Dated", value: "30 January 2026" },
-      { label: "Structure", value: "Sole proprietorship" },
-      { label: "Sole Proprietor", value: "Muhammad Amin Firdaus bin Mashudi" }
-    ],
-    note:
-      "The Bar Council confirmed that it has no objection to the use of the firm name “Amin Firdaus Mashudi & Co.” and the firm commenced practice in February 2026."
-  },
-  {
     id: "practising-certificate",
     title: "Practising Certificate 2026",
     icon: "ScrollText",
@@ -468,24 +462,6 @@ export const CREDENTIAL_RECORDS: CredentialRecord[] = [
     ],
     note:
       "Certifies that the 2026 subscription has been paid and that there are no arrears of subscription for past years."
-  },
-  {
-    id: "indemnity-insurance",
-    title: "Professional Indemnity Insurance",
-    icon: "ShieldCheck",
-    rows: [
-      { label: "Scheme", value: "Malaysian Bar Professional Indemnity Insurance Scheme 2026" },
-      { label: "Insurer", value: "Pacific & Orient Insurance Co. Berhad" },
-      { label: "Arranged by", value: "AON Insurance Brokers (Malaysia) Sdn. Bhd." },
-      { label: "Insured firm", value: "Amin Firdaus Mashudi & Co." },
-      { label: "Period of insurance", value: "1 February 2026 to 31 December 2026" },
-      {
-        label: "Mandatory limit of indemnity",
-        value: "RM250,000 for each and every claim, subject to policy terms"
-      }
-    ],
-    note:
-      "All law firms in Peninsular Malaysia are required to hold professional indemnity insurance under the Malaysian Bar's mandatory scheme. This protects clients in the event of a claim arising from professional negligence."
   }
 ];
 
@@ -517,3 +493,505 @@ export const FRAUD_WARNING =
 
 export const CREDENTIALS_FOOTNOTE =
   "The details above relate to the year 2026 and will be updated annually.";
+
+/** 2. OUR LEADERSHIP */
+export interface LeadershipMember {
+  id: string;
+  name: string;
+  role: string;
+  badge: string;
+  summary: string;
+  description: string;
+  responsibilities?: string[];
+  note?: string;
+}
+
+export const LEADERSHIP_TEAM: LeadershipMember[] = [
+  {
+    id: "founder-principal",
+    name: "Muhammad Amin Firdaus Bin Mashudi",
+    role: "Founder & Principal",
+    badge: "Founder & Principal",
+    summary: "Oversees the firm's strategic direction, legal practice, client matters, and professional standards.",
+    description:
+      "Muhammad Amin Firdaus Bin Mashudi is the founder of Amin Firdaus Mashudi & Co., providing leadership and strategic direction to the firm. His role includes overseeing the firm's legal direction, client matters, professional standards and development of the firm's legal practice.",
+    note: "Under his leadership, the firm aims to build a professional legal practice that combines traditional legal expertise with efficient modern case management."
+  },
+  {
+    id: "operations-manager",
+    name: "Mr. Mohan",
+    role: "Operations Manager",
+    badge: "Operations Management",
+    summary: "Oversees the operational and administrative functions, internal workflow, and cross-party communication.",
+    description:
+      "Mr. Mohan oversees the operational and administrative functions of the firm. The Operations Manager works closely with the legal team to ensure that client matters are handled efficiently and systematically.",
+    responsibilities: [
+      "Firm operations",
+      "Client coordination",
+      "Case administration",
+      "Internal workflow",
+      "Documentation management",
+      "Communication between clients, lawyers and external parties",
+      "Monitoring case progress",
+      "Operational planning and coordination"
+    ],
+    note: "The Operations Manager works closely with the legal team to ensure that client matters are handled efficiently and systematically."
+  },
+  {
+    id: "management-lead",
+    name: "Mr. Shiva",
+    role: "Management Lead",
+    badge: "Strategic Management",
+    summary: "Leads firm management functions, business development, and strategic operational initiatives.",
+    description:
+      "Mr. Shiva leads the firm's management functions and supports the development and implementation of the firm's operational and management strategies.",
+    responsibilities: [
+      "Management coordination",
+      "Business development",
+      "Strategic planning",
+      "Internal administration",
+      "Client relationship management",
+      "Workflow improvement",
+      "Coordination between legal and operational teams",
+      "Supporting the firm's long-term development"
+    ],
+    note: "Supports the ongoing expansion and high-standard service delivery of the chambers across Johor and Pahang."
+  }
+];
+
+/** 3. OUR LEGAL SERVICES (10 items, narrative paragraph format) */
+export interface LegalServiceItem {
+  number: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  paragraphs: string[];
+  icon: string;
+}
+
+export const OUR_LEGAL_SERVICES: LegalServiceItem[] = [
+  {
+    number: "01",
+    slug: "conveyancing-property",
+    title: "Conveyancing & Property",
+    subtitle: "Property Transactions From Start to Completion",
+    paragraphs: [
+      "We provide comprehensive legal assistance for property transactions, from the initial documentation and due diligence stage through to completion and registration. Our services cover the purchase, sale, transfer and financing of residential, commercial and other properties.",
+      "Our conveyancing services include Sale and Purchase Agreements, Options to Purchase, subsale transactions, property transfers, loan and financing documentation, redemption and discharge of charges, refinancing, land searches and related Land Office matters. We coordinate with buyers, sellers, banks, agents and relevant authorities to ensure transactions progress efficiently and in accordance with legal requirements."
+    ],
+    icon: "Home"
+  },
+  {
+    number: "02",
+    slug: "probate-letters-of-administration",
+    title: "Probate & Letters of Administration (LA)",
+    subtitle: "Estate Administration & Succession Support",
+    paragraphs: [
+      "We assist families, beneficiaries, executors and administrators with the legal process of administering the estate of a deceased person.",
+      "Our services include applications for Probate and Letters of Administration, identification and administration of estate assets, transmission of properties, estate property sales, beneficiary documentation and distribution-related matters.",
+      "We guide clients through the necessary legal procedures and documentation, helping to simplify what can often be a complicated and sensitive process for families."
+    ],
+    icon: "FileText"
+  },
+  {
+    number: "03",
+    slug: "civil-commercial-litigation",
+    title: "Civil & Commercial Litigation",
+    subtitle: "Court Representation & Dispute Resolution",
+    paragraphs: [
+      "We provide legal representation and advice for individuals and businesses involved in civil and commercial disputes.",
+      "Our services cover contractual disputes, property disputes, debt recovery, breach of agreements, ownership disputes, commercial claims and other civil matters. We assess the circumstances and available evidence before advising clients on the appropriate course of action, whether through negotiation, settlement or court proceedings.",
+      "Where litigation is necessary, we assist clients throughout the relevant legal proceedings and work to protect their interests at every stage."
+    ],
+    icon: "Scale"
+  },
+  {
+    number: "04",
+    slug: "land-property-disputes",
+    title: "Land & Property Disputes",
+    subtitle: "Protecting Land Rights & Real Estate Interests",
+    paragraphs: [
+      "Property and land disputes can involve ownership, possession, boundaries, title restrictions, caveats, contractual obligations or competing interests.",
+      "We assist clients in identifying the legal and factual issues surrounding their property disputes and advise on available remedies and strategies.",
+      "Our services may include land title review, caveat-related matters, ownership disputes, boundary issues, property possession, sale and purchase disputes, estate property disputes and land-related court proceedings."
+    ],
+    icon: "ShieldAlert"
+  },
+  {
+    number: "05",
+    slug: "corporate-commercial-law",
+    title: "Corporate & Commercial Law",
+    subtitle: "Strategic Counsel for Businesses & Enterprises",
+    paragraphs: [
+      "We provide legal support to businesses, entrepreneurs, companies, investors and commercial organisations in their day-to-day and strategic activities.",
+      "Our services include drafting and reviewing commercial agreements, shareholder arrangements, partnership matters, business transactions, corporate documentation, joint ventures, restructuring and general corporate advisory.",
+      "We aim to help businesses understand their legal obligations, manage risks and structure their commercial relationships effectively."
+    ],
+    icon: "Briefcase"
+  },
+  {
+    number: "06",
+    slug: "banking-finance",
+    title: "Banking & Finance",
+    subtitle: "Financing Documentation & Institutional Facilities",
+    paragraphs: [
+      "We assist clients with legal matters relating to property financing, banking transactions and financial arrangements.",
+      "Our services include bank loan documentation, property financing, refinancing, redemption of existing loans, discharge of charges, security documentation and other financing-related legal matters.",
+      "We work with clients, financial institutions and relevant parties to facilitate the documentation and completion process while ensuring the necessary legal requirements are addressed."
+    ],
+    icon: "Receipt"
+  },
+  {
+    number: "07",
+    slug: "wills-writing",
+    title: "Wills Writing",
+    subtitle: "Testamentary Planning & Asset Protection",
+    paragraphs: [
+      "Proper estate planning can help individuals organise their assets and provide greater clarity for their families and beneficiaries.",
+      "We provide legal assistance relating to Wills, inheritance and succession planning. Our services include preparation and review of Wills, estate planning, beneficiary arrangements, succession matters and legal advice concerning the future administration of assets.",
+      "We work with clients to understand their circumstances and objectives and assist in putting appropriate legal arrangements in place."
+    ],
+    icon: "ScrollText"
+  },
+  {
+    number: "08",
+    slug: "debt-recovery",
+    title: "Debt Recovery",
+    subtitle: "Monies Recovery & Commercial Claims",
+    paragraphs: [
+      "We assist individuals and businesses in recovering outstanding debts and monies owed to them.",
+      "Our approach may begin with reviewing the underlying agreement, invoices, correspondence and supporting documents to establish the basis of the claim. Where appropriate, we assist with Letters of Demand, negotiations, settlement arrangements and legal proceedings.",
+      "Where a matter proceeds to court, we provide legal assistance in pursuing the claim and appropriate enforcement measures in accordance with applicable law."
+    ],
+    icon: "CreditCard"
+  },
+  {
+    number: "09",
+    slug: "legal-advisory-consultation",
+    title: "Legal Advisory & Consultation",
+    subtitle: "Objective Guidance Before Important Decisions",
+    paragraphs: [
+      "We provide legal consultation and advisory services to individuals, families, property owners, entrepreneurs and businesses seeking professional guidance before making important decisions.",
+      "Clients may seek advice on property transactions, contracts, estate matters, business arrangements, potential disputes, legal documentation or other legal concerns.",
+      "Our role is to understand the client's circumstances, identify the relevant legal issues and explain the available options in a clear and practical manner so that clients can make informed decisions."
+    ],
+    icon: "MessageSquare"
+  },
+  {
+    number: "10",
+    slug: "tenancy-property-management",
+    title: "Tenancy & Property Management Matters",
+    subtitle: "Residential & Commercial Leasing Administration",
+    paragraphs: [
+      "We assist landlords, tenants, property owners and businesses with legal matters relating to the occupation and management of properties.",
+      "Our services include preparation and review of tenancy agreements, rental arrangements, tenancy termination, rental arrears, landlord-tenant disputes, recovery of possession and other property-related contractual matters.",
+      "We help clients understand their contractual rights and obligations and provide legal assistance when disagreements or disputes arise during the tenancy."
+    ],
+    icon: "Key"
+  }
+];
+
+/** 4. OUR LEGAL PROCESS (8 steps from the firm document) */
+export interface LegalProcessStep {
+  stepNumber: number;
+  stepCode: string;
+  title: string;
+  summary: string;
+  details: string[];
+  documentsOrParties?: {
+    label: string;
+    items: string[];
+  };
+}
+
+export const LEGAL_PROCESS_STEPS: LegalProcessStep[] = [
+  {
+    stepNumber: 1,
+    stepCode: "STEP 1",
+    title: "Initial Consultation",
+    summary: "We first understand the client's situation, objectives and concerns.",
+    details: [
+      "During the initial meeting, our team listens carefully to understand the background, goals, and urgency of the client's matter."
+    ],
+    documentsOrParties: {
+      label: "Clients may provide relevant documents such as:",
+      items: [
+        "Identification documents",
+        "Agreements",
+        "Property titles",
+        "Letters",
+        "Court documents",
+        "Bank documents",
+        "Estate documents",
+        "Relevant correspondence"
+      ]
+    }
+  },
+  {
+    stepNumber: 2,
+    stepCode: "STEP 2",
+    title: "Document & Fact Review",
+    summary: "Our legal team reviews the information provided and identifies the key legal and factual issues.",
+    details: [
+      "Where necessary, further documents or information may be requested to ensure a thorough assessment."
+    ]
+  },
+  {
+    stepNumber: 3,
+    stepCode: "STEP 3",
+    title: "Legal Assessment",
+    summary: "We assess the matter based on the applicable law, available evidence, contractual documents and surrounding circumstances.",
+    details: [
+      "The client will then be advised on the available legal options and appropriate remedies."
+    ]
+  },
+  {
+    stepNumber: 4,
+    stepCode: "STEP 4",
+    title: "Strategy & Engagement",
+    summary: "After the client understands the proposed course of action, the firm will determine the appropriate legal strategy and scope of work.",
+    details: [
+      "Where applicable, an engagement or appointment letter and fee arrangement will be provided."
+    ]
+  },
+  {
+    stepNumber: 5,
+    stepCode: "STEP 5",
+    title: "Legal Documentation",
+    summary: "Our team prepares, reviews or submits the relevant legal documents.",
+    details: [
+      "We prepare and execute legally binding instruments with strict compliance and attention to detail."
+    ],
+    documentsOrParties: {
+      label: "Depending on the matter, this may involve:",
+      items: [
+        "Agreements",
+        "Applications",
+        "Court documents",
+        "Land Office documents",
+        "Bank documentation",
+        "Estate documents",
+        "Correspondence",
+        "Notices",
+        "Legal submissions"
+      ]
+    }
+  },
+  {
+    stepNumber: 6,
+    stepCode: "STEP 6",
+    title: "Negotiation / Representation",
+    summary: "Where required, we communicate and negotiate with external parties and provide legal representation.",
+    details: [
+      "For disputes, the firm may represent clients in the appropriate legal proceedings."
+    ],
+    documentsOrParties: {
+      label: "Where required, we communicate and negotiate with:",
+      items: [
+        "Opposing solicitors",
+        "Banks",
+        "Government departments",
+        "Land Offices",
+        "Financial institutions",
+        "Executors and beneficiaries",
+        "Developers",
+        "Agents",
+        "Other relevant parties"
+      ]
+    }
+  },
+  {
+    stepNumber: 7,
+    stepCode: "STEP 7",
+    title: "Completion",
+    summary: "We monitor the matter through to completion and ensure the relevant documentation and legal requirements are attended to.",
+    details: [
+      "For property and estate matters, this may include registration, transfer, completion, distribution or other required procedures."
+    ]
+  },
+  {
+    stepNumber: 8,
+    stepCode: "STEP 8",
+    title: "Client Update & Record",
+    summary: "Clients are kept informed of significant developments and the relevant file documentation is maintained accordingly.",
+    details: [
+      "We ensure organized file records, formal handover of completed documentation, and ongoing client communication."
+    ]
+  }
+];
+
+/** 5. WHY CHOOSE AMIN FIRDAUS MASHUDI & CO. */
+export interface WhyChooseUsPillar {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export const WHY_CHOOSE_US_PILLARS: WhyChooseUsPillar[] = [
+  {
+    title: "Professional Legal Practice",
+    description: "We approach every matter with professionalism, confidentiality and attention to detail.",
+    icon: "ShieldCheck"
+  },
+  {
+    title: "Client-Focused",
+    description: "We take time to understand each client's objectives before recommending a legal course of action.",
+    icon: "Users"
+  },
+  {
+    title: "Practical Solutions",
+    description: "Our focus is not simply on identifying legal problems, but on developing practical and commercially sensible solutions.",
+    icon: "Lightbulb"
+  },
+  {
+    title: "Structured Case Management",
+    description: "We use a systematic approach to documentation, communication, follow-up and case progression.",
+    icon: "CheckCircle2"
+  },
+  {
+    title: "Multidisciplinary Support",
+    description: "Our practice covers property, estate, litigation, corporate and commercial matters, allowing clients to obtain legal assistance across different stages of their personal or business needs.",
+    icon: "Layers"
+  },
+  {
+    title: "Transparency",
+    description: "We aim to communicate clearly regarding the legal process, documentation required, expected steps and applicable professional fees.",
+    icon: "Eye"
+  }
+];
+
+/** 7. OUR PROFESSIONAL VALUES */
+export interface ProfessionalValue {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export const PROFESSIONAL_VALUES: ProfessionalValue[] = [
+  {
+    title: "Integrity",
+    description: "We conduct our practice with honesty, professionalism and responsibility.",
+    icon: "ShieldCheck"
+  },
+  {
+    title: "Confidentiality",
+    description: "Client information and documents are handled with appropriate confidentiality.",
+    icon: "Lock"
+  },
+  {
+    title: "Accountability",
+    description: "We believe in clear communication and responsible case management.",
+    icon: "CheckSquare"
+  },
+  {
+    title: "Precision",
+    description: "Legal work requires attention to detail. We carefully review documentation, facts and procedures.",
+    icon: "Target"
+  },
+  {
+    title: "Commitment",
+    description: "We are committed to protecting our clients' interests and pursuing appropriate legal solutions.",
+    icon: "HeartHandshake"
+  },
+  {
+    title: "Professional Excellence",
+    description: "We continuously strive to improve our legal knowledge, systems and client service.",
+    icon: "Award"
+  }
+];
+
+/** 6. OUR CLIENTS */
+export interface ClientCategory {
+  title: string;
+  scope: string;
+  description: string;
+  icon: string;
+  highlights: string[];
+}
+
+export const OUR_CLIENTS_LIST: ClientCategory[] = [
+  {
+    title: "Individuals",
+    scope: "Personal Legal Matters",
+    description: "Legal advice and representation for personal legal matters.",
+    highlights: [
+      "Personal contracts & agreements",
+      "Tenancy & residential occupation",
+      "Dispute resolution & court representation",
+      "Personal rights advisory"
+    ],
+    icon: "User"
+  },
+  {
+    title: "Families",
+    scope: "Estate & Family Succession",
+    description: "Estate, inheritance, property and succession-related matters.",
+    highlights: [
+      "Will writing & estate planning",
+      "Grant of Probate applications",
+      "Letters of Administration (LA)",
+      "Inter-family property transfers"
+    ],
+    icon: "Users"
+  },
+  {
+    title: "Property Owners & Buyers",
+    scope: "Real Estate Transactions & Land Rights",
+    description: "Legal assistance for property transactions and disputes.",
+    highlights: [
+      "Sale and Purchase Agreements (SPA)",
+      "Sub-sale property conveyance",
+      "Private caveat entry & removal",
+      "Boundary & ownership disputes"
+    ],
+    icon: "Home"
+  },
+  {
+    title: "Businesses",
+    scope: "Commercial Support for SMEs & Enterprises",
+    description: "Corporate, commercial and contractual legal support.",
+    highlights: [
+      "Commercial contract drafting & review",
+      "Partnership & shareholder agreements",
+      "Debt recovery & demand letters",
+      "Business regulatory compliance"
+    ],
+    icon: "Briefcase"
+  },
+  {
+    title: "Investors",
+    scope: "Strategic Real Estate & Commercial Ventures",
+    description: "Legal assistance relating to property and commercial transactions.",
+    highlights: [
+      "Commercial property acquisition due diligence",
+      "Joint venture documentation",
+      "Security documentation & financing perfection",
+      "Asset risk mitigation"
+    ],
+    icon: "TrendingUp"
+  },
+  {
+    title: "Executors & Beneficiaries",
+    scope: "Deceased Estate Administration",
+    description: "Probate, Letters of Administration and estate administration.",
+    highlights: [
+      "Estate asset identification & gathering",
+      "Transmission of estate titles",
+      "Settlement of estate debts & distribution",
+      "High Court representation"
+    ],
+    icon: "ScrollText"
+  },
+  {
+    title: "Corporate Clients",
+    scope: "Institutional & Enterprise Advisory",
+    description: "Ongoing legal support, documentation and commercial matters.",
+    highlights: [
+      "Ongoing commercial counsel",
+      "Corporate governance & restructuring",
+      "Banking & financing perfection",
+      "Commercial dispute management"
+    ],
+    icon: "Building2"
+  }
+];

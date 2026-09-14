@@ -169,25 +169,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Secondary navigation */}
-        <div className="py-6 border-b border-[#CBD5E1]/70 flex flex-wrap gap-x-6 gap-y-2 text-xs">
-          <Link to="/" className="hover:text-[#EA580C] transition-colors">Home</Link>
-          <Link to="/about" className="hover:text-[#EA580C] transition-colors">About the Firm</Link>
-          <Link to="/our-lawyer" className="hover:text-[#EA580C] transition-colors">Our Lawyer</Link>
-          <Link to="/credentials" className="hover:text-[#EA580C] transition-colors">Registration &amp; Credentials</Link>
-          <Link to="/practice-areas" className="hover:text-[#EA580C] transition-colors">Practice Areas</Link>
-          <Link to="/offices" className="hover:text-[#EA580C] transition-colors">Our Offices</Link>
-          <Link to="/faq" className="hover:text-[#EA580C] transition-colors">FAQ</Link>
-          <Link to="/client-guide" className="hover:text-[#EA580C] transition-colors">Client Guide</Link>
-          <Link to="/articles" className="hover:text-[#EA580C] transition-colors">Articles</Link>
-          <Link to="/careers" className="hover:text-[#EA580C] transition-colors">Careers</Link>
-          <Link to="/contact" className="hover:text-[#EA580C] transition-colors">Contact Us</Link>
-        </div>
-
-        {/* Statutory disclaimer */}
-        <div className="py-6 border-b border-[#CBD5E1]/70 text-xs leading-relaxed text-[#475569]">
-          <p className="italic">{FIRM_DETAILS.disclaimer}</p>
-        </div>
 
         {/* Bottom strip */}
         <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-[#64748B] gap-4">

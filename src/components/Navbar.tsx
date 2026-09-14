@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Scale, ChevronDown, Menu, X, ArrowRight, Phone, Mail, ArrowUpRight } from 'lucide-react';
 import { FIRM_DETAILS } from '../data/firm';
@@ -28,11 +28,21 @@ const NAV_ITEMS: NavItem[] = [
     path: '/about',
     children: [
       { label: 'About the Firm', path: '/about' },
-      { label: 'Our Lawyer', path: '/our-lawyer' },
+      { label: 'Why Choose Us', path: '/why-us' },
+      { label: 'Our Lawyer & Team', path: '/our-lawyer' },
+      { label: 'Our Clients', path: '/clients' },
       { label: 'Registration & Credentials', path: '/credentials' }
     ]
   },
-  { label: 'Practice Areas', path: '/practice-areas' },
+  {
+    label: 'Services',
+    path: '/services',
+    children: [
+      { label: 'Our Legal Services', path: '/services' },
+      { label: 'Practice Areas', path: '/practice-areas' },
+      { label: 'Our Legal Process', path: '/process' }
+    ]
+  },
   { label: 'Our Offices', path: '/offices' },
   {
     label: 'Resources',
@@ -83,6 +93,17 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const isItemActive = (item: NavItem) => {
     if (item.children) {
       return item.children.some(
@@ -110,7 +131,8 @@ export default function Navbar() {
           {/* LOGO */}
           <Link
             to="/"
-            className="group flex items-center gap-2 sm:gap-2.5 text-left focus-visible:outline-none shrink-0"
+            onClick={handleLogoClick}
+            className="group flex items-center gap-2 sm:gap-2.5 text-left focus-visible:outline-none shrink-0 cursor-pointer"
             aria-label="Amin Firdaus Mashudi & Co. Home"
           >
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-amber-500 bg-gradient-to-br from-white via-amber-50/60 to-white flex items-center justify-center text-[#EA580C] shadow-[0_0_12px_rgba(245,158,11,0.3)] transition-all duration-300 group-hover:border-[#FACC15] group-hover:shadow-[0_0_22px_rgba(250,204,21,0.5)] group-hover:scale-105">
@@ -333,7 +355,10 @@ export default function Navbar() {
             <div className="space-y-1">
               <Link
                 to="/"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  handleLogoClick(e);
+                }}
                 className={`block px-4 py-2.5 rounded-full text-sm font-serif transition-colors ${
                   location.pathname === '/'
                     ? 'text-[#C2410C] bg-amber-500/10 font-bold border border-amber-500/30'

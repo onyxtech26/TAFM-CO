@@ -507,8 +507,8 @@ export const PRACTICE_AREAS: PracticeArea[] = [
   },
   {
     slug: "wills-probate-estates",
-    title: "Wills, Probate & Estate Administration",
-    navTitle: "Wills, Probate & Estates",
+    title: "Probate & Letter of Administration (LA)",
+    navTitle: "Probate & Letter of Administration (LA)",
     cardLine: "Will writing, Grant of Probate, and Letters of Administration.",
     icon: "FileText",
     emoji: "📜",
@@ -586,7 +586,7 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       "Small Estates (Distribution) Act 1955"
     ],
     relatedSlugs: ["family-law", "conveyancing-property", "civil-commercial-litigation"],
-    metaTitle: "Wills, Probate & Letters of Administration | Johor & Pahang",
+    metaTitle: "Probate & Letter of Administration (LA) | Johor & Pahang",
     metaDescription:
       "Will writing, Grant of Probate, Letters of Administration and estate distribution in Malaysia."
   },

@@ -298,12 +298,12 @@ export const ARTICLE_TOPICS: ArticleTopic[] = [
   {
     title: "Probate or Letters of Administration? Understanding the Difference",
     summary: "With or without a will, where to apply, and typical documents.",
-    area: "Wills, Probate & Estates"
+    area: "Probate & Letter of Administration (LA)"
   },
   {
     title: "Why You Should Write a Will (and What Happens If You Don't)",
     summary: "Wills Act 1959, Distribution Act 1958, and a faraid overview.",
-    area: "Wills, Probate & Estates"
+    area: "Probate & Letter of Administration (LA)"
   },
   {
     title: "Arrested? Know Your Rights Under Malaysian Law",

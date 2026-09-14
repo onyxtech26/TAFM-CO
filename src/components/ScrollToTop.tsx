@@ -7,11 +7,13 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const ROUTE_TITLES: Record<string, string> = {
-  '/': 'Amin Firdaus Mashudi & Co. | Advocates & Solicitors, Kuantan',
+  '/': 'Amin Firdaus Mashudi & Co. | Advocates & Solicitors',
   '/about': 'About The Chambers | Amin Firdaus Mashudi & Co.',
-  '/services': 'Legal Practice Areas & Services | AFM & Co.',
+  '/services': 'Our Legal Services | AFM & Co.',
   '/why-us': 'Why Choose Our Chambers | AFM & Co.',
   '/process': 'Our Legal Process & Engagement | AFM & Co.',
+  '/clients': 'Our Clients | AFM & Co.',
+  '/our-clients': 'Our Clients | AFM & Co.',
   '/experience': 'Experience, Practice Forums & Counsel Profile | AFM & Co.',
   '/contact': 'Confidential Consultation & Office Location | AFM & Co.'
 };
