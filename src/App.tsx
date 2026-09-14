@@ -99,12 +99,12 @@ function FirmApp() {
             {!showSplash && (
               <motion.div
                 key={location.pathname}
-                initial={{ opacity: 0, y: isFromSplash ? 18 : 0 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={
                   isFromSplash
-                    ? { duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.05 }
+                    ? { duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.05 }
                     : { duration: 0.18, ease: 'easeOut' }
                 }
                 onAnimationComplete={() => {

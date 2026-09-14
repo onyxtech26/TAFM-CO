@@ -93,7 +93,7 @@ export default function LegalProcessPage() {
   };
 
   return (
-    <div className="space-y-0 overflow-x-hidden">
+    <div className="space-y-0">
       <PageHero
         eyebrow="Methodical Workflow"
         title="Our Legal"
