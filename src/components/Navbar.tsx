@@ -3,221 +3,458 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Scale } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Scale, ChevronDown, Menu, X, ArrowRight, Phone, Mail, ArrowUpRight } from 'lucide-react';
+import { PRACTICE_AREAS } from '../data/services';
+import { FIRM_DETAILS } from '../data/firm';
+import { whatsappUrl, mailtoUrl } from '../lib/contact';
+import WhatsAppIcon from './WhatsAppIcon';
 
-interface NavbarProps {
-  activeSection: string;
+interface NavChild {
+  label: string;
+  path: string;
 }
 
-export default function Navbar({ activeSection }: NavbarProps) {
+interface NavItem {
+  label: string;
+  path: string;
+  children?: NavChild[];
+}
+
+/** Main menu per Part 2 of the content pack. */
+const NAV_ITEMS: NavItem[] = [
+  {
+    label: 'About',
+    path: '/about',
+    children: [
+      { label: 'About the Firm', path: '/about' },
+      { label: 'Our Lawyer', path: '/our-lawyer' },
+      { label: 'Registration & Credentials', path: '/credentials' }
+    ]
+  },
+  {
+    label: 'Practice Areas',
+    path: '/practice-areas',
+    children: PRACTICE_AREAS.map((area) => ({
+      label: area.navTitle,
+      path: `/practice-areas/${area.slug}`
+    }))
+  },
+  { label: 'Our Offices', path: '/offices' },
+  {
+    label: 'Resources',
+    path: '/faq',
+    children: [
+      { label: 'FAQ', path: '/faq' },
+      { label: 'Client Guide', path: '/client-guide' },
+      { label: 'Articles', path: '/articles' }
+    ]
+  },
+  { label: 'Careers', path: '/careers' }
+];
+
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [consultDropdownOpen, setConsultDropdownOpen] = useState(false);
+  const consultDropdownRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
-    };
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Why Us', href: '#why-choose-us' },
-    { label: 'Process', href: '#process' },
-    { label: 'Experience', href: '#experience' },
-  ];
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setConsultDropdownOpen(false);
+    setOpenDropdown(null);
+  }, [location.pathname]);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      const offset = 100; // adjusted height of floating navbar
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (consultDropdownRef.current && !consultDropdownRef.current.contains(e.target as Node)) {
+        setConsultDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
+  const isItemActive = (item: NavItem) => {
+    if (item.children) {
+      return item.children.some(
+        (child) => location.pathname === child.path || location.pathname.startsWith(`${child.path}/`)
+      );
     }
-  };
-
-  const handleConsultNowClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
-    // Dispatch custom event to trigger the consultation modal in Consultation.tsx
-    window.dispatchEvent(new CustomEvent('open-consultation'));
+    return location.pathname === item.path;
   };
 
   return (
     <>
-      <div className="fixed top-3 md:top-5 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
-        <motion.header
-          id="main-navbar"
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-full max-w-6xl pointer-events-auto"
+      {/* FLOATING PILL HEADER */}
+      <header
+        className="fixed top-1 sm:top-2 left-0 right-0 z-50 px-3 sm:px-5 w-full flex justify-center pointer-events-none transition-all duration-300"
+        aria-label="Site Header"
+      >
+        <div
+          className={`pointer-events-auto w-full max-w-xl xl:w-auto xl:max-w-none mx-auto rounded-full transition-all duration-300 ease-out flex items-center justify-between xl:justify-center xl:gap-3 border ${
+            isScrolled
+              ? 'bg-white/95 backdrop-blur-2xl border-amber-500/50 py-1.5 sm:py-2 px-3 sm:px-4.5 shadow-[0_12px_30px_rgba(15,23,42,0.12),0_0_22px_rgba(245,158,11,0.2)] ring-1 ring-amber-500/20'
+              : 'bg-white/85 backdrop-blur-xl border-[#CBD5E1] py-1.5 sm:py-2 px-3.5 sm:px-5 shadow-[0_8px_25px_rgba(15,23,42,0.08),0_0_15px_rgba(245,158,11,0.1)]'
+          }`}
         >
-          {/* Floating circular layout with neon clockwise running border light */}
-          <div className="relative p-[2px] rounded-full overflow-hidden shadow-lg shadow-black/5 bg-neutral-100">
-            
-            {/* Neon spinning light background circle */}
-            <div className="absolute inset-0 z-0 overflow-hidden rounded-full pointer-events-none">
-              <div 
-                className="absolute top-1/2 left-1/2 w-[220%] h-[220%] -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_35%,#c9a227_50%,transparent_65%)] animate-border-spin" 
-              />
+          {/* LOGO */}
+          <Link
+            to="/"
+            className="group flex items-center gap-2 sm:gap-2.5 text-left focus-visible:outline-none shrink-0"
+            aria-label="Amin Firdaus Mashudi & Co. Home"
+          >
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-amber-500 bg-gradient-to-br from-white via-amber-50/60 to-white flex items-center justify-center text-[#EA580C] shadow-[0_0_12px_rgba(245,158,11,0.3)] transition-all duration-300 group-hover:border-[#FACC15] group-hover:shadow-[0_0_22px_rgba(250,204,21,0.5)] group-hover:scale-105">
+              <Scale className="w-4 h-4 sm:w-4.5 sm:h-4.5 transition-transform duration-300 group-hover:rotate-6 text-[#EA580C]" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-serif text-sm sm:text-base font-bold tracking-wider text-[#0F172A] group-hover:text-[#EA580C] transition-colors leading-none">
+                AFM &amp; CO.
+              </span>
+              <span className="text-[8.5px] sm:text-[9px] tracking-[0.16em] uppercase text-[#64748B] mt-0.5 font-medium hidden xs:block">
+                Advocates &amp; Solicitors
+              </span>
+            </div>
+          </Link>
+
+          <div className="hidden xl:block w-px h-5 bg-slate-300/80 mx-0.5 shrink-0" aria-hidden="true" />
+
+          {/* DESKTOP NAV */}
+          <nav className="hidden xl:flex items-center gap-0.5 shrink-0" aria-label="Main Navigation">
+            {NAV_ITEMS.map((item) => {
+              const isActive = isItemActive(item);
+              if (!item.children) {
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`px-3 py-1.5 text-xs font-medium transition-all duration-200 rounded-full border ${
+                      isActive
+                        ? 'text-[#C2410C] bg-gradient-to-r from-orange-500/15 via-amber-500/15 to-yellow-500/15 border-amber-500/40 shadow-[0_0_12px_rgba(245,158,11,0.22)] font-semibold'
+                        : 'text-[#1E293B] hover:text-[#EA580C] hover:bg-[#F1F5F9] border-transparent'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+
+              return (
+                <div
+                  key={item.path}
+                  className="relative"
+                  onMouseEnter={() => setOpenDropdown(item.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  <Link
+                    to={item.path}
+                    className={`px-3 py-1.5 text-xs font-medium transition-all duration-200 rounded-full border inline-flex items-center gap-1 ${
+                      isActive
+                        ? 'text-[#C2410C] bg-gradient-to-r from-orange-500/15 via-amber-500/15 to-yellow-500/15 border-amber-500/40 shadow-[0_0_12px_rgba(245,158,11,0.22)] font-semibold'
+                        : 'text-[#1E293B] hover:text-[#EA580C] hover:bg-[#F1F5F9] border-transparent'
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    <ChevronDown
+                      className={`w-3 h-3 transition-transform duration-200 ${
+                        openDropdown === item.label ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </Link>
+
+                  {openDropdown === item.label && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50">
+                      <div className="min-w-[248px] bg-white/98 border border-amber-500/40 rounded-2xl shadow-[0_20px_45px_rgba(15,23,42,0.15)] p-2 backdrop-blur-2xl">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.path}
+                            to={child.path}
+                            className={`block px-3 py-2 rounded-xl text-xs transition-colors ${
+                              location.pathname === child.path
+                                ? 'bg-amber-500/10 text-[#C2410C] font-semibold'
+                                : 'text-[#475569] hover:text-[#0F172A] hover:bg-slate-100'
+                            }`}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </nav>
+
+          {/* RIGHT ACTIONS */}
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            {/* Language switch (Part 2) — moved here now that the top bar is gone */}
+            <div className="hidden xl:flex items-center gap-1 text-[11px] font-semibold mr-0.5">
+              <span className="text-[#C2410C]" aria-current="true">
+                EN
+              </span>
+              <span className="text-[#CBD5E1]" aria-hidden="true">
+                |
+              </span>
+              <Link
+                to="/ms"
+                className="text-[#64748B] hover:text-[#EA580C] transition-colors"
+                aria-label="Baca dalam Bahasa Malaysia"
+              >
+                BM
+              </Link>
             </div>
 
-          {/* Inner Header Glass Container */}
-          <div className="relative z-10 w-full bg-white/90 backdrop-blur-md rounded-full px-5 md:px-8 py-3 flex items-center justify-between">
-            
-            {/* Logo Brand area - No Subtitle */}
             <a
-              href="#home"
-              onClick={(e) => handleNavClick(e, '#home')}
-              className="flex items-center gap-2.5 group focus:outline-none lg:flex-1 lg:justify-start shrink-0"
-              id="nav-brand"
+              href={`tel:${FIRM_DETAILS.contact.primaryPhoneTel}`}
+              className="xl:hidden w-8 h-8 rounded-full bg-white border border-[#CBD5E1] text-[#EA580C] hover:bg-gradient-to-r hover:from-[#EA580C] hover:to-[#F59E0B] hover:text-white flex items-center justify-center transition-all duration-200 shadow-sm"
+              aria-label="Call our office"
             >
-              <div className="w-8 h-8 flex items-center justify-center border border-luxury-gold/50 rounded-full bg-neutral-50 transition-all duration-500 group-hover:border-luxury-gold group-hover:shadow-[0_0_10px_rgba(201,162,39,0.3)] shrink-0">
-                <Scale className="w-4 h-4 text-luxury-gold transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6" />
-              </div>
-              <div className="flex flex-col justify-center text-center items-center lg:items-start lg:text-left">
-                <span className="font-serif text-xs sm:text-sm md:text-base font-bold tracking-wider text-neutral-900 transition-colors group-hover:text-luxury-gold leading-none text-center lg:text-left whitespace-nowrap">
-                  TAFM & CO.
-                </span>
-              </div>
+              <Phone className="w-3.5 h-3.5" />
             </a>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center justify-center lg:flex-1 shrink-0 mx-4" id="desktop-nav">
-              <ul className="flex items-center gap-6 whitespace-nowrap">
-                {navItems.map((item) => {
-                  const isActive = activeSection === item.href.substring(1);
-                  return (
-                    <li key={item.href} className="whitespace-nowrap">
-                      <a
-                        href={item.href}
-                        onClick={(e) => handleNavClick(e, item.href)}
-                        className={`relative font-sans text-[11px] uppercase tracking-[0.18em] transition-colors duration-300 py-1.5 focus:outline-none whitespace-nowrap ${
-                          isActive
-                            ? 'text-luxury-gold font-semibold'
-                            : 'text-neutral-500 hover:text-black'
-                        }`}
-                      >
-                        {item.label}
-                        {isActive && (
-                          <motion.span
-                            layoutId="activeIndicator"
-                            className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-luxury-gold"
-                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                          />
-                        )}
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
-
-            {/* Desktop Consultation Action */}
-            <div className="hidden lg:flex items-center justify-end lg:flex-1 shrink-0" id="desktop-nav-cta">
+            <div
+              ref={consultDropdownRef}
+              className="relative hidden sm:block"
+              onMouseEnter={() => setConsultDropdownOpen(true)}
+              onMouseLeave={() => setConsultDropdownOpen(false)}
+            >
               <button
-                onClick={handleConsultNowClick}
-                className="px-5 py-2.5 gold-gradient text-black font-sans text-xs font-bold uppercase tracking-widest rounded-full transition-all duration-300 hover:scale-[1.05] shadow-sm hover:shadow-luxury-gold/30 cursor-pointer whitespace-nowrap"
-                id="nav-consult-button"
+                type="button"
+                onClick={() => setConsultDropdownOpen(!consultDropdownOpen)}
+                aria-expanded={consultDropdownOpen}
+                aria-haspopup="true"
+                className="btn-primary text-xs px-3.5 sm:px-4.5 py-1.5 font-semibold rounded-full shadow-[0_2px_14px_rgba(234,88,12,0.35)] hover:shadow-[0_4px_20px_rgba(249,115,22,0.5)] transition-all flex items-center gap-1.5 cursor-pointer"
               >
-                Consult Now
+                <span>Book a Consultation</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    consultDropdownOpen ? 'rotate-180' : ''
+                  }`}
+                />
               </button>
+
+              {consultDropdownOpen && (
+                <div className="absolute top-full right-0 w-72 sm:w-80 pt-2 z-50">
+                  <div className="bg-white/98 border border-amber-500/40 rounded-2xl shadow-[0_20px_45px_rgba(15,23,42,0.15),0_0_22px_rgba(245,158,11,0.15)] p-3 backdrop-blur-2xl">
+                    <div className="px-3 py-1.5 mb-2 border-b border-[#E2E8F0]">
+                      <span className="text-[10px] uppercase tracking-[0.2em] text-[#C2410C] font-semibold">
+                        Get in touch
+                      </span>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <a
+                        href={whatsappUrl()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setConsultDropdownOpen(false)}
+                        className="group flex items-start gap-3 p-2.5 rounded-xl bg-[#F8FAFC] hover:bg-[#25D366]/10 border border-[#E2E8F0] hover:border-[#25D366]/50 transition-all text-left"
+                      >
+                        <div className="w-9 h-9 rounded-lg bg-[#25D366]/15 border border-[#25D366]/40 text-[#16a34a] flex items-center justify-center shrink-0">
+                          <WhatsAppIcon className="w-5 h-5 text-[#16a34a]" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-semibold text-[#0F172A] group-hover:text-[#16a34a] transition-colors">
+                              WhatsApp Us
+                            </span>
+                            <ArrowUpRight className="w-3.5 h-3.5 text-[#64748B] group-hover:text-[#16a34a] transition-colors" />
+                          </div>
+                          <p className="text-[11px] text-[#C2410C] font-mono mt-0.5">
+                            {FIRM_DETAILS.contact.primaryPhone}
+                          </p>
+                          <p className="text-[10px] text-[#64748B] mt-0.5">Chat with our office</p>
+                        </div>
+                      </a>
+
+                      <a
+                        href={mailtoUrl('Legal enquiry - Amin Firdaus Mashudi & Co.')}
+                        onClick={() => setConsultDropdownOpen(false)}
+                        className="group flex items-start gap-3 p-2.5 rounded-xl bg-[#F8FAFC] hover:bg-amber-500/10 border border-[#E2E8F0] hover:border-amber-500/50 transition-all text-left"
+                      >
+                        <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-orange-500/15 to-amber-500/20 border border-amber-500/40 text-[#EA580C] flex items-center justify-center shrink-0">
+                          <Mail className="w-5 h-5" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-semibold text-[#0F172A] group-hover:text-[#EA580C] transition-colors">
+                              Email Us
+                            </span>
+                            <ArrowUpRight className="w-3.5 h-3.5 text-[#64748B] group-hover:text-[#EA580C] transition-colors" />
+                          </div>
+                          <p className="text-[11px] text-[#C2410C] font-mono truncate mt-0.5">
+                            {FIRM_DETAILS.contact.generalEmail}
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div className="mt-2 pt-2 border-t border-[#E2E8F0] px-1 text-center">
+                      <Link
+                        to="/contact"
+                        onClick={() => setConsultDropdownOpen(false)}
+                        className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#64748B] hover:text-[#EA580C] transition-colors"
+                      >
+                        <span>Or send an enquiry through our form</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    </div>
+
+                    <p className="mt-2 px-1 text-[10px] text-[#64748B] leading-relaxed">
+                      {FIRM_DETAILS.contact.whatsappNote}
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Mobile Hamburger Button */}
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-neutral-600 hover:text-black transition-colors focus:outline-none"
-              aria-label="Toggle mobile menu"
-              id="mobile-menu-toggle"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="xl:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white border border-[#CBD5E1] text-[#0F172A] hover:text-[#EA580C] hover:border-amber-500/50 flex items-center justify-center transition-all cursor-pointer focus-visible:outline-none shadow-sm"
+              aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
             >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
           </div>
         </div>
-      </motion.header>
-      </div>
+      </header>
 
-      {/* Mobile Menu Slide-Out Drawer */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            id="mobile-nav-drawer"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 lg:hidden bg-white/95 backdrop-blur-lg flex flex-col justify-between pt-28 pb-12 px-8"
-          >
-            {/* Ambient Gold backlights */}
-            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-72 h-72 bg-luxury-gold/5 rounded-full blur-3xl pointer-events-none" />
+      {/* MOBILE MENU */}
+      {mobileMenuOpen && (
+        <>
+          <div
+            className="xl:hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-40"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
 
-            <nav className="relative flex flex-col items-center">
-              <ul className="flex flex-col items-center gap-6">
-                {navItems.map((item, idx) => {
-                  const isActive = activeSection === item.href.substring(1);
-                  return (
-                    <motion.li
-                      key={item.href}
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: idx * 0.05 }}
-                    >
-                      <a
-                        href={item.href}
-                        onClick={(e) => handleNavClick(e, item.href)}
-                        className={`text-sm font-serif tracking-[0.12em] uppercase transition-all duration-300 ${
-                          isActive
-                            ? 'text-luxury-gold scale-105 font-bold'
-                            : 'text-neutral-500 hover:text-black'
-                        }`}
-                      >
-                        {item.label}
-                      </a>
-                    </motion.li>
-                  );
-                })}
-              </ul>
+          <div className="xl:hidden fixed top-16 sm:top-20 left-3 right-3 sm:left-6 sm:right-6 max-w-md mx-auto bg-white/98 border border-amber-500/40 rounded-3xl p-5 shadow-[0_25px_50px_rgba(15,23,42,0.2)] backdrop-blur-2xl z-50 max-h-[calc(100vh-95px)] overflow-y-auto space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-[#E2E8F0]">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#C2410C] font-semibold">
+                Menu
+              </span>
+              <span className="text-[11px] text-[#64748B]">Skudai · JB · Kuantan</span>
+            </div>
 
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: navItems.length * 0.05 }}
-                className="mt-12"
+            <div className="space-y-1">
+              <Link
+                to="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-2.5 rounded-full text-sm font-serif transition-colors ${
+                  location.pathname === '/'
+                    ? 'text-[#C2410C] bg-amber-500/10 font-bold border border-amber-500/30'
+                    : 'text-[#0F172A] hover:text-[#EA580C] hover:bg-[#F1F5F9]'
+                }`}
               >
-                <button
-                  onClick={handleConsultNowClick}
-                  className="px-8 py-3.5 gold-gradient text-black font-sans text-xs font-bold uppercase tracking-widest rounded-full transition-all duration-300 shadow-md hover:scale-105"
-                >
-                  Consult Now
-                </button>
-              </motion.div>
-            </nav>
+                Home
+              </Link>
 
-            {/* Bottom Contact Details inside Mobile Menu */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.6 }}
-              transition={{ delay: 0.4 }}
-              className="text-center flex flex-col gap-1 text-neutral-500 font-sans text-[10px] tracking-wider uppercase"
-            >
-              <span>Kuantan, Pahang, Malaysia</span>
-              <span>moamien89@gmail.com</span>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              {NAV_ITEMS.map((item) => (
+                <div key={item.path}>
+                  <Link
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block px-4 py-2.5 rounded-full text-sm font-serif transition-colors ${
+                      isItemActive(item)
+                        ? 'text-[#C2410C] bg-amber-500/10 font-bold border border-amber-500/30'
+                        : 'text-[#0F172A] hover:text-[#EA580C] hover:bg-[#F1F5F9]'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                  {item.children && (
+                    <div className="pl-5 py-1 space-y-0.5">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.path}
+                          to={child.path}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block px-3 py-1.5 rounded-lg text-xs text-[#475569] hover:text-[#EA580C] hover:bg-[#F8FAFC] transition-colors"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              <Link
+                to="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-2.5 rounded-full text-sm font-serif transition-colors ${
+                  location.pathname === '/contact'
+                    ? 'text-[#C2410C] bg-amber-500/10 font-bold border border-amber-500/30'
+                    : 'text-[#0F172A] hover:text-[#EA580C] hover:bg-[#F1F5F9]'
+                }`}
+              >
+                Contact Us
+              </Link>
+            </div>
+
+            <div className="pt-3 border-t border-[#E2E8F0] space-y-3">
+              <div className="grid grid-cols-2 gap-2">
+                <a
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-700 text-xs font-semibold hover:bg-emerald-100 transition-colors"
+                >
+                  <WhatsAppIcon className="w-4 h-4" />
+                  <span>WhatsApp</span>
+                </a>
+                <a
+                  href={mailtoUrl('Legal enquiry - Amin Firdaus Mashudi & Co.')}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-orange-50 border border-orange-300 text-orange-700 text-xs font-semibold hover:bg-orange-100 transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>Email</span>
+                </a>
+              </div>
+
+              <Link
+                to="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full btn-primary py-2.5 text-center text-xs font-semibold rounded-full block"
+              >
+                Book a Consultation
+              </Link>
+
+              <div className="flex items-center justify-between text-[11px] text-[#64748B] px-2 pt-1">
+                <a
+                  href={`tel:${FIRM_DETAILS.contact.primaryPhoneTel}`}
+                  className="flex items-center gap-1.5 hover:text-[#EA580C]"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#EA580C]" />
+                  <span>{FIRM_DETAILS.contact.primaryPhone}</span>
+                </a>
+                <Link to="/ms" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#EA580C]">
+                  Bahasa Malaysia
+                </Link>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }

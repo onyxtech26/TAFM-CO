@@ -4,117 +4,177 @@
  */
 
 import { useState, useEffect } from 'react';
-import Preloader from './components/Preloader';
+import { HashRouter, Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'motion/react';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import WhyChooseUs from './components/WhyChooseUs';
-import Process from './components/Process';
-import Experience from './components/Experience';
-import Consultation from './components/Consultation';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
-import GalaxyBackground from './components/GalaxyBackground';
+import WhatsAppButton from './components/WhatsAppButton';
+import ScrollToTop from './components/ScrollToTop';
+import Interactive3DBackground from './components/Interactive3DBackground';
+import SplashScreen from './components/SplashScreen';
+import CookieBanner from './components/CookieBanner';
+import Seo from './components/Seo';
 
-export default function App() {
-  const [loading, setLoading] = useState(true);
-  const [activeSection, setActiveSection] = useState('home');
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import OurLawyerPage from './pages/OurLawyerPage';
+import CredentialsPage from './pages/CredentialsPage';
+import PracticeAreasPage from './pages/PracticeAreasPage';
+import PracticeAreaDetailPage from './pages/PracticeAreaDetailPage';
+import OfficesPage from './pages/OfficesPage';
+import FaqPage from './pages/FaqPage';
+import ClientGuidePage from './pages/ClientGuidePage';
+import ArticlesPage from './pages/ArticlesPage';
+import CareersPage from './pages/CareersPage';
+import ContactPage from './pages/ContactPage';
+import ThankYouPage from './pages/ThankYouPage';
+import BahasaPage from './pages/BahasaPage';
+import LegalPage from './pages/LegalPage';
+import NotFoundPage from './pages/NotFoundPage';
+
+/**
+ * The splash screen only plays when the visitor lands on the home page.
+ * Deep links (a shared practice-area page, a search result, a link in an
+ * email) must open on the page that was asked for.
+ */
+function shouldPlaySplash(): boolean {
+  if (typeof window === 'undefined') return true;
+  const hash = window.location.hash.replace(/^#/, '');
+  return hash === '' || hash === '/';
+}
+
+function FirmApp() {
+  const [showSplash, setShowSplash] = useState(shouldPlaySplash);
+  const [isFromSplash, setIsFromSplash] = useState(true);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    // If the preloader is running, disable scrolling on body
-    if (loading) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
+    const handleReplay = () => {
+      setIsFromSplash(true);
+      setShowSplash(true);
+      navigate('/');
+    };
+    window.addEventListener('replay-splash', handleReplay);
+    return () => window.removeEventListener('replay-splash', handleReplay);
+  }, [navigate]);
+
+  useEffect(() => {
+    if (!showSplash && isFromSplash && location.pathname !== '/') {
+      setIsFromSplash(false);
     }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [loading]);
+  }, [location.pathname, showSplash, isFromSplash]);
 
-  useEffect(() => {
-    // Scroll active element tracking using IntersectionObserver
-    const sections = ['home', 'about', 'services', 'why-choose-us', 'process', 'experience', 'contact'];
-    
-    const observerOptions = {
-      root: null,
-      rootMargin: '-30% 0px -60% 0px', // trigger near center scroll
-      threshold: 0,
-    };
-
-    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersect, observerOptions);
-
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => {
-      sections.forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) observer.unobserve(el);
-      });
-    };
-  }, [loading]);
+  const handleSplashComplete = () => {
+    setShowSplash(false);
+    setIsFromSplash(true);
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
 
   return (
-    <div className="relative min-h-screen bg-white font-sans selection:bg-luxury-gold selection:text-black text-neutral-800">
-      
-      {/* 1. Loading Preloader */}
-      <Preloader onComplete={() => setLoading(false)} />
+    <>
+      <ScrollToTop />
+      <Seo />
 
-      {/* Global animated galaxy background behind all transparent sections */}
-      {!loading && <GalaxyBackground />}
+      <AnimatePresence mode="wait">
+        {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
+      </AnimatePresence>
 
-      {/* Main Website Wrapper */}
-      {!loading && (
-        <div className="fade-in-content relative z-10">
-          
-          {/* Subtle gold noise texture overlay */}
-          <div className="fixed inset-0 pointer-events-none z-40 opacity-[0.015] bg-repeat" 
-               style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }} />
+      <Interactive3DBackground />
 
-          {/* 2. Sticky Floating Navbar with spin neon clockwise border */}
-          <Navbar activeSection={activeSection} />
+      <div className="grain-overlay" aria-hidden="true" />
 
-          {/* 3. Hero Section (Updated to high contrast text and white/cosmic background) */}
-          <Hero />
+      <motion.div
+        animate={{ opacity: showSplash ? 0 : 1 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        className="min-h-screen bg-transparent text-[#0F172A] flex flex-col relative z-10 selection:bg-[#EA580C] selection:text-[#FFFFFF]"
+      >
+        <Navbar />
 
-          {/* 4. About Us Section */}
-          <About />
+        <main className="flex-1 pt-16 sm:pt-20">
+          <AnimatePresence mode="wait">
+            {!showSplash && (
+              <motion.div
+                key={location.pathname}
+                initial={{ opacity: 0, y: isFromSplash ? 18 : 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={
+                  isFromSplash
+                    ? { duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.05 }
+                    : { duration: 0.18, ease: 'easeOut' }
+                }
+                onAnimationComplete={() => {
+                  if (isFromSplash) setIsFromSplash(false);
+                }}
+              >
+                <Routes location={location}>
+                  <Route path="/" element={<HomePage />} />
 
-          {/* 5. Legal Services Grid Section */}
-          <Services />
+                  {/* About */}
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/our-lawyer" element={<OurLawyerPage />} />
+                  <Route path="/credentials" element={<CredentialsPage />} />
 
-          {/* 6. Why Choose Us Section with stats */}
-          <WhyChooseUs />
+                  {/* Practice areas */}
+                  <Route path="/practice-areas" element={<PracticeAreasPage />} />
+                  <Route path="/practice-areas/:slug" element={<PracticeAreaDetailPage />} />
 
-          {/* 7. Timeline Process Section */}
-          <Process />
+                  {/* Offices */}
+                  <Route path="/offices" element={<OfficesPage />} />
 
-          {/* 8. Areas of Experience Section */}
-          <Experience />
+                  {/* Resources */}
+                  <Route path="/faq" element={<FaqPage />} />
+                  <Route path="/client-guide" element={<ClientGuidePage />} />
+                  <Route path="/articles" element={<ArticlesPage />} />
 
-          {/* 9. Mid-page Consultation CTA with interactive modal */}
-          <Consultation />
+                  {/* Careers & contact */}
+                  <Route path="/careers" element={<CareersPage />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/thank-you" element={<ThankYouPage />} />
 
-          {/* 10. Contact Info directory & inquiry form & interactive map */}
-          <Contact />
+                  {/* Bahasa Malaysia */}
+                  <Route path="/ms" element={<BahasaPage />} />
 
-          {/* 11. Authoritative Corporate Footer in liquid glassmorphism design */}
-          <Footer />
+                  {/* Legal pages */}
+                  <Route path="/disclaimer" element={<LegalPage slug="disclaimer" />} />
+                  <Route path="/privacy" element={<LegalPage slug="privacy" />} />
+                  <Route path="/notis-privasi" element={<LegalPage slug="notis-privasi" />} />
+                  <Route path="/terms" element={<LegalPage slug="terms" />} />
+                  <Route path="/cookies" element={<LegalPage slug="cookies" />} />
 
-        </div>
-      )}
-    </div>
+                  {/* Redirects from the previous site structure */}
+                  <Route path="/services" element={<Navigate to="/practice-areas" replace />} />
+                  <Route
+                    path="/services/:slug"
+                    element={<Navigate to="/practice-areas" replace />}
+                  />
+                  <Route path="/why-us" element={<Navigate to="/about" replace />} />
+                  <Route path="/process" element={<Navigate to="/client-guide" replace />} />
+                  <Route path="/experience" element={<Navigate to="/our-lawyer" replace />} />
+
+                  <Route path="*" element={<NotFoundPage />} />
+                </Routes>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </main>
+
+        <WhatsAppButton />
+
+        <Footer />
+      </motion.div>
+
+      <CookieBanner />
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <HashRouter>
+      <FirmApp />
+    </HashRouter>
   );
 }

@@ -3,11 +3,100 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tetuan Amin Firdaus Mashudi & Co.</title>
+    <title>Amin Firdaus Mashudi &amp; Co. | Lawyers in Skudai, JB &amp; Kuantan</title>
+    <meta name="description" content="Law firm in Skudai, Johor Bahru and Kuantan advising on property, litigation, criminal, family, estate and business matters." />
+    <meta name="author" content="Amin Firdaus Mashudi &amp; Co." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Amin Firdaus Mashudi &amp; Co." />
+    <meta property="og:locale" content="en_MY" />
+    <meta property="og:locale:alternate" content="ms_MY" />
+    <meta property="og:title" content="Amin Firdaus Mashudi &amp; Co. | Lawyers in Skudai, JB &amp; Kuantan" />
+    <meta property="og:description" content="Law firm in Skudai, Johor Bahru and Kuantan advising on property, litigation, criminal, family, estate and business matters." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--
+      Structured data (Part 15.4 of the content pack).
+      TODO before launch: replace every "https://www.example.com.my" with the
+      firm's real domain, and add the approved logo at /images/logo.png.
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LegalService",
+          "@id": "https://www.example.com.my/#skudai",
+          "name": "Amin Firdaus Mashudi & Co. (Main Office, Skudai)",
+          "url": "https://www.example.com.my/",
+          "telephone": "+60102520859",
+          "email": "aminfirdausco@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "No. 85-01, Jalan Wira 2, Taman Tan Sri Yaacob",
+            "addressLocality": "Skudai",
+            "addressRegion": "Johor",
+            "postalCode": "81300",
+            "addressCountry": "MY"
+          },
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "17:30"
+          }],
+          "areaServed": ["Johor", "Pahang", "Peninsular Malaysia"],
+          "founder": {
+            "@type": "Person",
+            "name": "Muhammad Amin Firdaus bin Mashudi",
+            "jobTitle": "Advocate & Solicitor",
+            "alumniOf": [
+              {"@type": "CollegeOrUniversity", "name": "Universiti Utara Malaysia"},
+              {"@type": "CollegeOrUniversity", "name": "Universiti Malaya"}
+            ]
+          },
+          "knowsAbout": ["Conveyancing","Civil Litigation","Criminal Law","Family Law","Probate","Corporate and Commercial Law","Employment Law","Personal Injury Claims"]
+        },
+        {
+          "@type": "LegalService",
+          "@id": "https://www.example.com.my/#johorbahru",
+          "name": "Amin Firdaus Mashudi & Co. (Johor Bahru, Adda Heights)",
+          "url": "https://www.example.com.my/offices",
+          "telephone": "+601151754152",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "26, Jalan Adda 7, Taman Adda Heights",
+            "addressLocality": "Johor Bahru",
+            "addressRegion": "Johor",
+            "postalCode": "81100",
+            "addressCountry": "MY"
+          },
+          "parentOrganization": {"@id": "https://www.example.com.my/#skudai"}
+        },
+        {
+          "@type": "LegalService",
+          "@id": "https://www.example.com.my/#kuantan",
+          "name": "Amin Firdaus Mashudi & Co. (Kuantan)",
+          "url": "https://www.example.com.my/offices",
+          "telephone": "+601159601300",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "22, Lorong Berjaya Permai 30, Taman Berjaya Permai, Kempadang",
+            "addressLocality": "Kuantan",
+            "addressRegion": "Pahang",
+            "postalCode": "25150",
+            "addressCountry": "MY"
+          },
+          "parentOrganization": {"@id": "https://www.example.com.my/#skudai"}
+        }
+      ]
+    }
+    </script>
   </head>
-  <body>
+  <body class="bg-[#D8DDE3] text-[#0F172A] antialiased selection:bg-[#EA580C] selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
