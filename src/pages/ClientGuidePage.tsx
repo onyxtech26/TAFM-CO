@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Link } from 'react-router-dom';
 import {
   ClipboardList,
   Home,
@@ -13,8 +12,7 @@ import {
   FileText,
   UserCheck,
   Car,
-  CheckCircle2,
-  ArrowRight
+  CheckCircle2
 } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import SectionHeading from '../components/SectionHeading';
@@ -106,13 +104,6 @@ export default function ClientGuidePage() {
                 </div>
               );
             })}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link to="/contact" className="btn-primary px-8 py-3.5 text-sm inline-flex items-center gap-2">
-              <span>Book a consultation</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </section>

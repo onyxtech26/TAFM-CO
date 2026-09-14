@@ -3,8 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import FAQAccordion from '../components/FAQAccordion';
 import CTABand from '../components/CTABand';
@@ -35,24 +33,6 @@ export default function FaqPage() {
               <FAQAccordion faqs={group.items} />
             </div>
           ))}
-
-          <div className="p-6 sm:p-8 rounded-2xl bg-white/70 backdrop-blur-xl border border-[#CBD5E1] shadow-sm text-center">
-            <h3 className="font-serif text-xl font-bold text-[#0F172A] mb-2">
-              Still have a question?
-            </h3>
-            <p className="text-sm text-[#475569] mb-5">
-              Tell us briefly about your matter and we will let you know whether we can assist.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link to="/contact" className="btn-primary px-6 py-3 text-sm">
-                <span>Contact us</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link to="/client-guide" className="btn-secondary px-6 py-3 text-sm">
-                <span>Read the Client Guide</span>
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 

@@ -4,7 +4,7 @@
  */
 
 import { Link } from 'react-router-dom';
-import { BookOpen, ArrowRight } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import CTABand from '../components/CTABand';
 import { ARTICLES_INTRO, ARTICLE_TOPICS } from '../data/resources';
@@ -62,13 +62,6 @@ export default function ArticlesPage() {
                 </div>
               </article>
             ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link to="/contact" className="btn-secondary px-8 py-3.5 text-sm inline-flex items-center gap-2">
-              <span>Ask us about your matter instead</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </section>
