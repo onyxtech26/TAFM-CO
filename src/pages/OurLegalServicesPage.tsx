@@ -47,25 +47,6 @@ export default function OurLegalServicesPage() {
         breadcrumbs={[{ label: 'Our Legal Services' }]}
       />
 
-      {/* Services Navigation Pills */}
-      <section className="bg-white/60 backdrop-blur-md py-6 border-b border-[#CBD5E1] sticky top-16 z-30 shadow-xs hidden lg:block">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none text-xs">
-            <span className="font-semibold text-[#C2410C] shrink-0 uppercase tracking-wider text-[11px] mr-2">
-              Quick Jump:
-            </span>
-            {OUR_LEGAL_SERVICES.map((s) => (
-              <a
-                key={s.number}
-                href={`#service-${s.number}`}
-                className="px-3 py-1.5 rounded-full bg-white/80 border border-[#CBD5E1] hover:border-amber-500 hover:text-[#EA580C] transition-colors shrink-0 font-medium text-[#0F172A]"
-              >
-                {s.number}. {s.title}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Services List (01 to 10) */}
       <section className="bg-transparent pt-12 pb-24 sm:pt-16 sm:pb-32 border-b border-[#CBD5E1]">

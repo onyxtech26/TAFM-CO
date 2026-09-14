@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Link } from 'react-router-dom';
 import {
   User,
   Users,
@@ -13,7 +12,6 @@ import {
   ScrollText,
   Building2,
   CheckCircle2,
-  ArrowRight,
   ShieldCheck,
   Scale
 } from 'lucide-react';
@@ -104,27 +102,6 @@ export default function OurClientsPage() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Engagement Banner */}
-      <section className="bg-slate-200/30 backdrop-blur-2xl py-16 sm:py-20 border-b border-[#CBD5E1]/60">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F172A]">
-            How May We Assist You?
-          </h2>
-          <p className="text-base text-[#475569] max-w-2xl mx-auto font-light leading-relaxed">
-            Every client matter receives individualized attention from our principal and dedicated management team. Contact us to discuss your requirements.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-            <Link to="/contact" className="btn-primary px-7 py-3 text-sm justify-center">
-              <span>Schedule a consultation</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link to="/process" className="btn-secondary px-7 py-3 text-sm justify-center">
-              <span>View our legal process</span>
-            </Link>
           </div>
         </div>
       </section>

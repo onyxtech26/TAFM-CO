@@ -4,11 +4,10 @@
  */
 
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, Navigation, Video, ArrowRight, Star } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Navigation, ArrowRight, Star } from 'lucide-react';
 import PageHero from '../components/PageHero';
-import SectionHeading from '../components/SectionHeading';
 import CTABand from '../components/CTABand';
-import { FIRM_DETAILS, OFFICES, ONLINE_CONSULTATION_NOTE } from '../data/firm';
+import { FIRM_DETAILS, OFFICES } from '../data/firm';
 import { satelliteMapEmbedUrl } from '../lib/contact';
 
 export default function OfficesPage() {
@@ -144,32 +143,6 @@ export default function OfficesPage() {
               </div>
             </article>
           ))}
-        </div>
-      </section>
-
-      {/* 8.4 Online consultations */}
-      <section className="bg-[#D8DDE3]/80 backdrop-blur-md py-16 sm:py-20 border-b border-[#CBD5E1]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Anywhere in Malaysia"
-            title="Online Consultations"
-            subtitle="Meet us by video call when visiting an office is not convenient."
-          />
-
-          <div className="card-luxury p-7 sm:p-9 flex flex-col sm:flex-row items-start gap-5">
-            <div className="w-12 h-12 rounded-xl border border-amber-500/40 bg-gradient-to-br from-white via-amber-50/40 to-white flex items-center justify-center text-[#EA580C] shrink-0 shadow-sm">
-              <Video className="w-6 h-6" />
-            </div>
-            <div className="space-y-4">
-              <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-light">
-                {ONLINE_CONSULTATION_NOTE}
-              </p>
-              <Link to="/contact" className="btn-primary px-6 py-3 text-sm inline-flex items-center gap-2">
-                <span>Book an appointment</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 

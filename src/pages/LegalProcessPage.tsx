@@ -4,7 +4,6 @@
  */
 
 import React, { useRef, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import {
   motion,
   useScroll,
@@ -18,15 +17,12 @@ import {
   FileCheck2,
   Award,
   Clock,
-  ShieldCheck,
   CheckCircle2,
-  ArrowRight,
   ChevronRight,
   Sparkles,
   ArrowDown
 } from 'lucide-react';
 import PageHero from '../components/PageHero';
-import SectionHeading from '../components/SectionHeading';
 import CTABand from '../components/CTABand';
 import { LEGAL_PROCESS_STEPS } from '../data/firm';
 
@@ -315,81 +311,6 @@ export default function LegalProcessPage() {
                 );
               })}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Complete Workflow Overview Grid */}
-      <section className="bg-transparent py-16 sm:py-24 border-b border-[#CBD5E1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Quick Reference"
-            title="All 8 Stages at a Glance"
-            subtitle="A comprehensive snapshot of our full case management framework."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {LEGAL_PROCESS_STEPS.map((step, idx) => {
-              const Icon = STEP_ICONS[idx % STEP_ICONS.length];
-              return (
-                <div
-                  key={step.stepCode}
-                  className="card-luxury p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-white via-amber-50/50 to-white border border-amber-500/40 flex items-center justify-center text-[#EA580C] shadow-xs group-hover:scale-105 transition-transform">
-                        <Icon className="w-5 h-5" />
-                      </span>
-                      <span className="text-[11px] font-mono text-[#C2410C] font-bold">
-                        {step.stepCode}
-                      </span>
-                    </div>
-                    <h3 className="font-serif text-lg font-bold text-[#0F172A] mb-2 group-hover:text-[#EA580C] transition-colors">
-                      {step.title}
-                    </h3>
-                    <p className="text-xs text-[#475569] leading-relaxed font-light">
-                      {step.summary}
-                    </p>
-                  </div>
-                  <div className="mt-4 pt-3 border-t border-[#CBD5E1]/60 flex items-center justify-between text-[11px] text-[#64748B]">
-                    <span>Stage {step.stepNumber} of 8</span>
-                    <button
-                      type="button"
-                      onClick={() => scrollToStep(idx)}
-                      className="text-[#C2410C] hover:text-[#EA580C] font-semibold cursor-pointer flex items-center gap-1"
-                    >
-                      <span>View</span>
-                      <ChevronRight className="w-3 h-3" />
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Reassurance Banner */}
-      <section className="bg-slate-200/30 backdrop-blur-2xl py-16 sm:py-20 border-b border-[#CBD5E1]/60">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <div className="w-12 h-12 rounded-2xl border border-amber-500/40 bg-white/90 flex items-center justify-center text-[#EA580C] mx-auto shadow-sm">
-            <ShieldCheck className="w-6 h-6" />
-          </div>
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F172A]">
-            Ready to Begin?
-          </h2>
-          <p className="text-base text-[#475569] max-w-2xl mx-auto font-light leading-relaxed">
-            Schedule an initial consultation with our chambers to discuss your matter with complete confidentiality and strategic clarity.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-            <Link to="/contact" className="btn-primary px-7 py-3 text-sm justify-center">
-              <span>Book an appointment</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link to="/services" className="btn-secondary px-7 py-3 text-sm justify-center">
-              <span>Explore legal services</span>
-            </Link>
           </div>
         </div>
       </section>

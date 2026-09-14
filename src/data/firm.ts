@@ -504,6 +504,7 @@ export interface LeadershipMember {
   description: string;
   responsibilities?: string[];
   note?: string;
+  photoUrl?: string;
 }
 
 export const LEADERSHIP_TEAM: LeadershipMember[] = [
@@ -515,7 +516,8 @@ export const LEADERSHIP_TEAM: LeadershipMember[] = [
     summary: "Oversees the firm's strategic direction, legal practice, client matters, and professional standards.",
     description:
       "Muhammad Amin Firdaus Bin Mashudi is the founder of Amin Firdaus Mashudi & Co., providing leadership and strategic direction to the firm. His role includes overseeing the firm's legal direction, client matters, professional standards and development of the firm's legal practice.",
-    note: "Under his leadership, the firm aims to build a professional legal practice that combines traditional legal expertise with efficient modern case management."
+    note: "Under his leadership, the firm aims to build a professional legal practice that combines traditional legal expertise with efficient modern case management.",
+    photoUrl: "/images/team/muhammad-amin-firdaus-bin-mashudi.jpg"
   },
   {
     id: "operations-manager",
@@ -535,7 +537,8 @@ export const LEADERSHIP_TEAM: LeadershipMember[] = [
       "Monitoring case progress",
       "Operational planning and coordination"
     ],
-    note: "The Operations Manager works closely with the legal team to ensure that client matters are handled efficiently and systematically."
+    note: "The Operations Manager works closely with the legal team to ensure that client matters are handled efficiently and systematically.",
+    photoUrl: "/images/team/mr-mohan.png"
   },
   {
     id: "management-lead",
@@ -555,7 +558,8 @@ export const LEADERSHIP_TEAM: LeadershipMember[] = [
       "Coordination between legal and operational teams",
       "Supporting the firm's long-term development"
     ],
-    note: "Supports the ongoing expansion and high-standard service delivery of the chambers across Johor and Pahang."
+    note: "Supports the ongoing expansion and high-standard service delivery of the chambers across Johor and Pahang.",
+    photoUrl: "/images/team/mr-shiva.png"
   }
 ];
 

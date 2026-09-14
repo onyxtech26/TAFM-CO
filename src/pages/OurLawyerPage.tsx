@@ -206,18 +206,30 @@ export default function OurLawyerPage() {
             {LEADERSHIP_TEAM.filter((m) => m.id !== 'founder-principal').map((member) => (
               <div key={member.id} className="card-luxury p-7 sm:p-8 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="text-[11px] font-mono text-[#C2410C] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30">
-                      {member.badge}
-                    </span>
-                  </div>
+                  <div className="flex items-start justify-between gap-4 mb-5">
+                    <div>
+                      <span className="text-[11px] font-mono text-[#C2410C] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 inline-block mb-3">
+                        {member.badge}
+                      </span>
+                      <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F172A] mb-1">
+                        {member.name}
+                      </h3>
+                      <p className="text-xs uppercase tracking-wider text-[#EA580C] font-bold">
+                        {member.role}
+                      </p>
+                    </div>
 
-                  <h3 className="font-serif text-2xl font-bold text-[#0F172A] mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-xs uppercase tracking-wider text-[#EA580C] font-semibold mb-4">
-                    {member.role}
-                  </p>
+                    {member.photoUrl && (
+                      <div className="relative shrink-0 w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-b from-white/95 via-amber-50/40 to-slate-100/70 border border-amber-500/30 shadow-md overflow-hidden flex items-end justify-center">
+                        <img
+                          src={member.photoUrl}
+                          alt={member.name}
+                          className="w-full h-full object-contain object-bottom scale-105"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                  </div>
 
                   <p className="text-sm text-[#475569] leading-relaxed font-light mb-6">
                     {member.description}

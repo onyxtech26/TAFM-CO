@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Link } from 'react-router-dom';
 import {
   ShieldCheck,
   Users,
@@ -16,7 +15,6 @@ import {
   Target,
   HeartHandshake,
   Award,
-  ArrowRight,
   Scale
 } from 'lucide-react';
 import PageHero from '../components/PageHero';
@@ -127,27 +125,6 @@ export default function WhyChooseUsPage() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Action Footer */}
-      <section className="bg-transparent py-16 sm:py-20 border-b border-[#CBD5E1]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F172A]">
-            Experience the AFM &amp; Co. Difference
-          </h2>
-          <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-light max-w-2xl mx-auto">
-            Contact our Skudai, Johor Bahru or Kuantan offices today to consult with our legal and management team on your matter.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-            <Link to="/contact" className="btn-primary px-7 py-3 text-sm justify-center">
-              <span>Contact our offices</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link to="/services" className="btn-secondary px-7 py-3 text-sm justify-center">
-              <span>View our services</span>
-            </Link>
           </div>
         </div>
       </section>
