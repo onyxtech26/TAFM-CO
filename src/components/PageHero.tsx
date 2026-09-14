@@ -28,13 +28,13 @@ export default function PageHero({
   breadcrumbs
 }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-transparent border-b border-[#CBD5E1]/70 pt-14 pb-16 sm:pt-20 sm:pb-24">
+    <section className="relative overflow-hidden bg-transparent border-b border-[#CBD5E1]/70 pt-6 pb-10 sm:pt-8 sm:pb-14">
       {/* Soft radial orange-and-yellow glow background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[radial-gradient(circle,rgba(250,204,21,0.12)_0%,rgba(234,88,12,0.07)_40%,transparent_70%)] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb row */}
-        <nav aria-label="Breadcrumb" className="mb-6">
+        <nav aria-label="Breadcrumb" className="mb-5">
           <ol className="flex items-center flex-wrap gap-2 text-xs text-[#475569]">
             <li>
               <Link to="/" className="hover:text-[#EA580C] transition-colors">

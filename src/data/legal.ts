@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-/** Footer legal pages: Disclaimer, Privacy Notice (EN + BM), Terms of Use, Cookie Notice. */
+/** Footer legal pages: Disclaimer, Privacy Notice, Terms of Use, Cookie Notice. */
 
 export interface LegalBlock {
   heading?: string;
@@ -19,7 +19,6 @@ export interface LegalDocument {
   intro?: string;
   lastUpdated?: string;
   blocks: LegalBlock[];
-  altLanguage?: { label: string; slug: string };
 }
 
 const PRIVACY_LAST_UPDATED = "February 2026";
@@ -74,8 +73,7 @@ export const PRIVACY_NOTICE: LegalDocument = {
   eyebrow: "Personal Data",
   lastUpdated: PRIVACY_LAST_UPDATED,
   intro:
-    "This Privacy Notice is issued by Amin Firdaus Mashudi & Co. (“we”, “us”, “the Firm”) in accordance with the Personal Data Protection Act 2010 (“PDPA”). It explains how we collect, use, disclose and protect your personal data. A Bahasa Malaysia version is provided. In case of inconsistency, the English version prevails.",
-  altLanguage: { label: "Baca dalam Bahasa Malaysia", slug: "notis-privasi" },
+    "This Privacy Notice is issued by Amin Firdaus Mashudi & Co. (“we”, “us”, “the Firm”) in accordance with the Personal Data Protection Act 2010 (“PDPA”). It explains how we collect, use, disclose and protect your personal data.",
   blocks: [
     {
       heading: "1. Personal data we collect",
@@ -140,97 +138,13 @@ export const PRIVACY_NOTICE: LegalDocument = {
     {
       heading: "10. Contact",
       paragraphs: [
-        "For enquiries, access or correction requests, or complaints, contact the Data Protection Officer, Muhammad Amin Firdaus bin Mashudi (Sole Proprietor), Amin Firdaus Mashudi & Co., No. 85-01, Jalan Wira 2, Taman Tan Sri Yaacob, 81300 Skudai, Johor. Email: aminfirdausco@gmail.com. Tel: +60 10-252 0859."
+        "For enquiries, access or correction requests, or complaints, contact the Data Protection Officer, Muhammad Amin Firdaus bin Mashudi (Sole Proprietor), Amin Firdaus Mashudi & Co., No. 85-01, Jalan Wira 2, Taman Tan Sri Yaacob, 81300 Skudai, Johor. Email: aminfirdausco@gmail.com. Tel: +60 11-5785 6100."
       ]
     },
     {
       heading: "11. Changes",
       paragraphs: [
         "We may update this notice from time to time. The latest version will be posted on this page."
-      ]
-    }
-  ]
-};
-
-export const NOTIS_PRIVASI: LegalDocument = {
-  slug: "notis-privasi",
-  title: "Notis Privasi (Akta Perlindungan Data Peribadi 2010)",
-  eyebrow: "Data Peribadi",
-  lastUpdated: "Februari 2026",
-  intro:
-    "Notis Privasi ini dikeluarkan oleh Tetuan Amin Firdaus Mashudi & Co. (“kami”, “Firma”) menurut Akta Perlindungan Data Peribadi 2010 (“APDP”). Notis ini menerangkan cara kami mengumpul, menggunakan, mendedahkan dan melindungi data peribadi anda.",
-  altLanguage: { label: "Read in English", slug: "privacy" },
-  blocks: [
-    {
-      heading: "1. Data peribadi yang dikumpul",
-      paragraphs: [
-        "Kami mungkin mengumpul nama, nombor kad pengenalan atau pasport, tarikh lahir, alamat, nombor telefon, alamat e-mel, pekerjaan, maklumat kewangan (seperti butiran bank dan pinjaman), butiran hartanah dan aset, maklumat keluarga, maklumat pekerjaan, dan sebarang maklumat lain yang anda berikan berkaitan dengan urusan anda. Bagi urusan tertentu, ini mungkin termasuk data peribadi sensitif seperti maklumat kesihatan atau kesalahan jenayah yang dikatakan."
-      ]
-    },
-    {
-      heading: "2. Cara data dikumpul",
-      paragraphs: [
-        "Secara terus daripada anda (secara bersemuka, telefon, WhatsApp, e-mel atau borang laman web); daripada dokumen yang anda berikan; daripada daftar awam (seperti pejabat tanah, SSM dan Jabatan Insolvensi Malaysia); daripada mahkamah dan pihak berkuasa kerajaan; dan daripada pihak lain dalam urusan anda seperti bank, pemaju, syarikat insurans, peguam lain dan ejen."
-      ]
-    },
-    {
-      heading: "3. Tujuan",
-      paragraphs: ["Kami memproses data peribadi anda untuk:"],
-      items: [
-        "(a) menjawab pertanyaan anda dan menilai sama ada kami boleh bertindak bagi pihak anda, termasuk semakan konflik kepentingan;",
-        "(b) memberikan perkhidmatan guaman dan menguruskan urusan anda;",
-        "(c) berhubung dengan anda, mahkamah, pihak berkuasa dan pihak lain bagi pihak anda;",
-        "(d) mengesahkan identiti anda dan mematuhi kewajipan di bawah Akta Pencegahan Pengubahan Wang Haram, Pencegahan Pembiayaan Keganasan dan Hasil Daripada Aktiviti Haram 2001 serta undang-undang lain yang berkaitan;",
-        "(e) mengeluarkan bil dan menyelenggara akaun, termasuk akaun anak guam;",
-        "(f) mematuhi kewajipan undang-undang, kawal selia dan profesional, termasuk di bawah Akta Profesion Undang-Undang 1976;",
-        "(g) memproses permohonan pekerjaan; dan",
-        "(h) apa-apa tujuan lain yang berkaitan dengan perkara di atas."
-      ]
-    },
-    {
-      heading: "4. Pendedahan",
-      paragraphs: [
-        "Kami mungkin mendedahkan data peribadi anda kepada mahkamah dan tribunal; pejabat tanah dan agensi kerajaan; institusi kewangan; pemaju; syarikat insurans; pihak lain dan peguam mereka dalam urusan anda; penasihat profesional seperti akauntan, penilai, setiausaha syarikat dan jurubahasa; penanggung insurans indemniti profesional dan broker kami; Badan Peguam Malaysia dan pihak berkuasa kawal selia; serta penyedia perkhidmatan seperti IT, storan awan dan kurier. Kami tidak menjual data peribadi anda."
-      ]
-    },
-    {
-      heading: "5. Pemindahan ke luar Malaysia",
-      paragraphs: [
-        "Sesetengah penyedia perkhidmatan kami (seperti penyedia e-mel dan storan awan) mungkin menyimpan data di pelayan di luar Malaysia. Dalam keadaan sedemikian, kami mengambil langkah yang munasabah untuk memastikan data anda dilindungi selaras dengan APDP."
-      ]
-    },
-    {
-      heading: "6. Kewajipan memberikan data",
-      paragraphs: [
-        "Pemberian data peribadi adalah secara sukarela. Walau bagaimanapun, jika anda tidak memberikan maklumat yang diperlukan, kami mungkin tidak dapat bertindak bagi pihak anda atau menyelesaikan urusan anda."
-      ]
-    },
-    {
-      heading: "7. Keselamatan dan penyimpanan",
-      paragraphs: [
-        "Kami mengambil langkah praktikal untuk melindungi data peribadi daripada kehilangan, penyalahgunaan, akses dan pendedahan tanpa kebenaran. Data peribadi disimpan selama yang perlu bagi tujuan di atas dan sebagaimana dikehendaki oleh undang-undang dan peraturan profesional, dan selepas itu dimusnahkan dengan selamat."
-      ]
-    },
-    {
-      heading: "8. Hak anda",
-      paragraphs: [
-        "Tertakluk kepada APDP, anda boleh meminta akses kepada dan pembetulan data peribadi anda, menarik balik persetujuan, atau mengehadkan pemprosesan. Kami boleh mengenakan fi yang dibenarkan oleh undang-undang bagi permintaan akses dan boleh menolak permintaan dalam keadaan yang dibenarkan oleh APDP, termasuk apabila keistimewaan undang-undang terpakai."
-      ]
-    },
-    {
-      heading: "9. Kuki laman web",
-      paragraphs: ["Laman web kami menggunakan kuki. Sila rujuk Notis Kuki kami."]
-    },
-    {
-      heading: "10. Hubungi kami",
-      paragraphs: [
-        "Bagi pertanyaan, permintaan akses atau pembetulan, atau aduan, sila hubungi Pegawai Perlindungan Data, Muhammad Amin Firdaus bin Mashudi (Pemilik Tunggal), Tetuan Amin Firdaus Mashudi & Co., No. 85-01, Jalan Wira 2, Taman Tan Sri Yaacob, 81300 Skudai, Johor. E-mel: aminfirdausco@gmail.com. Tel: +60 10-252 0859."
-      ]
-    },
-    {
-      heading: "11. Pindaan",
-      paragraphs: [
-        "Kami boleh mengemas kini notis ini dari semasa ke semasa. Versi terkini akan disiarkan di halaman ini."
       ]
     }
   ]
@@ -321,7 +235,7 @@ export const COOKIE_NOTICE: LegalDocument = {
     {
       heading: "Managing cookies",
       paragraphs: [
-        "You can change your choice at any time through the “Cookie settings” link in the footer, or by adjusting your browser settings. Blocking some cookies may affect how the website works."
+        "You can block or delete cookies at any time through your browser settings. Blocking some cookies may affect how the website works."
       ]
     }
   ]
@@ -330,7 +244,6 @@ export const COOKIE_NOTICE: LegalDocument = {
 export const LEGAL_DOCUMENTS: LegalDocument[] = [
   DISCLAIMER,
   PRIVACY_NOTICE,
-  NOTIS_PRIVASI,
   TERMS_OF_USE,
   COOKIE_NOTICE
 ];
@@ -342,12 +255,3 @@ export const LEGAL_DOCUMENTS_MAP: Record<string, LegalDocument> = LEGAL_DOCUMENT
   },
   {} as Record<string, LegalDocument>
 );
-
-export const COOKIE_BANNER = {
-  message:
-    "We use essential cookies to make this website work and, with your consent, analytics cookies to understand how visitors use it. You can accept or reject non-essential cookies.",
-  acceptLabel: "Accept all",
-  rejectLabel: "Reject non-essential",
-  readMoreLabel: "Read our Cookie Notice",
-  storageKey: "afmco-cookie-consent"
-};

@@ -24,11 +24,16 @@ export default function PracticeAreasPage() {
         breadcrumbs={[{ label: 'Practice Areas' }]}
       />
 
-      <section className="bg-transparent py-16 sm:py-24 border-b border-[#CBD5E1]">
+      <section className="bg-transparent pt-10 pb-16 sm:pt-12 sm:pb-24 border-b border-[#CBD5E1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Flex-wrap + justify-center so an incomplete last row sits in the middle. */}
+          <div className="flex flex-wrap justify-center gap-6">
             {PRACTICE_AREAS.map((area) => (
-              <PracticeAreaCard key={area.slug} area={area} />
+              <PracticeAreaCard
+                key={area.slug}
+                area={area}
+                className="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+              />
             ))}
           </div>
 

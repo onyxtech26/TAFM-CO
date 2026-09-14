@@ -53,7 +53,7 @@ export default function PracticeAreaDetailPage() {
         ]}
       />
 
-      <section className="bg-transparent py-16 sm:py-24 border-b border-[#CBD5E1]">
+      <section className="bg-transparent pt-10 pb-16 sm:pt-12 sm:pb-24 border-b border-[#CBD5E1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Main column */}

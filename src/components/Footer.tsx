@@ -84,7 +84,7 @@ export default function Footer() {
                 <li key={office.id}>
                   <span className="block text-[#0F172A] font-semibold mb-0.5">
                     {office.isMain
-                      ? `${office.city} (Main Office)`
+                      ? `${office.city} (HQ)`
                       : office.id === 'adda-heights'
                         ? 'Johor Bahru (Adda Heights)'
                         : office.city}
@@ -182,7 +182,6 @@ export default function Footer() {
           <Link to="/articles" className="hover:text-[#EA580C] transition-colors">Articles</Link>
           <Link to="/careers" className="hover:text-[#EA580C] transition-colors">Careers</Link>
           <Link to="/contact" className="hover:text-[#EA580C] transition-colors">Contact Us</Link>
-          <Link to="/ms" className="hover:text-[#EA580C] transition-colors">Bahasa Malaysia</Link>
         </div>
 
         {/* Statutory disclaimer */}
@@ -192,10 +191,15 @@ export default function Footer() {
 
         {/* Bottom strip */}
         <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-[#64748B] gap-4">
-          <p>
-            &copy; {currentYear} {FIRM_DETAILS.name} ({FIRM_DETAILS.registrationNumber}). All rights
-            reserved.
-          </p>
+          <div className="space-y-1">
+            <p>
+              &copy; {currentYear} {FIRM_DETAILS.name} ({FIRM_DETAILS.registrationNumber}). All rights
+              reserved.
+            </p>
+            <p>
+              Powered by <span className="font-semibold text-[#C2410C]">Onyxx Tech Hub</span>
+            </p>
+          </div>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <Link to="/disclaimer" className="hover:text-[#EA580C] transition-colors">
               Disclaimer
@@ -203,10 +207,6 @@ export default function Footer() {
             <span aria-hidden="true">·</span>
             <Link to="/privacy" className="hover:text-[#EA580C] transition-colors">
               Privacy Notice
-            </Link>
-            <span aria-hidden="true">·</span>
-            <Link to="/notis-privasi" className="hover:text-[#EA580C] transition-colors">
-              Notis Privasi
             </Link>
             <span aria-hidden="true">·</span>
             <Link to="/terms" className="hover:text-[#EA580C] transition-colors">

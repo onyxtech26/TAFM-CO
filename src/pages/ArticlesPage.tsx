@@ -19,13 +19,12 @@ export default function ArticlesPage() {
         breadcrumbs={[{ label: 'Resources' }, { label: 'Articles' }]}
       />
 
-      <section className="bg-transparent py-16 sm:py-24 border-b border-[#CBD5E1]">
+      <section className="bg-transparent pt-10 pb-16 sm:pt-12 sm:pb-24 border-b border-[#CBD5E1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10 p-5 rounded-2xl bg-white/70 backdrop-blur-xl border border-[#CBD5E1] shadow-sm flex items-start gap-3">
             <BookOpen className="w-4 h-4 text-[#EA580C] shrink-0 mt-0.5" />
             <p className="text-sm text-[#475569] leading-relaxed">
-              These articles are being prepared and will be published here in English and Bahasa
-              Malaysia. In the meantime, our{' '}
+              These articles are being prepared and will be published here. In the meantime, our{' '}
               <Link to="/faq" className="text-[#C2410C] font-semibold hover:underline">
                 FAQ
               </Link>{' '}

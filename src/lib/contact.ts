@@ -16,3 +16,11 @@ export function whatsappUrl(message: string = FIRM_DETAILS.contact.whatsappDefau
 export function mailtoUrl(subject: string): string {
   return `mailto:${FIRM_DETAILS.contact.generalEmail}?subject=${encodeURIComponent(subject)}`;
 }
+
+/**
+ * Google Maps embed in satellite view (`t=k`), zoomed in on the building
+ * (`z=18`) so the office frontage and surrounding streets are recognisable.
+ */
+export function satelliteMapEmbedUrl(address: string): string {
+  return `https://www.google.com/maps?q=${encodeURIComponent(address)}&t=k&z=18&output=embed`;
+}

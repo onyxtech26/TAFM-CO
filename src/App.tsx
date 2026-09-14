@@ -12,7 +12,6 @@ import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
 import Interactive3DBackground from './components/Interactive3DBackground';
 import SplashScreen from './components/SplashScreen';
-import CookieBanner from './components/CookieBanner';
 import Seo from './components/Seo';
 
 import HomePage from './pages/HomePage';
@@ -28,7 +27,6 @@ import ArticlesPage from './pages/ArticlesPage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
 import ThankYouPage from './pages/ThankYouPage';
-import BahasaPage from './pages/BahasaPage';
 import LegalPage from './pages/LegalPage';
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -92,7 +90,7 @@ function FirmApp() {
       >
         <Navbar />
 
-        <main className="flex-1 pt-16 sm:pt-20">
+        <main className="flex-1 pt-16 sm:pt-[4.5rem]">
           <AnimatePresence mode="wait">
             {!showSplash && (
               <motion.div
@@ -134,13 +132,9 @@ function FirmApp() {
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/thank-you" element={<ThankYouPage />} />
 
-                  {/* Bahasa Malaysia */}
-                  <Route path="/ms" element={<BahasaPage />} />
-
                   {/* Legal pages */}
                   <Route path="/disclaimer" element={<LegalPage slug="disclaimer" />} />
                   <Route path="/privacy" element={<LegalPage slug="privacy" />} />
-                  <Route path="/notis-privasi" element={<LegalPage slug="notis-privasi" />} />
                   <Route path="/terms" element={<LegalPage slug="terms" />} />
                   <Route path="/cookies" element={<LegalPage slug="cookies" />} />
 
@@ -153,6 +147,8 @@ function FirmApp() {
                   <Route path="/why-us" element={<Navigate to="/about" replace />} />
                   <Route path="/process" element={<Navigate to="/client-guide" replace />} />
                   <Route path="/experience" element={<Navigate to="/our-lawyer" replace />} />
+                  <Route path="/ms" element={<Navigate to="/" replace />} />
+                  <Route path="/notis-privasi" element={<Navigate to="/privacy" replace />} />
 
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
@@ -166,7 +162,6 @@ function FirmApp() {
         <Footer />
       </motion.div>
 
-      <CookieBanner />
     </>
   );
 }

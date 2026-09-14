@@ -4,7 +4,6 @@
  */
 
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { Languages } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import { LEGAL_DOCUMENTS_MAP } from '../data/legal';
 
@@ -31,23 +30,13 @@ export default function LegalPage({ slug: slugProp }: LegalPageProps) {
         breadcrumbs={[{ label: doc.title }]}
       />
 
-      <section className="bg-transparent py-16 sm:py-24 border-b border-[#CBD5E1]">
+      <section className="bg-transparent pt-10 pb-16 sm:pt-12 sm:pb-24 border-b border-[#CBD5E1]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-[#CBD5E1]">
             {doc.lastUpdated ? (
               <p className="text-xs text-[#64748B] italic">Last updated: {doc.lastUpdated}</p>
             ) : (
               <span />
-            )}
-
-            {doc.altLanguage && (
-              <Link
-                to={`/${doc.altLanguage.slug}`}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#C2410C] hover:text-[#EA580C] transition-colors"
-              >
-                <Languages className="w-3.5 h-3.5" />
-                <span>{doc.altLanguage.label}</span>
-              </Link>
             )}
           </div>
 
@@ -126,9 +115,6 @@ export default function LegalPage({ slug: slugProp }: LegalPageProps) {
             </Link>
             <Link to="/privacy" className="hover:text-[#EA580C] transition-colors">
               Privacy Notice
-            </Link>
-            <Link to="/notis-privasi" className="hover:text-[#EA580C] transition-colors">
-              Notis Privasi
             </Link>
             <Link to="/terms" className="hover:text-[#EA580C] transition-colors">
               Terms of Use

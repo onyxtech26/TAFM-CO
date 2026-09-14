@@ -9,10 +9,7 @@ import PageHero from '../components/PageHero';
 import SectionHeading from '../components/SectionHeading';
 import CTABand from '../components/CTABand';
 import { FIRM_DETAILS, OFFICES, ONLINE_CONSULTATION_NOTE } from '../data/firm';
-
-function mapEmbedUrl(query: string) {
-  return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
-}
+import { satelliteMapEmbedUrl } from '../lib/contact';
 
 export default function OfficesPage() {
   return (
@@ -24,7 +21,7 @@ export default function OfficesPage() {
         breadcrumbs={[{ label: 'Our Offices' }]}
       />
 
-      <section className="bg-transparent py-16 sm:py-24 border-b border-[#CBD5E1]">
+      <section className="bg-transparent pt-10 pb-16 sm:pt-12 sm:pb-24 border-b border-[#CBD5E1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {OFFICES.map((office, idx) => (
             <article
@@ -43,7 +40,7 @@ export default function OfficesPage() {
                       {office.isMain && (
                         <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider font-semibold text-amber-900 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-full">
                           <Star className="w-3 h-3" />
-                          Main Office
+                          HQ · Headquarters
                         </span>
                       )}
                     </div>
@@ -135,7 +132,7 @@ export default function OfficesPage() {
                 <div className="relative min-h-[280px] lg:min-h-full border-t lg:border-t-0 lg:border-l border-[#CBD5E1] bg-slate-100">
                   <iframe
                     title={`Map of ${office.name}`}
-                    src={mapEmbedUrl(
+                    src={satelliteMapEmbedUrl(
                       `${office.addressLines.join(', ')}, ${office.postcode} ${office.city}, ${office.state}, Malaysia`
                     )}
                     className="absolute inset-0 w-full h-full"

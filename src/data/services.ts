@@ -395,7 +395,7 @@ export const PRACTICE_AREAS: PracticeArea[] = [
           "You have the right to be informed of the grounds of your arrest and to consult a legal practitioner of your choice (Article 5(3) of the Federal Constitution; Section 28A of the Criminal Procedure Code).",
           "Ask to contact a lawyer or family member.",
           "Do not sign any document you do not understand.",
-          "Contact us as soon as possible: +60 10-252 0859."
+          "Contact us as soon as possible: +60 11-5785 6100."
         ]
       }
     ],
@@ -417,7 +417,7 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       }
     ],
     ctaLead: "Need urgent criminal law assistance?",
-    ctaLabel: "Call +60 10-252 0859",
+    ctaLabel: "Call +60 11-5785 6100",
     relevantLaws: [
       "Criminal Procedure Code (Act 593)",
       "Federal Constitution (Article 5)",

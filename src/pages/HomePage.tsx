@@ -46,7 +46,7 @@ export default function HomePage() {
   return (
     <div className="space-y-0">
       {/* 1. HERO (4.1) */}
-      <section className="relative overflow-hidden bg-transparent pt-12 pb-20 sm:pt-20 sm:pb-28 border-b border-[#CBD5E1]">
+      <section className="relative overflow-hidden bg-transparent pt-6 pb-16 sm:pt-10 sm:pb-24 border-b border-[#CBD5E1]">
         <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[radial-gradient(circle,rgba(234,88,12,0.12)_0%,transparent_70%)] pointer-events-none blur-3xl" />
         <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(234,88,12,0.06)_0%,transparent_70%)] pointer-events-none blur-3xl" />
 
@@ -431,7 +431,7 @@ export default function HomePage() {
                   <div className="flex items-center gap-2 mb-3">
                     <MapPin className="w-4 h-4 text-[#EA580C] shrink-0" />
                     <span className="text-xs uppercase tracking-[0.18em] text-[#C2410C] font-semibold">
-                      {office.isMain ? 'Main Office' : 'Office'}
+                      {office.isMain ? 'HQ' : 'Office'}
                     </span>
                   </div>
 

@@ -21,12 +21,12 @@ import SectionHeading from '../components/SectionHeading';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 import { FIRM_DETAILS, OFFICES, formatOfficeAddress } from '../data/firm';
 import { MATTER_TYPE_OPTIONS } from '../data/services';
-import { whatsappUrl } from '../lib/contact';
+import { whatsappUrl, satelliteMapEmbedUrl } from '../lib/contact';
 
 const OFFICE_OPTIONS = [
   ...OFFICES.map((office) =>
     office.isMain
-      ? 'Skudai (Main)'
+      ? 'Skudai (HQ)'
       : office.id === 'adda-heights'
         ? 'Johor Bahru (Adda Heights)'
         : office.city
@@ -145,7 +145,7 @@ export default function ContactPage() {
         breadcrumbs={[{ label: 'Contact Us' }]}
       />
 
-      <section className="bg-transparent py-16 sm:py-24 border-b border-[#CBD5E1]">
+      <section className="bg-transparent pt-10 pb-16 sm:pt-12 sm:pb-24 border-b border-[#CBD5E1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* LEFT: contact details */}
@@ -230,7 +230,7 @@ export default function ContactPage() {
                         <div className="flex-1">
                           <h3 className="text-sm font-semibold text-[#0F172A] mb-1">
                             {office.isMain
-                              ? 'Johor Bahru — Main Office (Skudai)'
+                              ? 'Johor Bahru — HQ (Skudai)'
                               : office.id === 'adda-heights'
                                 ? 'Johor Bahru — Adda Heights'
                                 : `${office.city} Office`}
@@ -604,9 +604,9 @@ export default function ContactPage() {
                 <div className="aspect-[4/3] bg-slate-100">
                   <iframe
                     title={`Map of ${office.name}`}
-                    src={`https://www.google.com/maps?q=${encodeURIComponent(
+                    src={satelliteMapEmbedUrl(
                       `${office.addressLines.join(', ')}, ${office.postcode} ${office.city}, ${office.state}, Malaysia`
-                    )}&output=embed`}
+                    )}
                     className="w-full h-full"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -614,7 +614,7 @@ export default function ContactPage() {
                 </div>
                 <div className="p-5">
                   <h3 className="text-sm font-semibold text-[#0F172A] mb-1">
-                    {office.isMain ? 'Skudai (Main Office)' : office.label}
+                    {office.isMain ? 'Skudai (HQ)' : office.label}
                   </h3>
                   <p className="text-xs text-[#475569] leading-relaxed">
                     {formatOfficeAddress(office)}

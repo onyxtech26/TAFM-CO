@@ -22,7 +22,7 @@ export default function OurLawyerPage() {
       />
 
       {/* 6.1 Profile card + 6.2 Verified biography */}
-      <section className="bg-transparent py-16 sm:py-24 border-b border-[#CBD5E1]">
+      <section className="bg-transparent pt-10 pb-16 sm:pt-12 sm:pb-24 border-b border-[#CBD5E1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Profile card */}
@@ -49,9 +49,6 @@ export default function OurLawyerPage() {
                       {PRINCIPAL_LAWYER.role}
                     </p>
                     <p className="text-sm text-[#475569] mt-0.5">{PRINCIPAL_LAWYER.designation}</p>
-                    <p className="text-xs text-[#64748B] italic mt-0.5">
-                      {PRINCIPAL_LAWYER.designationBm}
-                    </p>
                   </div>
 
                   <div className="pt-4 border-t border-[#CBD5E1] space-y-2">

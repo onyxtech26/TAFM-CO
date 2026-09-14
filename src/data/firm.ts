@@ -28,7 +28,6 @@ export interface LawyerProfile {
   name: string;
   role: string;
   designation: string;
-  designationBm: string;
   qualifications: Qualification[];
   admission: string;
   admissionDate: string;
@@ -36,7 +35,6 @@ export interface LawyerProfile {
   areasOfFocus: string[];
   courts: string[];
   biography: string[];
-  biographyBm: string;
   /** Real photograph URL; empty renders the monogram placeholder. */
   photoUrl: string;
   initials: string;
@@ -48,6 +46,7 @@ export interface OfficeLocation {
   id: string;
   name: string;
   label: string;
+  /** Headquarters (HQ). */
   isMain: boolean;
   addressLines: string[];
   city: string;
@@ -62,14 +61,11 @@ export interface OfficeLocation {
 export const FIRM_DETAILS = {
   name: "Amin Firdaus Mashudi & Co.",
   legalName: "Messrs. Amin Firdaus Mashudi & Co.",
-  bmName: "Tetuan Amin Firdaus Mashudi & Co.",
   shortName: "AFM & Co.",
   fullTitle: "Amin Firdaus Mashudi & Co. (Advocates & Solicitors)",
   descriptor: "Advocates & Solicitors",
-  descriptorBm: "Peguambela & Peguamcara",
 
   tagline: "Clear Legal Guidance for Individuals, Families and Businesses",
-  taglineBm: "Nasihat Guaman yang Jelas untuk Individu, Keluarga dan Perniagaan",
 
   registrationNumber: "000020009279",
   registrationBasis:
@@ -100,13 +96,10 @@ export const FIRM_DETAILS = {
   disclaimer:
     "The information on this website is for general information only and does not constitute legal advice. No advocate–client relationship is created by using this website or contacting us through it. This website is published in accordance with the Legal Profession (Publicity) Rules 2025.",
 
-  disclaimerBm:
-    "Maklumat di laman web ini adalah untuk makluman umum sahaja dan bukan nasihat guaman. Tiada hubungan peguam–anak guam diwujudkan melalui penggunaan laman web ini atau dengan menghubungi kami melaluinya. Laman web ini diterbitkan menurut Kaedah-Kaedah Profesion Undang-Undang (Publisiti) 2025.",
-
   officeHours: {
-    weekdays: "Monday – Friday: 9.00 am – 5.30 pm",
+    weekdays: "Monday – Friday: 10.00 am – 5.00 pm",
     weekend: "Saturday, Sunday & Public Holidays: Closed",
-    shortLabel: "Mon – Fri, 9.00 am – 5.30 pm",
+    shortLabel: "Mon – Fri, 10.00 am – 5.00 pm",
     note: "Consultations are by appointment so that a lawyer is available to meet you. For urgent criminal matters, please call us directly."
   },
 
@@ -115,13 +108,13 @@ export const FIRM_DETAILS = {
   responseTime: "within one working day",
 
   contact: {
-    primaryPhone: "+60 10-252 0859",
-    primaryPhoneTel: "+60102520859",
-    secondaryPhone: "+60 11-5175 4152",
-    secondaryPhoneTel: "+601151754152",
+    primaryPhone: "+60 11-5785 6100",
+    primaryPhoneTel: "+601157856100",
+    secondaryPhone: "+60 7-906 0256",
+    secondaryPhoneTel: "+6079060256",
     generalEmail: "aminfirdausco@gmail.com",
     careersEmail: "aminfirdausco@gmail.com",
-    whatsappNumber: "60102520859",
+    whatsappNumber: "601157856100",
     whatsappDefaultMessage: "Hello, I would like to enquire about a legal matter.",
     whatsappNote:
       "Please do not send confidential documents through WhatsApp before we have confirmed your appointment."
@@ -138,16 +131,16 @@ export const FIRM_DETAILS = {
 export const OFFICES: OfficeLocation[] = [
   {
     id: "skudai",
-    name: "Johor Bahru — Main Office (Skudai)",
-    label: "Skudai (Main)",
+    name: "Johor Bahru — HQ (Skudai)",
+    label: "Skudai (HQ)",
     isMain: true,
     addressLines: ["No. 85-01, Jalan Wira 2", "Taman Tan Sri Yaacob"],
     city: "Skudai",
     state: "Johor",
     postcode: "81300",
     phones: [
-      { display: "+60 10-252 0859", tel: "+60102520859" },
-      { display: "+60 18-377 7716", tel: "+60183777716" }
+      { display: "+60 11-5785 6100", tel: "+601157856100" },
+      { display: "+60 7-906 0256", tel: "+6079060256" }
     ],
     email: "aminfirdausco@gmail.com",
     googleMapsUrl:
@@ -164,7 +157,7 @@ export const OFFICES: OfficeLocation[] = [
     city: "Johor Bahru",
     state: "Johor",
     postcode: "81100",
-    phones: [{ display: "+60 11-5175 4152", tel: "+601151754152" }],
+    phones: [{ display: "+60 10-252 0859", tel: "+60102520859" }],
     email: "aminfirdausco@gmail.com",
     googleMapsUrl:
       "https://www.google.com/maps/search/?api=1&query=26%2C%20Jalan%20Adda%207%2C%20Taman%20Adda%20Heights%2C%2081100%20Johor%20Bahru%2C%20Johor",
@@ -180,7 +173,7 @@ export const OFFICES: OfficeLocation[] = [
     city: "Kuantan",
     state: "Pahang",
     postcode: "25150",
-    phones: [{ display: "+60 11-5960 1300", tel: "+601159601300" }],
+    phones: [{ display: "+60 10-252 0859", tel: "+60102520859" }],
     email: "aminfirdausco@gmail.com",
     googleMapsUrl:
       "https://www.google.com/maps/search/?api=1&query=22%2C%20Lorong%20Berjaya%20Permai%2030%2C%20Taman%20Berjaya%20Permai%2C%20Kempadang%2C%2025150%20Kuantan%2C%20Pahang",
@@ -203,7 +196,6 @@ export const PRINCIPAL_LAWYER: LawyerProfile = {
   name: "Muhammad Amin Firdaus bin Mashudi",
   role: "Founder & Sole Proprietor",
   designation: "Advocate & Solicitor, High Court in Malaya",
-  designationBm: "Peguambela & Peguamcara, Mahkamah Tinggi di Malaya",
   qualifications: [
     { degree: "Bachelor of Laws (LLB)", institution: "Universiti Utara Malaysia (UUM)" },
     { degree: "Master of Laws (LLM)", institution: "Universiti Malaya (UM)" }
@@ -233,16 +225,11 @@ export const PRINCIPAL_LAWYER: LawyerProfile = {
     "He holds a Practising Certificate for 2026 which entitles him to practise as an Advocate and Solicitor in the Federal Court, the Court of Appeal, the High Court in Malaya, and the Sessions Courts and Magistrates' Courts in Peninsular Malaysia. He is a member of the Malaysian Bar.",
     "His practice covers conveyancing and property transactions, civil and commercial litigation, criminal matters, family law, wills and estate administration, and general corporate and commercial advisory work. He advises individual and business clients in Bahasa Malaysia and English."
   ],
-  biographyBm:
-    "Encik Muhammad Amin Firdaus bin Mashudi telah diterima masuk sebagai Peguambela dan Peguamcara Mahkamah Tinggi di Malaya pada 5 Ogos 2022 dan menubuhkan Tetuan Amin Firdaus Mashudi & Co. pada tahun 2026. Beliau memegang Sijil Amalan 2026 yang membenarkan beliau beramal di Mahkamah Persekutuan, Mahkamah Rayuan, Mahkamah Tinggi di Malaya, Mahkamah Sesyen dan Mahkamah Majistret di Semenanjung Malaysia.",
-  // TODO before launch: add the real formal headshot (plain background) here.
-  // Left empty on purpose — a stock photograph of another person must not be
-  // published as the firm's lawyer. An empty value renders a monogram
-  // placeholder instead (see components/LawyerPortrait.tsx).
-  photoUrl: "",
+  // Served from public/images/team/.
+  photoUrl: "/images/team/muhammad-amin-firdaus-bin-mashudi.jpg",
   initials: "AF",
   email: "aminfirdausco@gmail.com",
-  phone: "+60 10-252 0859"
+  phone: "+60 11-5785 6100"
 };
 
 export const LAWYER_QUICK_FACTS = [
@@ -403,7 +390,7 @@ export const FIRM_AT_A_GLANCE = [
   { label: "Registered with", value: "Malaysian Bar (Registration No. 000020009279)" },
   { label: "Commenced practice", value: "February 2026" },
   { label: "Sole Proprietor", value: "Muhammad Amin Firdaus bin Mashudi" },
-  { label: "Offices", value: "Skudai (Main), Johor Bahru, Kuantan" },
+  { label: "Offices", value: "Skudai (HQ), Johor Bahru, Kuantan" },
   { label: "Languages", value: "Bahasa Malaysia, English" }
 ];
 
@@ -526,7 +513,7 @@ export const VERIFICATION_CONTACT = {
 };
 
 export const FRAUD_WARNING =
-  "Scammers sometimes impersonate lawyers and law firms. Before transferring any money for a legal transaction, confirm that you are dealing with a registered firm, and check that payment is being made into the firm's official clients' account. If you receive a message claiming to be from us asking you to pay into a different account, call us on +60 10-252 0859 before making any payment.";
+  "Scammers sometimes impersonate lawyers and law firms. Before transferring any money for a legal transaction, confirm that you are dealing with a registered firm, and check that payment is being made into the firm's official clients' account. If you receive a message claiming to be from us asking you to pay into a different account, call us on +60 11-5785 6100 before making any payment.";
 
 export const CREDENTIALS_FOOTNOTE =
   "The details above relate to the year 2026 and will be updated annually.";

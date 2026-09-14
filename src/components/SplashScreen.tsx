@@ -170,7 +170,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
                 {FIRM_DETAILS.name}
               </h1>
               <p className="font-serif text-sm sm:text-base italic gold-text-gradient tracking-wide font-medium">
-                Peguambela &amp; Peguamcara &bull; Advocates &amp; Solicitors
+                {FIRM_DETAILS.tagline}
               </p>
             </motion.div>
 

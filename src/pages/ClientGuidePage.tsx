@@ -45,7 +45,7 @@ export default function ClientGuidePage() {
       />
 
       {/* What to expect */}
-      <section className="bg-transparent py-16 sm:py-20 border-b border-[#CBD5E1]">
+      <section className="bg-transparent pt-10 pb-16 sm:pt-12 sm:pb-20 border-b border-[#CBD5E1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Before You Arrive"
@@ -78,11 +78,12 @@ export default function ClientGuidePage() {
             subtitle="Use the checklist that matches your matter. If you are unsure, bring everything you have."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Flex-wrap + justify-center so an incomplete last row sits in the middle. */}
+          <div className="flex flex-wrap justify-center gap-6">
             {CLIENT_GUIDE_CHECKLISTS.map((group) => {
               const Icon = ICONS[group.icon] || ClipboardList;
               return (
-                <div key={group.id} className="card-luxury p-7 flex flex-col">
+                <div key={group.id} className="card-luxury p-7 flex flex-col w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
                   <div className="flex items-center gap-3 mb-5 pb-4 border-b border-[#CBD5E1]">
                     <div className="w-10 h-10 rounded-xl border border-amber-500/40 bg-gradient-to-br from-white via-amber-50/40 to-white flex items-center justify-center text-[#EA580C] shrink-0 shadow-sm">
                       <Icon className="w-5 h-5" />

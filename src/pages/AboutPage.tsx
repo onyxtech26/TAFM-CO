@@ -46,7 +46,7 @@ export default function AboutPage() {
       />
 
       {/* 5.1 Introduction & 5.2 Why the firm was founded */}
-      <section className="bg-transparent py-20 sm:py-28 border-b border-[#CBD5E1]">
+      <section className="bg-transparent pt-10 pb-20 sm:pt-12 sm:pb-28 border-b border-[#CBD5E1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-7 space-y-6">
@@ -71,7 +71,7 @@ export default function AboutPage() {
                   operates as a sole proprietorship.
                 </p>
                 <p>
-                  From our main office in Skudai and our offices in Johor Bahru and Kuantan, we advise
+                  From our headquarters (HQ) in Skudai and our offices in Johor Bahru and Kuantan, we advise
                   and act for individuals, families, small and medium-sized businesses, and property
                   owners across Johor, Pahang and the rest of Peninsular Malaysia.
                 </p>

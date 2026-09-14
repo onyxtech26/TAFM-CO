@@ -21,7 +21,7 @@ export default function FaqPage() {
         breadcrumbs={[{ label: 'Resources' }, { label: 'FAQ' }]}
       />
 
-      <section className="bg-transparent py-16 sm:py-24 border-b border-[#CBD5E1]">
+      <section className="bg-transparent pt-10 pb-16 sm:pt-12 sm:pb-24 border-b border-[#CBD5E1]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
           {FAQ_GROUPS.map((group) => (
             <div key={group.id} id={group.id} className="space-y-5 scroll-mt-28">

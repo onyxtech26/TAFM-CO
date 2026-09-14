@@ -6,7 +6,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Scale, ChevronDown, Menu, X, ArrowRight, Phone, Mail, ArrowUpRight } from 'lucide-react';
-import { PRACTICE_AREAS } from '../data/services';
 import { FIRM_DETAILS } from '../data/firm';
 import { whatsappUrl, mailtoUrl } from '../lib/contact';
 import WhatsAppIcon from './WhatsAppIcon';
@@ -33,14 +32,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'Registration & Credentials', path: '/credentials' }
     ]
   },
-  {
-    label: 'Practice Areas',
-    path: '/practice-areas',
-    children: PRACTICE_AREAS.map((area) => ({
-      label: area.navTitle,
-      path: `/practice-areas/${area.slug}`
-    }))
-  },
+  { label: 'Practice Areas', path: '/practice-areas' },
   { label: 'Our Offices', path: '/offices' },
   {
     label: 'Resources',
@@ -97,7 +89,8 @@ export default function Navbar() {
         (child) => location.pathname === child.path || location.pathname.startsWith(`${child.path}/`)
       );
     }
-    return location.pathname === item.path;
+    // Top-level links stay highlighted on their sub-pages (e.g. a practice area).
+    return location.pathname === item.path || location.pathname.startsWith(`${item.path}/`);
   };
 
   return (
@@ -204,22 +197,6 @@ export default function Navbar() {
 
           {/* RIGHT ACTIONS */}
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            {/* Language switch (Part 2) — moved here now that the top bar is gone */}
-            <div className="hidden xl:flex items-center gap-1 text-[11px] font-semibold mr-0.5">
-              <span className="text-[#C2410C]" aria-current="true">
-                EN
-              </span>
-              <span className="text-[#CBD5E1]" aria-hidden="true">
-                |
-              </span>
-              <Link
-                to="/ms"
-                className="text-[#64748B] hover:text-[#EA580C] transition-colors"
-                aria-label="Baca dalam Bahasa Malaysia"
-              >
-                BM
-              </Link>
-            </div>
 
             <a
               href={`tel:${FIRM_DETAILS.contact.primaryPhoneTel}`}
@@ -447,9 +424,6 @@ export default function Navbar() {
                   <Phone className="w-3.5 h-3.5 text-[#EA580C]" />
                   <span>{FIRM_DETAILS.contact.primaryPhone}</span>
                 </a>
-                <Link to="/ms" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#EA580C]">
-                  Bahasa Malaysia
-                </Link>
               </div>
             </div>
           </div>

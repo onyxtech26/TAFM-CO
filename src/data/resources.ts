@@ -24,7 +24,7 @@ export const FAQ_GROUPS: FAQGroup[] = [
       {
         question: "How do I make an appointment?",
         answer:
-          "Call or WhatsApp us on +60 10-252 0859, email aminfirdausco@gmail.com, or use the form on our Contact page. Please tell us briefly what your matter involves and which office you prefer."
+          "Call or WhatsApp us on +60 11-5785 6100, email aminfirdausco@gmail.com, or use the form on our Contact page. Please tell us briefly what your matter involves and which office you prefer."
       },
       {
         question: "What should I bring to my first consultation?",
@@ -272,7 +272,7 @@ export interface ArticleTopic {
 }
 
 export const ARTICLES_INTRO =
-  "Practical explanations of everyday legal issues in Malaysia. These are the topics we are preparing for publication in English and Bahasa Malaysia.";
+  "Practical explanations of everyday legal issues in Malaysia. These are the topics we are preparing for publication.";
 
 export const ARTICLE_TOPICS: ArticleTopic[] = [
   {

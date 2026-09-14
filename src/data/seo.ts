@@ -61,7 +61,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/articles": {
     title: "Legal Insights | Amin Firdaus Mashudi & Co.",
     description:
-      "Practical explanations of everyday legal issues in Malaysia, in English and Bahasa Malaysia."
+      "Practical explanations of everyday legal issues in Malaysia."
   },
   "/careers": {
     title: "Careers | Amin Firdaus Mashudi & Co.",
@@ -71,16 +71,11 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/contact": {
     title: "Contact Us | Amin Firdaus Mashudi & Co.",
     description:
-      "Call or WhatsApp +60 10-252 0859 or send an enquiry to our Skudai, Johor Bahru or Kuantan office."
+      "Call or WhatsApp +60 11-5785 6100 or send an enquiry to our Skudai, Johor Bahru or Kuantan office."
   },
   "/thank-you": {
     title: "Thank You | Amin Firdaus Mashudi & Co.",
     description: "Your enquiry has been sent. We will contact you shortly."
-  },
-  "/ms": {
-    title: "Tetuan Amin Firdaus Mashudi & Co. | Peguam Skudai, JB & Kuantan",
-    description:
-      "Firma guaman di Skudai, Johor Bahru dan Kuantan bagi urusan hartanah, litigasi, jenayah, keluarga, harta pusaka dan perniagaan."
   },
   "/disclaimer": {
     title: "Disclaimer | Amin Firdaus Mashudi & Co.",
@@ -92,11 +87,6 @@ export const PAGE_META: Record<string, PageMeta> = {
     description:
       "How we collect, use, disclose and protect personal data under the Personal Data Protection Act 2010."
   },
-  "/notis-privasi": {
-    title: "Notis Privasi | Tetuan Amin Firdaus Mashudi & Co.",
-    description:
-      "Cara kami mengumpul, menggunakan, mendedahkan dan melindungi data peribadi anda di bawah APDP 2010."
-  },
   "/terms": {
     title: "Terms of Use | Amin Firdaus Mashudi & Co.",
     description: "The terms that apply when you access and use this website."
@@ -107,7 +97,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   }
 };
 
-/** Target keywords (Part 15.2), kept for the meta keywords tag and reference. */
+/** Target keywords (Part 15.2), kept for reference. */
 export const TARGET_KEYWORDS_EN = [
   "lawyer Skudai",
   "law firm Skudai",
@@ -125,20 +115,4 @@ export const TARGET_KEYWORDS_EN = [
   "conveyancing lawyer Kuantan",
   "lawyer Taman Tan Sri Yaacob",
   "lawyer Adda Heights"
-];
-
-export const TARGET_KEYWORDS_BM = [
-  "peguam Skudai",
-  "firma guaman Skudai",
-  "peguam Johor Bahru",
-  "peguam hartanah Johor Bahru",
-  "peguam jual beli rumah JB",
-  "peguam cerai Johor Bahru",
-  "peguam jenayah Johor Bahru",
-  "peguam pusaka Johor",
-  "surat kuasa tadbir",
-  "peguam Kuantan",
-  "firma guaman Kuantan",
-  "peguam hartanah Kuantan",
-  "perjanjian sewa rumah peguam"
 ];
