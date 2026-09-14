@@ -146,7 +146,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
           </div>
 
           {/* TYPOGRAPHY CONTAINER */}
-          <div className="text-center max-w-xl mx-auto space-y-4 relative z-10">
+          <div className="text-center w-full max-w-4xl mx-auto space-y-4 relative z-10">
             {/* Eyebrow Label */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -166,7 +166,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
               transition={{ duration: 0.8, delay: 0.45 }}
               className="space-y-1"
             >
-              <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0F172A] leading-tight">
+              <h1 className="font-serif text-[clamp(1.35rem,5.6vw,3rem)] font-bold tracking-tight text-[#0F172A] leading-tight whitespace-nowrap">
                 {FIRM_DETAILS.name}
               </h1>
               <p className="font-serif text-sm sm:text-base italic gold-text-gradient tracking-wide font-medium">
