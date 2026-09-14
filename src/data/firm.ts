@@ -538,7 +538,7 @@ export const LEADERSHIP_TEAM: LeadershipMember[] = [
       "Operational planning and coordination"
     ],
     note: "The Operations Manager works closely with the legal team to ensure that client matters are handled efficiently and systematically.",
-    photoUrl: "/images/team/mr-mohan.png"
+    photoUrl: "/images/team/mr-mohan.png?v=2"
   },
   {
     id: "management-lead",
@@ -559,7 +559,7 @@ export const LEADERSHIP_TEAM: LeadershipMember[] = [
       "Supporting the firm's long-term development"
     ],
     note: "Supports the ongoing expansion and high-standard service delivery of the chambers across Johor and Pahang.",
-    photoUrl: "/images/team/mr-shiva.png"
+    photoUrl: "/images/team/mr-shiva.png?v=2"
   }
 ];
 
