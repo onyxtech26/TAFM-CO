@@ -4,7 +4,7 @@
  */
 
 import { Link } from 'react-router-dom';
-import { Award, Globe, Phone, Mail, Gavel, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Award, Globe, Phone, Mail, Gavel, ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import SectionHeading from '../components/SectionHeading';
 import CTABand from '../components/CTABand';
@@ -231,8 +231,21 @@ export default function OurLawyerPage() {
                     )}
                   </div>
 
-                  <p className="text-sm text-[#475569] leading-relaxed font-light mb-6">
+                  <p className="text-sm text-[#475569] leading-relaxed font-light mb-4">
                     {member.description}
+                  </p>
+
+                  <p className="text-sm text-[#475569] leading-relaxed font-light mb-6">
+                    The combination of legal knowledge, operational experience and property intelligence enables a more structured approach to matters where legal issues and complex property information intersect.{' '}
+                    <a
+                      href="https://conglomerate4u.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-semibold text-[#EA580C] hover:text-[#C2410C] transition-colors underline decoration-amber-500/40 hover:decoration-amber-500 break-all"
+                    >
+                      <span>https://conglomerate4u.com/</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+                    </a>
                   </p>
 
                   {member.responsibilities && (
