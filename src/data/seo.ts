@@ -16,7 +16,7 @@ export interface PageMeta {
 }
 
 export const DEFAULT_META: PageMeta = {
-  title: "Amin Firdaus Mashudi & Co. | Lawyers in Skudai, Johor Bahru",
+  title: "Amin Firdaus Mashudi & Co.",
   description:
     "Law firm in Skudai, Johor Bahru advising on property, litigation, criminal, family, estate and business matters."
 };

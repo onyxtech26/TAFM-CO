@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const ROUTE_TITLES: Record<string, string> = {
-  '/': 'Amin Firdaus Mashudi & Co. | Advocates & Solicitors',
+  '/': 'Amin Firdaus Mashudi & Co.',
   '/about': 'About The Chambers | Amin Firdaus Mashudi & Co.',
   '/services': 'Our Legal Services | AFM & Co.',
   '/why-us': 'Why Choose Our Chambers | AFM & Co.',
@@ -41,7 +41,7 @@ export default function ScrollToTop() {
         .join(' ');
       document.title = `${formatted} | Practice Area | AFM & Co.`;
     } else {
-      document.title = 'Amin Firdaus Mashudi & Co. | Advocates & Solicitors';
+      document.title = 'Amin Firdaus Mashudi & Co.';
     }
   }, [pathname]);
 

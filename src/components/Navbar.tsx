@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Scale, ChevronDown, Menu, X, ArrowRight, Phone, Mail, ArrowUpRight } from 'lucide-react';
+import { ChevronDown, Menu, X, ArrowRight, Phone, Mail, ArrowUpRight } from 'lucide-react';
 import { FIRM_DETAILS } from '../data/firm';
 import { whatsappUrl, mailtoUrl } from '../lib/contact';
 import WhatsAppIcon from './WhatsAppIcon';
@@ -134,17 +134,16 @@ export default function Navbar() {
             className="group flex items-center gap-2 sm:gap-2.5 text-left focus-visible:outline-none shrink-0 cursor-pointer"
             aria-label="Amin Firdaus Mashudi & Co. Home"
           >
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-amber-500 bg-gradient-to-br from-white via-amber-50/60 to-white flex items-center justify-center text-[#EA580C] shadow-[0_0_12px_rgba(245,158,11,0.3)] transition-all duration-300 group-hover:border-[#FACC15] group-hover:shadow-[0_0_22px_rgba(250,204,21,0.5)] group-hover:scale-105">
-              <Scale className="w-4 h-4 sm:w-4.5 sm:h-4.5 transition-transform duration-300 group-hover:rotate-6 text-[#EA580C]" />
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-amber-500 bg-gradient-to-br from-white via-amber-50/60 to-white flex items-center justify-center shadow-[0_0_12px_rgba(245,158,11,0.3)] transition-all duration-300 group-hover:border-[#FACC15] group-hover:shadow-[0_0_22px_rgba(250,204,21,0.5)] group-hover:scale-105 overflow-hidden p-0.5">
+              <img
+                src="/images/logo.png"
+                alt="Amin Firdaus Mashudi & Co."
+                className="w-full h-full object-contain rounded-full"
+              />
             </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-sm sm:text-base font-bold tracking-wider text-[#0F172A] group-hover:text-[#EA580C] transition-colors leading-none">
-                AFM &amp; CO.
-              </span>
-              <span className="text-[8.5px] sm:text-[9px] tracking-[0.16em] uppercase text-[#64748B] mt-0.5 font-medium hidden xs:block">
-                Advocates &amp; Solicitors
-              </span>
-            </div>
+            <span className="font-serif text-xs xs:text-sm sm:text-base font-bold tracking-tight text-[#0F172A] group-hover:text-[#EA580C] transition-colors leading-none whitespace-nowrap">
+              Amin Firdaus Mashudi &amp; Co
+            </span>
           </Link>
 
           <div className="hidden xl:block w-px h-5 bg-slate-300/80 mx-0.5 shrink-0" aria-hidden="true" />
