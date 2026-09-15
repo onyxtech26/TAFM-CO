@@ -193,7 +193,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="text-xs text-[#475569] tracking-wider uppercase font-medium"
             >
-              Skudai &bull; Johor Bahru &bull; Kuantan &bull; Malaysia
+              Skudai &bull; Johor Bahru &bull; Malaysia
             </motion.p>
 
             {/* Progress & Channel Initialization Indicator */}

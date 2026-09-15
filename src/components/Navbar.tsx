@@ -43,7 +43,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'Our Legal Process', path: '/process' }
     ]
   },
-  { label: 'Our Offices', path: '/offices' },
+  { label: 'Our Office', path: '/offices' },
   {
     label: 'Resources',
     path: '/faq',
@@ -52,8 +52,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'Client Guide', path: '/client-guide' },
       { label: 'Articles', path: '/articles' }
     ]
-  },
-  { label: 'Careers', path: '/careers' }
+  }
 ];
 
 export default function Navbar() {
@@ -349,7 +348,7 @@ export default function Navbar() {
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#C2410C] font-semibold">
                 Menu
               </span>
-              <span className="text-[11px] text-[#64748B]">Skudai · JB · Kuantan</span>
+              <span className="text-[11px] text-[#64748B]">Skudai, Johor Bahru</span>
             </div>
 
             <div className="space-y-1">

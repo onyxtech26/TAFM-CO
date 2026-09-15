@@ -4,7 +4,7 @@
  */
 
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, Navigation, ArrowRight, Star } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Navigation, ArrowRight } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import CTABand from '../components/CTABand';
 import { FIRM_DETAILS, OFFICES } from '../data/firm';
@@ -15,14 +15,14 @@ export default function OfficesPage() {
     <div className="space-y-0">
       <PageHero
         eyebrow="Visit Us"
-        title="Our Offices"
-        intro="We serve clients from three offices in Johor and Pahang. Consultations are by appointment so that a lawyer is available to meet you. Online consultations by video call are also available."
-        breadcrumbs={[{ label: 'Our Offices' }]}
+        title="Our Office"
+        intro="We serve clients from our office in Skudai, Johor Bahru. Consultations are by appointment so that a lawyer is available to meet you. Online consultations by video call are also available."
+        breadcrumbs={[{ label: 'Our Office' }]}
       />
 
       <section className="bg-transparent pt-10 pb-16 sm:pt-12 sm:pb-24 border-b border-[#CBD5E1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          {OFFICES.map((office, idx) => (
+          {OFFICES.map((office) => (
             <article
               key={office.id}
               id={office.id}
@@ -34,14 +34,8 @@ export default function OfficesPage() {
                   <div>
                     <div className="flex flex-wrap items-center gap-3 mb-3">
                       <span className="text-xs uppercase tracking-[0.2em] text-[#C2410C] font-semibold">
-                        Office {idx + 1} of {OFFICES.length}
+                        Skudai, Johor Bahru
                       </span>
-                      {office.isMain && (
-                        <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider font-semibold text-amber-900 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-full">
-                          <Star className="w-3 h-3" />
-                          HQ · Headquarters
-                        </span>
-                      )}
                     </div>
 
                     <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F172A] leading-snug">

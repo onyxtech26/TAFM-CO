@@ -77,13 +77,13 @@ export const FIRM_DETAILS = {
   commencedPractice: "February 2026",
   jurisdiction: "Advocate & Solicitor of the High Court in Malaya",
   headquarters: "Skudai, Johor",
-  areasServed: ["Johor", "Pahang", "Peninsular Malaysia"],
+  areasServed: ["Johor", "Peninsular Malaysia"],
 
   description:
     "Amin Firdaus Mashudi & Co. is a Malaysian law firm providing legal representation, advisory services and comprehensive legal solutions to individuals, families, businesses, property owners, investors and corporate clients.",
 
   heroSubheadline:
-    "Messrs. Amin Firdaus Mashudi & Co. advises and represents clients in property transactions, court disputes, criminal matters, family and estate matters, and business affairs, from offices in Johor and Pahang.",
+    "Messrs. Amin Firdaus Mashudi & Co. advises and represents clients in property transactions, court disputes, criminal matters, family and estate matters, and business affairs, from its office in Skudai, Johor Bahru.",
 
   vision:
     "To be a distinguished and progressive Malaysian law firm recognised for legal excellence, uncompromising integrity, and unwavering dedication to safeguarding our clients' legal and commercial interests across Peninsular Malaysia.",
@@ -135,15 +135,15 @@ export const FIRM_DETAILS = {
     { label: "Registered with the Malaysian Bar", detail: "Reg. No. 000020009279" },
     { label: "Practising Certificate 2026", detail: "High Court in Malaya" },
     { label: "Professional Indemnity Insured", detail: "Malaysian Bar PII Scheme 2026" },
-    { label: "3 Offices in Johor & Pahang", detail: "Skudai · Johor Bahru · Kuantan" }
+    { label: "Office in Johor", detail: "Skudai, Johor Bahru" }
   ]
 };
 
 export const OFFICES: OfficeLocation[] = [
   {
     id: "skudai",
-    name: "Johor Bahru — HQ (Skudai)",
-    label: "Skudai (HQ)",
+    name: "Johor Bahru (Skudai)",
+    label: "Skudai",
     isMain: true,
     addressLines: ["No. 85-01, Jalan Wira 2", "Taman Tan Sri Yaacob"],
     city: "Skudai",
@@ -158,38 +158,6 @@ export const OFFICES: OfficeLocation[] = [
       "https://www.google.com/maps/search/?api=1&query=No.%2085-01%2C%20Jalan%20Wira%202%2C%20Taman%20Tan%20Sri%20Yaacob%2C%2081300%20Skudai%2C%20Johor",
     wazeUrl:
       "https://www.waze.com/ul?q=Jalan%20Wira%202%20Taman%20Tan%20Sri%20Yaacob%2081300%20Skudai%20Johor"
-  },
-  {
-    id: "adda-heights",
-    name: "Johor Bahru — Adda Heights Office",
-    label: "Johor Bahru (Adda Heights)",
-    isMain: false,
-    addressLines: ["26, Jalan Adda 7", "Taman Adda Heights"],
-    city: "Johor Bahru",
-    state: "Johor",
-    postcode: "81100",
-    phones: [{ display: "+60 10-252 0859", tel: "+60102520859" }],
-    email: "aminfirdausco@gmail.com",
-    googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=26%2C%20Jalan%20Adda%207%2C%20Taman%20Adda%20Heights%2C%2081100%20Johor%20Bahru%2C%20Johor",
-    wazeUrl:
-      "https://www.waze.com/ul?q=Jalan%20Adda%207%20Taman%20Adda%20Heights%2081100%20Johor%20Bahru"
-  },
-  {
-    id: "kuantan",
-    name: "Kuantan Office",
-    label: "Kuantan",
-    isMain: false,
-    addressLines: ["22, Lorong Berjaya Permai 30", "Taman Berjaya Permai, Kempadang"],
-    city: "Kuantan",
-    state: "Pahang",
-    postcode: "25150",
-    phones: [{ display: "+60 10-252 0859", tel: "+60102520859" }],
-    email: "aminfirdausco@gmail.com",
-    googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=22%2C%20Lorong%20Berjaya%20Permai%2030%2C%20Taman%20Berjaya%20Permai%2C%20Kempadang%2C%2025150%20Kuantan%2C%20Pahang",
-    wazeUrl:
-      "https://www.waze.com/ul?q=Lorong%20Berjaya%20Permai%2030%20Kempadang%2025150%20Kuantan%20Pahang"
   }
 ];
 
@@ -233,7 +201,7 @@ export const PRINCIPAL_LAWYER: LawyerProfile = {
     "Encik Muhammad Amin Firdaus bin Mashudi is the founder and sole proprietor of Amin Firdaus Mashudi & Co.",
     "He obtained his Bachelor of Laws (LLB) from Universiti Utara Malaysia (UUM) and his Master of Laws (LLM) from Universiti Malaya (UM).",
     "He was admitted as an Advocate and Solicitor of the High Court in Malaya on 5 August 2022. In 2026, he established Amin Firdaus Mashudi & Co., which is registered with the Malaysian Bar.",
-    "He holds a Practising Certificate for 2026 which entitles him to practise as an Advocate and Solicitor in the Federal Court, the Court of Appeal, the High Court in Malaya, and the Sessions Courts and Magistrates' Courts in Peninsular Malaysia. He is a member of the Malaysian Bar.",
+    "He holds a Practising Certificate for 2026 which entitles him to practise as an Advocate and Solicitor in the Federal Court, the Court of Appeal, the High Court in Malaya, and the Sessions Courts and Magistrates' Courts in Peninsular Malaysia.",
     "His practice covers conveyancing and property transactions, civil and commercial litigation, criminal matters, family law, wills and estate administration, and general corporate and commercial advisory work. He advises individual and business clients in Bahasa Malaysia and English."
   ],
   // Served from public/images/team/.
@@ -414,7 +382,7 @@ export const FIRM_AT_A_GLANCE = [
   { label: "Registered with", value: "Malaysian Bar (Registration No. 000020009279)" },
   { label: "Commenced practice", value: "February 2026" },
   { label: "Sole Proprietor", value: "Muhammad Amin Firdaus bin Mashudi" },
-  { label: "Offices", value: "Skudai (HQ), Johor Bahru, Kuantan" },
+  { label: "Office", value: "Skudai, Johor Bahru" },
   { label: "Languages", value: "Bahasa Malaysia, English" }
 ];
 
@@ -534,45 +502,23 @@ export const LEADERSHIP_TEAM: LeadershipMember[] = [
   },
   {
     id: "operations-manager",
-    name: "Mr. Mohan",
+    name: "Mr. Mohaan",
     role: "Operations Manager",
-    badge: "Operations Management",
+    badge: "Operations & Management",
     summary: "Oversees the operational and administrative functions, internal workflow, and cross-party communication.",
     description:
-      "Mr. Mohan oversees the operational and administrative functions of the firm. The Operations Manager works closely with the legal team to ensure that client matters are handled efficiently and systematically.",
+      "Mr. Mohaan oversees the operational and administrative functions of the firm, leads the firm's management functions and supports the development and implementation of the firm's operational and management strategies. The Operations Manager works closely with the legal team to ensure that client matters are handled efficiently and supports the ongoing expansion and high-standard service delivery of the chambers across Johor.",
     responsibilities: [
-      "Firm operations",
-      "Client coordination",
-      "Case administration",
-      "Internal workflow",
-      "Documentation management",
+      "Firm operations and management coordination",
+      "Client coordination and relationship management",
+      "Case administration and workflow improvement",
+      "Documentation and strategic management",
       "Communication between clients, lawyers and external parties",
-      "Monitoring case progress",
-      "Operational planning and coordination"
-    ],
-    note: "The Operations Manager works closely with the legal team to ensure that client matters are handled efficiently and systematically.",
-    photoUrl: "/images/team/mr-mohan.png?v=2"
-  },
-  {
-    id: "management-lead",
-    name: "Mr. Shiva",
-    role: "Management Lead",
-    badge: "Strategic Management",
-    summary: "Leads firm management functions, business development, and strategic operational initiatives.",
-    description:
-      "Mr. Shiva leads the firm's management functions and supports the development and implementation of the firm's operational and management strategies.",
-    responsibilities: [
-      "Management coordination",
-      "Business development",
-      "Strategic planning",
-      "Internal administration",
-      "Client relationship management",
-      "Workflow improvement",
-      "Coordination between legal and operational teams",
+      "Monitoring case progress and operational planning",
       "Supporting the firm's long-term development"
     ],
-    note: "Supports the ongoing expansion and high-standard service delivery of the chambers across Johor and Pahang.",
-    photoUrl: "/images/team/mr-shiva.png?v=2"
+    note: "The Operations Manager works closely with the legal team to ensure that client matters are handled efficiently and supports the ongoing expansion and high-standard service delivery of the chambers across Johor.",
+    photoUrl: "/images/team/mr-mohan.png?v=2"
   }
 ];
 

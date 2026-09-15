@@ -16,9 +16,9 @@ export interface PageMeta {
 }
 
 export const DEFAULT_META: PageMeta = {
-  title: "Amin Firdaus Mashudi & Co. | Lawyers in Skudai, JB & Kuantan",
+  title: "Amin Firdaus Mashudi & Co. | Lawyers in Skudai, Johor Bahru",
   description:
-    "Law firm in Skudai, Johor Bahru and Kuantan advising on property, litigation, criminal, family, estate and business matters."
+    "Law firm in Skudai, Johor Bahru advising on property, litigation, criminal, family, estate and business matters."
 };
 
 export const PAGE_META: Record<string, PageMeta> = {
@@ -26,7 +26,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/about": {
     title: "About Us | Amin Firdaus Mashudi & Co.",
     description:
-      "Registered Malaysian law firm founded in 2026, serving individuals, families and businesses in Johor and Pahang."
+      "Registered Malaysian law firm founded in 2026, serving individuals, families and businesses in Johor."
   },
   "/our-lawyer": {
     title: "Muhammad Amin Firdaus bin Mashudi | Advocate & Solicitor",
@@ -51,7 +51,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/why-us": {
     title: "Why Choose Us | Amin Firdaus Mashudi & Co.",
     description:
-      "Discover the 6 core pillars and professional values that define our practice in Johor and Pahang."
+      "Discover the 6 core pillars and professional values that define our practice in Johor."
   },
   "/clients": {
     title: "Our Clients | Amin Firdaus Mashudi & Co.",
@@ -69,9 +69,9 @@ export const PAGE_META: Record<string, PageMeta> = {
       "Conveyancing, civil litigation, criminal law, family law, wills and probate, corporate, employment and accident claims."
   },
   "/offices": {
-    title: "Our Offices | Skudai, Johor Bahru & Kuantan",
+    title: "Our Office | Skudai, Johor Bahru",
     description:
-      "Office addresses, contact numbers and directions for our Skudai, Johor Bahru and Kuantan offices."
+      "Office address, contact numbers and directions for our Skudai, Johor Bahru office."
   },
   "/faq": {
     title: "FAQ | Amin Firdaus Mashudi & Co.",
@@ -88,15 +88,10 @@ export const PAGE_META: Record<string, PageMeta> = {
     description:
       "Practical explanations of everyday legal issues in Malaysia."
   },
-  "/careers": {
-    title: "Careers | Amin Firdaus Mashudi & Co.",
-    description:
-      "Openings for legal associates, conveyancing and litigation staff, and law student internships in Skudai, Johor Bahru and Kuantan."
-  },
   "/contact": {
     title: "Contact Us | Amin Firdaus Mashudi & Co.",
     description:
-      "Call or WhatsApp +60 11-5785 6100 or send an enquiry to our Skudai, Johor Bahru or Kuantan office."
+      "Call or WhatsApp +60 11-5785 6100 or send an enquiry to our Skudai, Johor Bahru office."
   },
   "/thank-you": {
     title: "Thank You | Amin Firdaus Mashudi & Co.",
@@ -135,9 +130,5 @@ export const TARGET_KEYWORDS_EN = [
   "probate lawyer Johor",
   "letters of administration Johor Bahru",
   "tenancy agreement lawyer JB",
-  "lawyer Kuantan",
-  "law firm Kuantan",
-  "conveyancing lawyer Kuantan",
-  "lawyer Taman Tan Sri Yaacob",
-  "lawyer Adda Heights"
+  "lawyer Taman Tan Sri Yaacob"
 ];

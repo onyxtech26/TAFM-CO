@@ -67,7 +67,7 @@ export default function CTABand({
         <div className="mt-8 text-xs text-[#64748B] flex flex-wrap items-center justify-center gap-2 font-medium">
           <span>Advocates &amp; Solicitors, High Court in Malaya</span>
           <span aria-hidden="true">&bull;</span>
-          <span>Skudai · Johor Bahru · Kuantan</span>
+          <span>Skudai, Johor Bahru</span>
         </div>
       </div>
     </section>

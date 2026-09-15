@@ -61,7 +61,7 @@ export default function HomePage() {
                 className="eyebrow-label"
               >
                 <span className="w-6 h-[1px] bg-[#EA580C]" />
-                <span>Advocates &amp; Solicitors &bull; Johor Bahru &bull; Kuantan</span>
+                <span>Advocates &amp; Solicitors &bull; Skudai, Johor Bahru</span>
               </motion.div>
 
               <motion.h1
@@ -162,10 +162,10 @@ export default function HomePage() {
                 <div className="absolute -bottom-5 -left-4 sm:-left-6 bg-white/95 border border-amber-500/40 backdrop-blur-md p-3.5 sm:p-4 rounded-xl shadow-lg max-w-[240px]">
                   <div className="flex items-center gap-2 text-[#C2410C] text-xs font-semibold uppercase tracking-wider mb-1">
                     <MapPin className="w-3.5 h-3.5 text-[#EA580C]" />
-                    <span>Three Offices</span>
+                    <span>Firm Office</span>
                   </div>
                   <p className="text-xs text-[#0F172A] font-medium leading-snug">
-                    Skudai &bull; Johor Bahru &bull; Kuantan
+                    Skudai, Johor Bahru
                   </p>
                 </div>
               </motion.div>
@@ -369,7 +369,7 @@ export default function HomePage() {
                     <h3 className="font-serif text-lg font-bold text-[#0F172A] mb-3 leading-snug">
                       {commitment.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed font-light">
+                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed font-light text-justify">
                       {commitment.text}
                     </p>
                   </div>
@@ -386,7 +386,7 @@ export default function HomePage() {
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F172A] italic mb-4 leading-snug">
               &ldquo;{OUR_PROMISE.motto}&rdquo;
             </h3>
-            <p className="text-sm sm:text-base text-[#475569] font-light max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-[#475569] font-light max-w-2xl mx-auto leading-relaxed text-justify">
               These principles guide the way we work and reflect our commitment to providing{' '}
               <span className="font-medium text-[#0F172A] italic">
                 professional, practical and client-focused legal services
@@ -477,103 +477,57 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Where to Find Us"
-            title="Our Offices"
-            subtitle="Three offices across Johor and Pahang, with online consultations also available."
+            title="Our Office"
+            subtitle="Located in Skudai, Johor Bahru, with online consultations also available."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-            {[
-              OFFICES.find((o) => o.id === 'adda-heights') || OFFICES[1],
-              OFFICES.find((o) => o.isMain) || OFFICES[0],
-              OFFICES.find((o) => o.id === 'kuantan') || OFFICES[2]
-            ].map((office) => {
-              const isHq = office.isMain;
-              return (
-                <div
-                  key={office.id}
-                  className={`card-luxury flex flex-col justify-between transition-all duration-300 ${
-                    isHq
-                      ? 'p-8 md:-translate-y-2 border-amber-500/50 shadow-md bg-white/85 hover:bg-gradient-to-br hover:from-[#EA580C] hover:via-[#F97316] hover:to-[#FACC15] hover:border-amber-400 hover:shadow-2xl hover:shadow-orange-500/25 group'
-                      : 'p-7 hover:border-amber-500/40 hover:shadow-lg'
-                  }`}
-                >
-                  <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <MapPin
-                        className={`w-4 h-4 shrink-0 transition-colors ${
-                          isHq ? 'text-[#EA580C] group-hover:text-white' : 'text-[#EA580C]'
-                        }`}
-                      />
-                      <span
-                        className={`uppercase tracking-[0.18em] font-semibold transition-colors ${
-                          isHq
-                            ? 'text-xs px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-[#C2410C] group-hover:text-white group-hover:bg-white/20 group-hover:border-white/40'
-                            : 'text-xs text-[#C2410C]'
-                        }`}
-                      >
-                        {isHq ? 'Headquarters (HQ)' : 'Branch Office'}
-                      </span>
-                    </div>
-
-                    <h3
-                      className={`font-serif font-bold mb-3 leading-snug transition-colors ${
-                        isHq
-                          ? 'text-2xl sm:text-3xl text-[#0F172A] group-hover:text-white'
-                          : 'text-xl text-[#0F172A]'
-                      }`}
-                    >
-                      {office.id === 'adda-heights'
-                        ? 'Johor Bahru (Adda Heights)'
-                        : isHq
-                          ? 'Johor Bahru (Skudai)'
-                          : office.city}
-                    </h3>
-
-                    <p
-                      className={`leading-relaxed font-light transition-colors ${
-                        isHq
-                          ? 'text-base text-[#475569] group-hover:text-white/95'
-                          : 'text-sm text-[#475569]'
-                      }`}
-                    >
-                      {formatOfficeAddress(office)}
-                    </p>
+          <div className="max-w-2xl mx-auto">
+            {OFFICES.map((office) => (
+              <div
+                key={office.id}
+                className="card-luxury p-8 sm:p-10 border-amber-500/50 shadow-md bg-white/85 hover:bg-gradient-to-br hover:from-[#EA580C] hover:via-[#F97316] hover:to-[#FACC15] hover:border-amber-400 hover:shadow-2xl hover:shadow-orange-500/25 group transition-all duration-300"
+              >
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <MapPin className="w-5 h-5 text-[#EA580C] group-hover:text-white shrink-0 transition-colors" />
+                    <span className="uppercase tracking-[0.2em] font-semibold text-xs px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-[#C2410C] group-hover:text-white group-hover:bg-white/20 group-hover:border-white/40 transition-colors">
+                      Skudai, Johor Bahru
+                    </span>
                   </div>
 
-                  <div
-                    className={`mt-6 pt-4 border-t flex items-center justify-between transition-colors ${
-                      isHq
-                        ? 'border-[#CBD5E1]/80 group-hover:border-white/30'
-                        : 'border-[#CBD5E1]'
-                    }`}
-                  >
-                    <a
-                      href={`tel:${office.phones[0].tel}`}
-                      className={`transition-colors font-semibold ${
-                        isHq
-                          ? 'text-sm text-[#0F172A] group-hover:text-white'
-                          : 'text-xs text-[#0F172A] hover:text-[#EA580C]'
-                      }`}
-                    >
-                      {office.phones[0].display}
-                    </a>
-                    <a
-                      href={office.googleMapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-1.5 transition-colors font-semibold ${
-                        isHq
-                          ? 'text-sm text-[#C2410C] group-hover:text-white'
-                          : 'text-xs text-[#C2410C] hover:text-[#EA580C]'
-                      }`}
-                    >
-                      <Navigation className="w-3.5 h-3.5" />
-                      <span>Get directions</span>
-                    </a>
-                  </div>
+                  <h3 className="font-serif font-bold text-2xl sm:text-3xl text-[#0F172A] group-hover:text-white mb-3 leading-snug transition-colors">
+                    {office.name}
+                  </h3>
+
+                  <p className="text-base text-[#475569] group-hover:text-white/95 leading-relaxed font-light transition-colors">
+                    {formatOfficeAddress(office)}
+                  </p>
                 </div>
-              );
-            })}
+
+                <div className="mt-8 pt-5 border-t border-[#CBD5E1]/80 group-hover:border-white/30 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 transition-colors">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    {office.phones.map((p) => (
+                      <a
+                        key={p.tel}
+                        href={`tel:${p.tel}`}
+                        className="text-sm font-semibold text-[#0F172A] group-hover:text-white transition-colors"
+                      >
+                        {p.display}
+                      </a>
+                    ))}
+                  </div>
+                  <a
+                    href={office.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2410C] group-hover:text-white transition-colors"
+                  >
+                    <Navigation className="w-4 h-4" />
+                    <span>Get directions</span>
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="mt-10 text-center">
@@ -581,7 +535,7 @@ export default function HomePage() {
               to="/offices"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2410C] hover:text-[#EA580C] transition-colors"
             >
-              <span>See all office details and opening hours</span>
+              <span>See office details and opening hours</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

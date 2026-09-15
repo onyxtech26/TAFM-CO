@@ -74,20 +74,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3 — Offices */}
+          {/* Column 3 — Office */}
           <div className="lg:col-span-3 space-y-4">
             <h3 className="text-xs uppercase tracking-[0.2em] text-[#C2410C] font-semibold">
-              Our Offices
+              Our Office
             </h3>
             <ul className="space-y-4 text-xs">
               {OFFICES.map((office) => (
                 <li key={office.id}>
                   <span className="block text-[#0F172A] font-semibold mb-0.5">
-                    {office.isMain
-                      ? `${office.city} (HQ)`
-                      : office.id === 'adda-heights'
-                        ? 'Johor Bahru (Adda Heights)'
-                        : office.city}
+                    {office.name}
                   </span>
                   <span className="block leading-relaxed">{formatOfficeAddress(office)}</span>
                 </li>
@@ -151,7 +147,7 @@ export default function Footer() {
 
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#EA580C] shrink-0 mt-0.5" />
-                <span>Skudai · Johor Bahru · Kuantan</span>
+                <span>Skudai, Johor Bahru</span>
               </div>
 
               <div className="pt-2">

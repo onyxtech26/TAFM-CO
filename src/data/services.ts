@@ -210,7 +210,7 @@ export const PRACTICE_AREAS: PracticeArea[] = [
     relatedSlugs: ["civil-commercial-litigation", "wills-probate-estates", "corporate-commercial"],
     metaTitle: "Conveyancing Lawyer Skudai & Johor Bahru | Property Law",
     metaDescription:
-      "SPA, loan documents, transfers, tenancy and land matters for buyers, sellers and banks in Johor and Pahang."
+      "SPA, loan documents, transfers, tenancy and land matters for buyers, sellers and banks in Johor."
   },
   {
     slug: "civil-commercial-litigation",
@@ -428,7 +428,7 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       "Communications and Multimedia Act 1998"
     ],
     relatedSlugs: ["family-law", "civil-commercial-litigation", "accident-personal-injury"],
-    metaTitle: "Criminal Lawyer Johor Bahru & Kuantan | Bail & Trials",
+    metaTitle: "Criminal Lawyer Johor Bahru | Bail & Trials",
     metaDescription:
       "Advice during investigation, remand and bail, trial representation and appeals in Peninsular Malaysia."
   },
@@ -586,7 +586,7 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       "Small Estates (Distribution) Act 1955"
     ],
     relatedSlugs: ["family-law", "conveyancing-property", "civil-commercial-litigation"],
-    metaTitle: "Probate & Letter of Administration (LA) | Johor & Pahang",
+    metaTitle: "Probate & Letter of Administration (LA) | Johor",
     metaDescription:
       "Will writing, Grant of Probate, Letters of Administration and estate distribution in Malaysia."
   },
@@ -784,7 +784,7 @@ export const PRACTICE_AREAS: PracticeArea[] = [
       "Occupational Safety and Health Act 1994"
     ],
     relatedSlugs: ["civil-commercial-litigation", "employment", "criminal-law"],
-    metaTitle: "Accident Claim Lawyer Johor Bahru & Kuantan",
+    metaTitle: "Accident Claim Lawyer Johor Bahru",
     metaDescription: "Road and workplace accident injury claims and insurance-related matters."
   }
 ];

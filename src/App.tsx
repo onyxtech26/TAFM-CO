@@ -24,7 +24,6 @@ import OfficesPage from './pages/OfficesPage';
 import FaqPage from './pages/FaqPage';
 import ClientGuidePage from './pages/ClientGuidePage';
 import ArticlesPage from './pages/ArticlesPage';
-import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
 import ThankYouPage from './pages/ThankYouPage';
 import LegalPage from './pages/LegalPage';
@@ -131,8 +130,7 @@ function FirmApp() {
                   <Route path="/client-guide" element={<ClientGuidePage />} />
                   <Route path="/articles" element={<ArticlesPage />} />
 
-                  {/* Careers & contact */}
-                  <Route path="/careers" element={<CareersPage />} />
+                  {/* Contact */}
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/thank-you" element={<ThankYouPage />} />
 

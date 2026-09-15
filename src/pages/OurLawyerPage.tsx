@@ -4,7 +4,7 @@
  */
 
 import { Link } from 'react-router-dom';
-import { Award, Globe, Phone, Mail, Gavel, ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { Award, Globe, Phone, Mail, Gavel, ArrowUpRight, ArrowRight, CheckCircle2 } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import SectionHeading from '../components/SectionHeading';
 import CTABand from '../components/CTABand';
@@ -202,25 +202,13 @@ export default function OurLawyerPage() {
             subtitle="Professional management ensuring efficient case progression, systematic administration, and exceptional client coordination."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             {LEADERSHIP_TEAM.filter((m) => m.id !== 'founder-principal').map((member) => (
-              <div key={member.id} className="card-luxury p-7 sm:p-8 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-start justify-between gap-4 mb-5">
-                    <div>
-                      <span className="text-[11px] font-mono text-[#C2410C] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 inline-block mb-3">
-                        {member.badge}
-                      </span>
-                      <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F172A] mb-1">
-                        {member.name}
-                      </h3>
-                      <p className="text-xs uppercase tracking-wider text-[#EA580C] font-bold">
-                        {member.role}
-                      </p>
-                    </div>
-
+              <div key={member.id} className="card-luxury p-7 sm:p-9 shadow-lg">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-7 sm:gap-9 items-start">
+                  <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
                     {member.photoUrl && (
-                      <div className="relative shrink-0 w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-b from-white/95 via-amber-50/40 to-slate-100/70 border border-amber-500/30 shadow-md overflow-hidden flex items-end justify-center">
+                      <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-2xl bg-gradient-to-b from-white/95 via-amber-50/40 to-slate-100/70 border border-amber-500/30 shadow-md overflow-hidden flex items-end justify-center mb-4">
                         <img
                           src={member.photoUrl}
                           alt={member.name}
@@ -229,59 +217,60 @@ export default function OurLawyerPage() {
                         />
                       </div>
                     )}
+                    <span className="text-[11px] font-mono text-[#C2410C] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 inline-block mb-2">
+                      {member.badge}
+                    </span>
+                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F172A]">
+                      {member.name}
+                    </h3>
+                    <p className="text-xs uppercase tracking-wider text-[#EA580C] font-bold mt-1">
+                      {member.role}
+                    </p>
                   </div>
 
-                  <p className="text-sm text-[#475569] leading-relaxed font-light mb-4">
-                    {member.description}
-                  </p>
-
-                  <p className="text-sm text-[#475569] leading-relaxed font-light mb-6">
-                    The combination of legal knowledge, operational experience and property intelligence enables a more structured approach to matters where legal issues and complex property information intersect.{' '}
-                    <a
-                      href="https://conglomerate4u.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 font-semibold text-[#EA580C] hover:text-[#C2410C] transition-colors underline decoration-amber-500/40 hover:decoration-amber-500 break-all"
-                    >
-                      <span>https://conglomerate4u.com/</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
-                    </a>
-                  </p>
-
-                  {member.responsibilities && (
-                    <div className="pt-4 border-t border-[#CBD5E1]/70">
-                      <span className="text-xs uppercase tracking-wider text-[#0F172A] font-semibold block mb-3">
-                        Key Responsibilities:
-                      </span>
-                      <ul className="space-y-2">
-                        {member.responsibilities.map((resp) => (
-                          <li key={resp} className="flex items-start gap-2 text-xs text-[#475569]">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] shrink-0 mt-1.5" />
-                            <span>{resp}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  {member.note && (
-                    <p className="mt-4 text-xs italic text-[#64748B] border-l-2 border-amber-500/40 pl-3">
-                      {member.note}
+                  <div className="md:col-span-8 space-y-4">
+                    <p className="text-sm text-[#475569] leading-relaxed font-light">
+                      {member.description}
                     </p>
-                  )}
+
+                    <p className="text-sm text-[#475569] leading-relaxed font-light">
+                      The combination of legal knowledge, operational experience and property intelligence enables a more structured approach to matters where legal issues and complex property information intersect.{' '}
+                      <a
+                        href="https://conglomerate4u.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 font-semibold text-[#EA580C] hover:text-[#C2410C] transition-colors underline decoration-amber-500/40 hover:decoration-amber-500 break-all"
+                      >
+                        <span>https://conglomerate4u.com/</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+                      </a>
+                    </p>
+
+                    {member.responsibilities && (
+                      <div className="pt-4 border-t border-[#CBD5E1]/70">
+                        <span className="text-xs uppercase tracking-wider text-[#0F172A] font-semibold block mb-3">
+                          Key Responsibilities:
+                        </span>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          {member.responsibilities.map((resp) => (
+                            <li key={resp} className="flex items-start gap-2 text-xs text-[#475569]">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] shrink-0 mt-1.5" />
+                              <span>{resp}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {member.note && (
+                      <p className="mt-4 text-xs italic text-[#64748B] border-l-2 border-amber-500/40 pl-3">
+                        {member.note}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link
-              to="/careers"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2410C] hover:text-[#EA580C] transition-colors"
-            >
-              <span>Explore career opportunities with our chambers</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </section>

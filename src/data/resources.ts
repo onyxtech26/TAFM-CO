@@ -61,7 +61,7 @@ export const FAQ_GROUPS: FAQGroup[] = [
     title: "About where we practise",
     items: [
       {
-        question: "Do you only handle matters in Johor and Pahang?",
+        question: "Do you only handle matters in Johor?",
         answer:
           "No. Our Practising Certificate allows us to practise in the courts of Peninsular Malaysia, including the Federal Court, Court of Appeal, High Court in Malaya, Sessions Courts and Magistrates' Courts. We can assist with matters in other states in Peninsular Malaysia."
       },
@@ -220,7 +220,7 @@ export const CAREERS_WHY_JOIN = [
   {
     title: "Locations",
     icon: "MapPin",
-    text: "Opportunities in Skudai, Johor Bahru and Kuantan."
+    text: "Opportunities in Skudai, Johor Bahru."
   }
 ];
 

@@ -24,13 +24,7 @@ import { MATTER_TYPE_OPTIONS } from '../data/services';
 import { whatsappUrl, satelliteMapEmbedUrl } from '../lib/contact';
 
 const OFFICE_OPTIONS = [
-  ...OFFICES.map((office) =>
-    office.isMain
-      ? 'Skudai (HQ)'
-      : office.id === 'adda-heights'
-        ? 'Johor Bahru (Adda Heights)'
-        : office.city
-  ),
+  'Skudai, Johor Bahru',
   'Online consultation'
 ];
 
@@ -216,10 +210,10 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* Offices */}
+              {/* Office */}
               <div className="card-luxury p-7 sm:p-8 space-y-5">
                 <span className="text-xs uppercase tracking-[0.2em] text-[#C2410C] font-semibold block">
-                  Our offices
+                  Our office
                 </span>
 
                 <div className="space-y-5">
@@ -229,22 +223,21 @@ export default function ContactPage() {
                         <MapPin className="w-4 h-4 text-[#EA580C] shrink-0 mt-0.5" />
                         <div className="flex-1">
                           <h3 className="text-sm font-semibold text-[#0F172A] mb-1">
-                            {office.isMain
-                              ? 'Johor Bahru — HQ (Skudai)'
-                              : office.id === 'adda-heights'
-                                ? 'Johor Bahru — Adda Heights'
-                                : `${office.city} Office`}
+                            {office.name}
                           </h3>
                           <p className="text-xs text-[#475569] leading-relaxed">
                             {formatOfficeAddress(office)}
                           </p>
                           <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
-                            <a
-                              href={`tel:${office.phones[0].tel}`}
-                              className="text-xs text-[#0F172A] hover:text-[#EA580C] font-semibold"
-                            >
-                              {office.phones[0].display}
-                            </a>
+                            {office.phones.map((phone) => (
+                              <a
+                                key={phone.tel}
+                                href={`tel:${phone.tel}`}
+                                className="text-xs text-[#0F172A] hover:text-[#EA580C] font-semibold"
+                              >
+                                {phone.display}
+                              </a>
+                            ))}
                             <a
                               href={office.googleMapsUrl}
                               target="_blank"
@@ -263,9 +256,9 @@ export default function ContactPage() {
 
                 <Link
                   to="/offices"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#C2410C] hover:text-[#EA580C] transition-colors"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-[#C2410C] hover:text-[#EA580C] pt-2"
                 >
-                  <span>See maps and opening hours</span>
+                  <span>View full office details and opening hours</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

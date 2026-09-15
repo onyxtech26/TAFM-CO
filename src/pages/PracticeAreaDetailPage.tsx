@@ -343,7 +343,7 @@ export default function PracticeAreaDetailPage() {
 
                   <div className="flex items-start gap-2.5 text-[#475569]">
                     <MapPin className="w-4 h-4 text-[#EA580C] shrink-0 mt-0.5" />
-                    <span>Skudai · Johor Bahru · Kuantan</span>
+                    <span>Skudai, Johor Bahru</span>
                   </div>
                 </div>
 
