@@ -14,18 +14,15 @@ import {
   ShieldCheck,
   Scale,
   Award,
-  Navigation,
   Ear,
   Target
 } from 'lucide-react';
 import {
   FIRM_DETAILS,
-  OFFICES,
   PRINCIPAL_LAWYER,
   OUR_COMMITMENTS,
   OUR_PROMISE,
-  HOW_WE_WORK,
-  formatOfficeAddress
+  HOW_WE_WORK
 } from '../data/firm';
 import { PRACTICE_AREAS } from '../data/services';
 import { ARTICLE_TOPICS } from '../data/resources';
@@ -472,75 +469,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. OFFICES SNAPSHOT (4.8) */}
-      <section className="bg-transparent py-20 sm:py-28 border-b border-[#CBD5E1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Where to Find Us"
-            title="Our Office"
-            subtitle="Located in Skudai, Johor Bahru, with online consultations also available."
-          />
-
-          <div className="max-w-2xl mx-auto">
-            {OFFICES.map((office) => (
-              <div
-                key={office.id}
-                className="card-luxury p-8 sm:p-10 border-amber-500/50 shadow-md bg-white/85 hover:bg-gradient-to-br hover:from-[#EA580C] hover:via-[#F97316] hover:to-[#FACC15] hover:border-amber-400 hover:shadow-2xl hover:shadow-orange-500/25 group transition-all duration-300"
-              >
-                <div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <MapPin className="w-5 h-5 text-[#EA580C] group-hover:text-white shrink-0 transition-colors" />
-                    <span className="uppercase tracking-[0.2em] font-semibold text-xs px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-[#C2410C] group-hover:text-white group-hover:bg-white/20 group-hover:border-white/40 transition-colors">
-                      Skudai, Johor Bahru
-                    </span>
-                  </div>
-
-                  <h3 className="font-serif font-bold text-2xl sm:text-3xl text-[#0F172A] group-hover:text-white mb-3 leading-snug transition-colors">
-                    {office.name}
-                  </h3>
-
-                  <p className="text-base text-[#475569] group-hover:text-white/95 leading-relaxed font-light transition-colors">
-                    {formatOfficeAddress(office)}
-                  </p>
-                </div>
-
-                <div className="mt-8 pt-5 border-t border-[#CBD5E1]/80 group-hover:border-white/30 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 transition-colors">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                    {office.phones.map((p) => (
-                      <a
-                        key={p.tel}
-                        href={`tel:${p.tel}`}
-                        className="text-sm font-semibold text-[#0F172A] group-hover:text-white transition-colors"
-                      >
-                        {p.display}
-                      </a>
-                    ))}
-                  </div>
-                  <a
-                    href={office.googleMapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2410C] group-hover:text-white transition-colors"
-                  >
-                    <Navigation className="w-4 h-4" />
-                    <span>Get directions</span>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 text-center">
-            <Link
-              to="/offices"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2410C] hover:text-[#EA580C] transition-colors"
-            >
-              <span>See office details and opening hours</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* 9. LEGAL INSIGHTS (4.9) */}
       <section className="bg-slate-200/30 backdrop-blur-2xl py-20 sm:py-24 border-b border-[#CBD5E1]/60">
