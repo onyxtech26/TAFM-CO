@@ -11,18 +11,19 @@ import {
   CheckCircle2,
   MapPin,
   MessageSquare,
-  FileText,
-  Lock,
   ShieldCheck,
   Scale,
   Award,
-  Navigation
+  Navigation,
+  Ear,
+  Target
 } from 'lucide-react';
 import {
   FIRM_DETAILS,
   OFFICES,
   PRINCIPAL_LAWYER,
   OUR_COMMITMENTS,
+  OUR_PROMISE,
   HOW_WE_WORK,
   formatOfficeAddress
 } from '../data/firm';
@@ -36,10 +37,10 @@ import WhatsAppIcon from '../components/WhatsAppIcon';
 import { whatsappUrl } from '../lib/contact';
 
 const COMMITMENT_ICONS: Record<string, typeof MessageSquare> = {
+  Ear,
+  Target,
   MessageSquare,
-  FileText,
-  Lock,
-  MapPin
+  ShieldCheck
 };
 
 export default function HomePage() {
@@ -211,30 +212,39 @@ export default function HomePage() {
             <span className="w-6 h-[1.5px] bg-gradient-to-l from-[#EA580C] to-[#F59E0B] rounded-full" />
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] leading-tight mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-[#0F172A] leading-tight mb-3">
             Welcome to{' '}
             <span className="italic font-normal gold-text-gradient">
               Amin Firdaus Mashudi &amp; Co.
             </span>
           </h2>
 
+          <p className="text-sm sm:text-base font-semibold text-[#EA580C] uppercase tracking-wider mb-8">
+            Trusted Legal Guidance &bull; Professional Representation &bull; Practical Solutions
+          </p>
+
           <div className="space-y-5 text-base text-[#475569] leading-relaxed font-light text-left sm:text-center">
             <p>
-              Legal matters often arrive at difficult moments: buying your first home, dealing with a
-              dispute, facing a criminal charge, going through a divorce, or managing a loved one&apos;s
-              estate. At those moments, you need someone who will explain your position clearly, tell
-              you what to expect, and handle the process properly.
+              Welcome to Amin Firdaus Mashudi &amp; Co., a Malaysian law firm committed to providing
+              professional, reliable and client-focused legal services to individuals, families,
+              businesses, property owners and corporate clients.
             </p>
             <p>
-              Amin Firdaus Mashudi &amp; Co. was established in 2026 by Advocate &amp; Solicitor
-              Muhammad Amin Firdaus bin Mashudi. The firm is registered with the Malaysian Bar and
-              serves individuals, families and businesses from offices in Skudai and Johor Bahru,
-              Johor, and in Kuantan, Pahang.
+              Established in 2021 and incorporated in 2025, our firm has grown with a commitment to
+              providing practical legal solutions while maintaining the highest standards of
+              professionalism, integrity and confidentiality.
             </p>
             <p>
-              We believe good legal service starts with good communication. We explain the law in
-              plain Bahasa Malaysia or English, set out the steps and likely costs in writing before
-              we begin, and keep you informed as your matter moves forward.
+              We understand that every legal matter is different. Whether you are purchasing or
+              selling a property, administering a loved one&apos;s estate, preparing important legal
+              documents, managing a business transaction or facing a legal dispute, the right legal
+              guidance can make a significant difference.
+            </p>
+            <p>
+              Our approach begins with understanding your circumstances. We carefully review the
+              relevant facts and documents, identify the legal issues and advise you on the available
+              options. From there, we work with you to develop an appropriate legal strategy and guide
+              you through each stage of the process.
             </p>
           </div>
 
@@ -306,36 +316,83 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              to="/process"
+              className="btn-primary px-8 py-3.5 text-sm inline-flex items-center gap-2"
+            >
+              <span>Explore our full legal process</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* 6. OUR COMMITMENTS (4.6) */}
+      {/* 6. OUR COMMITMENTS / OUR PROMISE (4.6) */}
       <section className="bg-transparent py-20 sm:py-28 border-b border-[#CBD5E1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Our Promise"
-            title="Our Commitments"
-            italicAccent="to You"
-            subtitle="Four things you can rely on from the first conversation onwards."
+            title="Our Commitment"
+            italicAccent="to Every Client"
+            subtitle="Built around four key stages to deliver transparent, attentive and responsible representation."
           />
+
+          <div className="max-w-3xl mx-auto text-center mb-12 -mt-4">
+            <p className="text-base text-[#475569] leading-relaxed font-light">
+              At <span className="font-medium text-[#0F172A] italic">Amin Firdaus Mashudi &amp; Co.</span>,
+              we believe that good legal service is more than simply providing legal advice. It means
+              listening to our clients, understanding their objectives, communicating clearly, and
+              taking responsibility for every stage of the matter entrusted to us.
+            </p>
+            <p className="text-xs uppercase tracking-wider text-[#EA580C] font-semibold mt-4">
+              Our commitment is built around four key stages:
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {OUR_COMMITMENTS.map((commitment) => {
               const Icon = COMMITMENT_ICONS[commitment.icon] || CheckCircle2;
               return (
-                <div key={commitment.title} className="card-luxury p-7">
-                  <div className="w-11 h-11 rounded-xl border border-amber-500/40 bg-gradient-to-br from-white via-amber-50/40 to-white flex items-center justify-center text-[#EA580C] mb-5 shadow-sm">
-                    <Icon className="w-5 h-5" />
+                <div key={commitment.title} className="card-luxury p-7 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="w-11 h-11 rounded-xl border border-amber-500/40 bg-gradient-to-br from-white via-amber-50/40 to-white flex items-center justify-center text-[#EA580C] shadow-sm">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <span className="text-[11px] font-mono text-[#C2410C] font-bold px-2 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/30">
+                        {commitment.step}
+                      </span>
+                    </div>
+
+                    <h3 className="font-serif text-lg font-bold text-[#0F172A] mb-3 leading-snug">
+                      {commitment.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed font-light">
+                      {commitment.text}
+                    </p>
                   </div>
-                  <h3 className="font-serif text-xl font-bold text-[#0F172A] mb-2.5">
-                    {commitment.title}
-                  </h3>
-                  <p className="text-sm text-[#475569] leading-relaxed font-light">
-                    {commitment.text}
-                  </p>
                 </div>
               );
             })}
+          </div>
+
+          {/* Featured Promise Box */}
+          <div className="mt-14 max-w-4xl mx-auto p-8 sm:p-10 rounded-2xl bg-gradient-to-br from-white/90 via-amber-50/40 to-white/90 border border-amber-500/40 shadow-lg text-center relative overflow-hidden">
+            <div className="inline-block px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-[#C2410C] text-[11px] font-mono font-bold tracking-widest uppercase mb-4">
+              Our Promise
+            </div>
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F172A] italic mb-4 leading-snug">
+              &ldquo;{OUR_PROMISE.motto}&rdquo;
+            </h3>
+            <p className="text-sm sm:text-base text-[#475569] font-light max-w-2xl mx-auto leading-relaxed">
+              These principles guide the way we work and reflect our commitment to providing{' '}
+              <span className="font-medium text-[#0F172A] italic">
+                professional, practical and client-focused legal services
+              </span>
+              .
+            </p>
           </div>
         </div>
       </section>

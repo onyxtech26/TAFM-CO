@@ -321,26 +321,39 @@ export const OUR_APPROACH = [
 
 export const OUR_COMMITMENTS = [
   {
-    title: "Plain language",
+    step: "01",
+    title: "Listening to Our Clients",
+    icon: "Ear",
+    text: "Every matter begins with listening. We take the time to understand our clients’ concerns, circumstances, expectations and the issues they are facing. We believe that proper understanding at the beginning allows us to provide advice that is relevant, focused and appropriate to the client’s situation."
+  },
+  {
+    step: "02",
+    title: "Understanding Your Objectives",
+    icon: "Target",
+    text: "We do not look at a legal matter from only one perspective. We seek to understand what our clients ultimately want to achieve, whether it involves protecting their interests, resolving a dispute, completing a transaction, managing an estate or finding a practical solution to a legal problem. Our advice and strategy are developed with those objectives in mind."
+  },
+  {
+    step: "03",
+    title: "Clear & Consistent Communication",
     icon: "MessageSquare",
-    text: "We explain your legal position without unnecessary jargon, in Bahasa Malaysia or English."
+    text: "Legal matters can often be complicated. We are committed to explaining legal issues, procedures, documents and available options in a clear and understandable manner. We keep our clients informed of important developments, requirements, timelines and next steps so that they can make informed decisions throughout the matter."
   },
   {
-    title: "Transparency",
-    icon: "FileText",
-    text: "We tell you the basis of our fees and expected disbursements in writing before starting work."
-  },
-  {
-    title: "Confidentiality",
-    icon: "Lock",
-    text: "Your affairs are protected by advocate–client privilege and our obligations under the Personal Data Protection Act 2010."
-  },
-  {
-    title: "Accessibility",
-    icon: "MapPin",
-    text: "With offices in Skudai, Johor Bahru and Kuantan, and online consultations available, you can reach us where it suits you."
+    step: "04",
+    title: "Taking Responsibility at Every Stage",
+    icon: "ShieldCheck",
+    text: "From the initial consultation to the completion of the matter, we take responsibility for managing each stage with care and attention. We monitor progress, coordinate the necessary steps, address issues as they arise and keep the matter moving forward. Our commitment does not end with giving advice — we remain focused on delivering the best practical outcome within the legal framework."
   }
 ];
+
+export const OUR_PROMISE = {
+  intro:
+    "At Amin Firdaus Mashudi & Co., we believe that good legal service is more than simply providing legal advice. It means listening to our clients, understanding their objectives, communicating clearly, and taking responsibility for every stage of the matter entrusted to us.",
+  commitmentLead: "Our commitment is built around four key stages:",
+  motto: "Listen carefully. Understand clearly. Communicate openly. Act responsibly.",
+  closing:
+    "These principles guide the way we work and reflect our commitment to providing professional, practical and client-focused legal services."
+};
 
 export interface EngagementStep {
   stepNumber: number;
