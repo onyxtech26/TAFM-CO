@@ -447,7 +447,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <p className="text-base text-[#475569] leading-relaxed font-light">
+              <p className="text-base text-[#475569] leading-relaxed font-light text-justify">
                 Mr. Amin Firdaus was admitted as an Advocate and Solicitor of the High Court in
                 Malaya in 2022 and founded Amin Firdaus Mashudi &amp; Co. in 2026. He holds a current
                 Practising Certificate entitling him to practise in the Federal Court, Court of
