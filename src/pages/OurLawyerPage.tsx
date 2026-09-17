@@ -226,6 +226,13 @@ export default function OurLawyerPage() {
                     <p className="text-xs uppercase tracking-wider text-[#EA580C] font-bold mt-1">
                       {member.role}
                     </p>
+                    {member.motto && (
+                      <div className="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 border border-amber-500/25 shadow-sm">
+                        <span className="font-serif italic text-xs font-semibold text-[#C2410C] tracking-wide">
+                          &ldquo;{member.motto}&rdquo;
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="md:col-span-8 space-y-4">

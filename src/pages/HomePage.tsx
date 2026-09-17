@@ -67,9 +67,9 @@ export default function HomePage() {
                 transition={{ duration: 0.7, delay: 0.1 }}
                 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#0F172A] leading-[1.08]"
               >
-                Clear Legal Guidance for{' '}
+                Your Legacy.{' '}
                 <span className="italic font-normal gold-text-gradient">
-                  Individuals, Families and Businesses
+                  Our Commitment
                 </span>
               </motion.h1>
 
