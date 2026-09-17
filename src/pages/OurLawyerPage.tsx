@@ -97,9 +97,9 @@ export default function OurLawyerPage() {
                 <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F172A] leading-snug">
                   Biography
                 </h2>
-                <div className="space-y-4 text-base text-[#475569] leading-relaxed font-light">
+                <div className="space-y-4 text-base text-[#475569] leading-relaxed font-light text-justify">
                   {PRINCIPAL_LAWYER.biography.map((paragraph, idx) => (
-                    <p key={idx}>{paragraph}</p>
+                    <p key={idx} className="text-justify">{paragraph}</p>
                   ))}
                 </div>
               </div>
