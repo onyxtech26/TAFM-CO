@@ -509,7 +509,7 @@ export const LEADERSHIP_TEAM: LeadershipMember[] = [
     motto: "Your Legacy. Our Commitment",
     summary: "Oversees the operational and administrative functions, internal workflow, and cross-party communication.",
     description:
-      "Mr. Mohaan oversees the operational and administrative functions of the firm, leads the firm's management functions and supports the development and implementation of the firm's operational and management strategies. The Operations Manager works closely with the legal team to ensure that client matters are handled efficiently and supports the ongoing expansion and high-standard service delivery of the chambers across Johor.",
+      "Mr. Mohaan oversees the operational and administrative functions of the firm, leads the firm's management functions and supports the development and implementation of the firm's operational and management strategies. He works closely with the legal team to ensure that client matters are handled efficiently and supports the ongoing expansion and high-standard service delivery of the chambers across Johor.",
     responsibilities: [
       "Firm operations and management coordination",
       "Client coordination and relationship management",
@@ -519,7 +519,7 @@ export const LEADERSHIP_TEAM: LeadershipMember[] = [
       "Monitoring case progress and operational planning",
       "Supporting the firm's long-term development"
     ],
-    note: "The Operations Manager works closely with the legal team to ensure that client matters are handled efficiently and supports the ongoing expansion and high-standard service delivery of the chambers across Johor.",
+    note: "He works closely with the legal team to ensure that client matters are handled efficiently and supports the ongoing expansion and high-standard service delivery of the chambers across Johor.",
     photoUrl: "/images/team/mr-mohan.png?v=2"
   }
 ];
