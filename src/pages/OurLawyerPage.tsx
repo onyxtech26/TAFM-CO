@@ -206,7 +206,7 @@ export default function OurLawyerPage() {
             {LEADERSHIP_TEAM.filter((m) => m.id !== 'founder-principal').map((member) => (
               <div key={member.id} className="card-luxury p-7 sm:p-9 shadow-lg">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-7 sm:gap-9 items-start">
-                  <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
+                  <div className="md:col-span-4 flex flex-col items-center text-center">
                     {member.photoUrl && (
                       <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-2xl bg-gradient-to-b from-white/95 via-amber-50/40 to-slate-100/70 border border-amber-500/30 shadow-md overflow-hidden flex items-end justify-center mb-4">
                         <img
@@ -227,7 +227,7 @@ export default function OurLawyerPage() {
                       {member.role}
                     </p>
                     {member.motto && (
-                      <div className="mt-3.5 w-full flex justify-center">
+                      <div className="mt-5 sm:mt-6 w-full flex justify-center">
                         <div className="inline-flex items-center justify-center px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-amber-500/15 via-orange-500/10 to-amber-500/15 border border-amber-500/35 shadow-sm text-center">
                           <span className="font-serif italic text-sm sm:text-base font-bold text-[#C2410C] tracking-wide text-center">
                             &ldquo;{member.motto}&rdquo;
