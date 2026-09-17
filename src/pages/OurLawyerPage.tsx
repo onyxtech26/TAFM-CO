@@ -227,10 +227,12 @@ export default function OurLawyerPage() {
                       {member.role}
                     </p>
                     {member.motto && (
-                      <div className="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 border border-amber-500/25 shadow-sm">
-                        <span className="font-serif italic text-xs font-semibold text-[#C2410C] tracking-wide">
-                          &ldquo;{member.motto}&rdquo;
-                        </span>
+                      <div className="mt-3.5 w-full flex justify-center">
+                        <div className="inline-flex items-center justify-center px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-amber-500/15 via-orange-500/10 to-amber-500/15 border border-amber-500/35 shadow-sm text-center">
+                          <span className="font-serif italic text-sm sm:text-base font-bold text-[#C2410C] tracking-wide text-center">
+                            &ldquo;{member.motto}&rdquo;
+                          </span>
+                        </div>
                       </div>
                     )}
                   </div>

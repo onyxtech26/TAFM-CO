@@ -65,7 +65,7 @@ export const FIRM_DETAILS = {
   fullTitle: "Amin Firdaus Mashudi & Co. (Advocates & Solicitors)",
   descriptor: "Advocates & Solicitors",
 
-  tagline: "Your Legacy. Our Commitment",
+  tagline: "Your Trust. Our Commitment",
 
   registrationNumber: "000020009279",
   registrationBasis:
@@ -506,7 +506,7 @@ export const LEADERSHIP_TEAM: LeadershipMember[] = [
     name: "Mr. Mohaan",
     role: "Operations Manager",
     badge: "Operations & Management",
-    motto: "Your Legacy. Our Commitment",
+    motto: "Your Trust. Our Commitment",
     summary: "Oversees the operational and administrative functions, internal workflow, and cross-party communication.",
     description:
       "Mr. Mohaan oversees the operational and administrative functions of the firm, leads the firm's management functions and supports the development and implementation of the firm's operational and management strategies. He works closely with the legal team to ensure that client matters are handled efficiently and supports the ongoing expansion and high-standard service delivery of the chambers across Johor.",
