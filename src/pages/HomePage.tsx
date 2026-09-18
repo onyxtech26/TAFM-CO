@@ -25,7 +25,6 @@ import {
   HOW_WE_WORK
 } from '../data/firm';
 import { PRACTICE_AREAS } from '../data/services';
-import { ARTICLE_TOPICS } from '../data/resources';
 import LawyerPortrait from '../components/LawyerPortrait';
 import PracticeAreaCard from '../components/PracticeAreaCard';
 import CTABand from '../components/CTABand';
@@ -470,49 +469,7 @@ export default function HomePage() {
       </section>
 
 
-      {/* 9. LEGAL INSIGHTS (4.9) */}
-      <section className="bg-slate-200/30 backdrop-blur-2xl py-20 sm:py-24 border-b border-[#CBD5E1]/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Resources"
-            title="Legal Insights"
-            subtitle="Practical explanations of everyday legal issues in Malaysia."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {ARTICLE_TOPICS.slice(0, 3).map((topic) => (
-              <article key={topic.title} className="card-luxury p-7 flex flex-col justify-between">
-                <div>
-                  <span className="text-[11px] uppercase tracking-[0.18em] text-[#C2410C] font-semibold block mb-3">
-                    {topic.area}
-                  </span>
-                  <h3 className="font-serif text-lg font-bold text-[#0F172A] mb-2.5 leading-snug">
-                    {topic.title}
-                  </h3>
-                  <p className="text-sm text-[#475569] leading-relaxed font-light">
-                    {topic.summary}
-                  </p>
-                </div>
-                <div className="mt-5 pt-4 border-t border-[#CBD5E1] text-[11px] font-mono text-[#64748B] uppercase tracking-wider">
-                  In preparation
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-10 text-center">
-            <Link
-              to="/articles"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C2410C] hover:text-[#EA580C] transition-colors"
-            >
-              <span>See all upcoming topics</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 10. FINAL CTA (4.10) */}
+      {/* Final CTA */}
       <CTABand />
     </div>
   );

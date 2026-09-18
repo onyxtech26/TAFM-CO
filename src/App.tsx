@@ -23,7 +23,6 @@ import PracticeAreaDetailPage from './pages/PracticeAreaDetailPage';
 import OfficesPage from './pages/OfficesPage';
 import FaqPage from './pages/FaqPage';
 import ClientGuidePage from './pages/ClientGuidePage';
-import ArticlesPage from './pages/ArticlesPage';
 import ContactPage from './pages/ContactPage';
 import ThankYouPage from './pages/ThankYouPage';
 import LegalPage from './pages/LegalPage';
@@ -128,7 +127,7 @@ function FirmApp() {
                   {/* Resources */}
                   <Route path="/faq" element={<FaqPage />} />
                   <Route path="/client-guide" element={<ClientGuidePage />} />
-                  <Route path="/articles" element={<ArticlesPage />} />
+                  <Route path="/articles" element={<Navigate to="/faq" replace />} />
 
                   {/* Contact */}
                   <Route path="/contact" element={<ContactPage />} />

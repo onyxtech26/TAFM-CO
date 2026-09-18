@@ -83,11 +83,6 @@ export const PAGE_META: Record<string, PageMeta> = {
     description:
       "Checklists of the documents to bring to your consultation, by type of legal matter."
   },
-  "/articles": {
-    title: "Legal Insights | Amin Firdaus Mashudi & Co.",
-    description:
-      "Practical explanations of everyday legal issues in Malaysia."
-  },
   "/contact": {
     title: "Contact Us | Amin Firdaus Mashudi & Co.",
     description:

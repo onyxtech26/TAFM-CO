@@ -49,8 +49,7 @@ const NAV_ITEMS: NavItem[] = [
     path: '/faq',
     children: [
       { label: 'FAQ', path: '/faq' },
-      { label: 'Client Guide', path: '/client-guide' },
-      { label: 'Articles', path: '/articles' }
+      { label: 'Client Guide', path: '/client-guide' }
     ]
   }
 ];
