@@ -134,7 +134,7 @@ export default function Navbar() {
             className="group flex items-center gap-2 sm:gap-2.5 text-left focus-visible:outline-none shrink-0 cursor-pointer"
             aria-label="Amin Firdaus Mashudi & Co. Home"
           >
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-amber-500 bg-gradient-to-br from-white via-amber-50/60 to-white flex items-center justify-center shadow-[0_0_12px_rgba(245,158,11,0.3)] transition-all duration-300 group-hover:border-[#FACC15] group-hover:shadow-[0_0_22px_rgba(250,204,21,0.5)] group-hover:scale-105 overflow-hidden p-0.5">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-amber-500/70 bg-gradient-to-br from-white via-amber-50/60 to-white flex items-center justify-center shadow-[0_0_12px_rgba(245,158,11,0.3)] transition-all duration-300 group-hover:border-[#FACC15] group-hover:shadow-[0_0_22px_rgba(250,204,21,0.5)] group-hover:scale-105 overflow-hidden">
               <img
                 src="/images/logo.png"
                 alt="Amin Firdaus Mashudi & Co."
